@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * 时间 2015 3 23
+ * 注释 杨率帅
+ *
+ * 本代码为程序主界面代码
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -23,11 +30,15 @@ namespace AR.Drone.WinApp
 {
     public partial class MainForm : Form
     {
+        //使用到的视频文件格式信息常量
         private const string ARDroneTrackFileExt = ".ardrone";
         private const string ARDroneTrackFilesFilter = "AR.Drone track files (*.ardrone)|*.ardrone";
 
+        //无人机类
         private readonly DroneClient _droneClient;
+        //视频框架
         private readonly List<PlayerForm> _playerForms;
+        //
         private readonly VideoPacketDecoderWorker _videoPacketDecoderWorker;
         private Settings _settings;
         private VideoFrame _frame;

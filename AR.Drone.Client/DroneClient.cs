@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ * 时间 2015 3 23
+ * 注释 杨率帅
+ *
+ * 本代码为SDK 的单机控制类 
+ * 从WorkerBase 类继承
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
 using System.Diagnostics;
