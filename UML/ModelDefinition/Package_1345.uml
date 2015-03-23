@@ -1,0 +1,3281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="5a281bb8-c73b-4030-add6-9e6a2aa88ec2"
+  name="Objectives"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="059293a9-9ce4-4ad5-abd1-d6e4e5ae7a9b"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAR.Drone.Avionics.Objectives"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="fb7e0664-112b-4563-be7b-60a55d02d3b5"
+        name="Objective"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="ae53481a-74aa-4cec-9471-42f2684deafb"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="29242bd5-24ef-4069-9f7c-498f98ad3bb5"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="26078cd7-ed10-4da2-ab5a-999479d421a9">
+                <propertyInstance
+                  Id="7e243c5a-8803-4a24-8dc3-791421034e9d"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3231f621-f0fd-4012-9886-9fd987815a74">
+                <propertyInstance
+                  Id="6af9c40c-8e7d-42f6-aabb-0a49439d76e1"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5d5aba25-6576-464c-962a-99633e1b634e">
+                <propertyInstance
+                  Id="a8c22c74-c511-4473-8e7c-73ab143d1dfb"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b6fde33f-e842-421e-a555-47c3639fa882">
+                <propertyInstance
+                  Id="5b7ddc53-557f-4bd3-8933-27d82eb24ccf"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8cb35058-16e2-4a0c-9a78-a3a61c84d132">
+                <propertyInstance
+                  Id="4e45fc97-e481-44a8-b4fc-adb1339394c8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="5096b966-2cc4-4c54-9e1d-d79e9084b21c">
+            <interfaceMoniker
+              Id="56030fd1-6f5a-40b9-93cb-bbd64971b3df"
+              LastKnownName="IEarlyObtainer"
+              LastKnownLocation="Package_1347.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="384488a1-ccfa-47b3-91a0-df1e13bb3fa9"
+            name="Started"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9e75f5b3-5882-4fb0-85fb-15f9bfa11d7d"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3DStarted"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5c8a1f1a-7481-41f0-8a1b-3b5061c69f73"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9b39636f-2eec-41f0-8580-f1a7b059109a">
+                    <propertyInstance
+                      Id="fea4cfa5-1a07-43be-aceb-701915059a63"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="712b2a09-94a9-40dd-92f6-27b3374eef2a">
+                    <propertyInstance
+                      Id="63dbef06-f199-4bf1-a77e-cc1ffdf5b92b"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0565c108-db64-467b-bfcb-df01f1bdbddf">
+                    <propertyInstance
+                      Id="9de6b44d-875c-4d4a-98c2-3f36ae074f0b"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a6328757-90ab-4cb7-a2dd-9f3b01ac6dc6">
+                    <propertyInstance
+                      Id="b858dab7-9ae2-4a93-93e9-315622488661"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9412087e-b6c0-4063-a05b-0285f395a1e6">
+                    <propertyInstance
+                      Id="f147a6a4-df88-45c3-ae40-1fa4f0529e1e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b51ba341-e54c-41e2-82d2-5636b74279cb">
+                    <propertyInstance
+                      Id="dc8cc3f4-b45f-4f03-bbf7-75b9c88ade1a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="41ed9bbe-0fe4-4445-af1b-104fb9c1e191">
+                    <propertyInstance
+                      Id="4ad6d74b-6166-4de5-9792-46ff3a9549a7"
+                      name="Set"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="92708ab9-52fd-471b-a1c6-b350423fb1c8"
+            name="CanBeObtained"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="bb443a1b-9dda-43a8-beb5-005cf4fafdad"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3DCanBeObtained"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f51926c1-8ac3-460f-b7b1-c2544de6595c"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5d0cba51-742e-48aa-a0bd-e762e7256321">
+                    <propertyInstance
+                      Id="ab5f6ef1-d255-40ab-a0f5-fb86e76efb82"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5d77ee32-0e42-445c-9ec0-b55bb2596f0e">
+                    <propertyInstance
+                      Id="d0a87465-92f7-46e8-b467-c455c13bd9ca"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2fbd44cc-0653-48e4-b81e-03342224308d">
+                    <propertyInstance
+                      Id="02087255-4cea-46c2-bbf5-8931c62672f2"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="805b6af3-834b-4e07-9e1b-cba3275e96c2">
+                    <propertyInstance
+                      Id="cf53050e-25e3-4b89-8244-6317f9aadf1a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="08a322f4-f947-4f04-b54a-a2d8d73573dc">
+                    <propertyInstance
+                      Id="726dd840-894d-4873-9666-6290d62f4d60"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5ef04ef6-15e2-4487-b0ff-b08aeeb2cd18">
+                    <propertyInstance
+                      Id="a0342832-3559-428e-ad80-23fd12f954e3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="287ab691-acd8-42ee-ad54-9379e14bd77c">
+                    <propertyInstance
+                      Id="3022f46b-da99-4f78-93bd-bc3789a5aa86"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1a0bac37-6984-433e-8251-a10e6c427401"
+            name="Obtained"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="ddef3299-563b-4831-9c91-61f156b643f8"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3DObtained"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5163c7e1-faee-4f9b-90a7-f9fad4ab42f5"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16405ce2-0861-4df5-9c71-b5ca69f72421">
+                    <propertyInstance
+                      Id="133b3738-09ff-4dd6-866a-39dd173986ff"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="254bab2a-20b7-4a5f-8019-280a2fe6399f">
+                    <propertyInstance
+                      Id="a6a5b6ca-e2c9-4209-ae77-db238f18c341"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2866aa2a-2541-4a9f-bc2c-44464390f37f">
+                    <propertyInstance
+                      Id="881a6425-c0f4-4b28-b29f-e31648a48a42"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0cb87a44-6252-4b9d-895d-4ac3ef1e2871">
+                    <propertyInstance
+                      Id="ea3d345a-d0a9-435f-aacc-75302eaa9048"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2d30508d-6699-4e37-8b30-3caf70423dff">
+                    <propertyInstance
+                      Id="fb1b2aa2-43a7-460d-aad0-f6d33e022dc7"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f4931719-e9bb-486b-b01d-79340a3a57ac">
+                    <propertyInstance
+                      Id="49fc941a-beff-4511-8cff-1bc4c7479c7a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="896b25f3-632f-41bc-9284-0959f9843f4b">
+                    <propertyInstance
+                      Id="69d31fb6-bfaa-47ef-9b41-45ba21ef89b9"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="38b6099d-d5be-4635-9059-87bf2e1478a9"
+            name="Empty"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="2242e080-9431-4d6b-8e1a-0665371686c4"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3DEmpty"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="335c308a-64ee-490c-a164-a0d2ef38a1eb"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="442746d8-7848-44b7-a7a8-68f3e4376f39">
+                    <propertyInstance
+                      Id="037026cc-7229-46df-8711-5e755942a391"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df70ab8c-9753-49a8-bec9-3efb899630b4">
+                    <propertyInstance
+                      Id="084ec3ac-a93b-4f71-ad9d-07958cc39eae"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e02cd1d7-fccd-4e66-a778-02042e97affb">
+                    <propertyInstance
+                      Id="e1478fb1-01f6-4c1e-8a8d-9aa88f31b71d"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="800e81cf-203a-4512-8a10-4f2ef7bb4a85">
+                    <propertyInstance
+                      Id="b26deba3-e1b0-4106-bcee-4557d4ce8902"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54f1a05b-e0be-4227-a5f6-9c49c39b1536">
+                    <propertyInstance
+                      Id="3c2f0630-e640-45c9-909d-67a68b29ebb3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="27c64941-36b0-4c02-bfe0-b93ab844795b">
+                    <propertyInstance
+                      Id="9184d6eb-0de7-425a-b8a6-6b066b8f511a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="084a4639-93bf-4e5f-bb82-41fa77a7e048">
+                    <propertyInstance
+                      Id="c122d8f6-7af7-40d3-9882-737cc36ba2a0"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8d7ddcfc-7739-440e-8dd9-7c3da0d23cbe"
+            name="Count"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="237d964d-3d8b-4763-a0a4-feeb1b4005ba"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3DCount"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="090be04e-de4e-4a16-9941-9b33e29c3bc5"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4d2b76c6-0082-4339-9363-6bd6c609659f">
+                    <propertyInstance
+                      Id="da37a2e8-d5ec-4eb9-92b3-b4ba36e44a90"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa37fbb6-4915-4b15-b9e3-75e0bcefeaa8">
+                    <propertyInstance
+                      Id="ac83d7fc-a276-4e53-9b1e-37906b812e65"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be642aa2-7388-4cb7-88af-ebb898c4113a">
+                    <propertyInstance
+                      Id="4d01acc9-17e4-4c0d-83bc-dccb9bf01eec"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="893e55e4-a936-4ccf-be2d-f1c37188077e">
+                    <propertyInstance
+                      Id="6d073399-038e-45d8-96f6-8d02fa26dc84"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="15766fe1-ebef-4c53-a40b-dae960e13c50">
+                    <propertyInstance
+                      Id="9d2c79cf-c9fe-40c0-a615-c398e0e81912"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="73e0edd6-8c1d-46ef-a5b3-c86d3a8c00ba">
+                    <propertyInstance
+                      Id="0554ef14-605c-4db2-90c8-7ea22ccd9ff2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="48df0b13-3a13-40ee-b990-43abc6cd354d">
+                    <propertyInstance
+                      Id="d51ba606-2b82-401c-aec2-286018508058"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8edadf68-b894-4841-b130-0092e830db85"
+            name="IsExpired"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="4de49658-4a0f-4bcf-88c6-ded420793fe1"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3DIsExpired"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5707f91c-eb49-40ed-8480-abc1fa1e3198"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5ed9970e-b2f4-4c14-841f-ac53021fde4b">
+                    <propertyInstance
+                      Id="571a36c4-6e2a-4bbb-8440-743220e8073b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ca32cdc-cd91-4611-a06d-4aa59cd4946b">
+                    <propertyInstance
+                      Id="5a977f2d-28b3-424c-99fa-64eebbaa6675"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="75ff85fe-9257-46b9-8e9f-4d1fddf330cb">
+                    <propertyInstance
+                      Id="e64aeff3-d65c-4c1a-8fe8-e286c00dae64"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="795582a9-7d62-4d3a-8a56-00ef374dcdac">
+                    <propertyInstance
+                      Id="510fed50-56b8-4bc9-8c00-a14e70095c52"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc392044-97e1-469c-a0c9-ee2b1f39101a">
+                    <propertyInstance
+                      Id="39b6bb58-0c38-4efc-8252-89a898ee04b1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="92de553a-3de5-45e1-9a8d-0280d8a5d905">
+                    <propertyInstance
+                      Id="9fe62d73-1a33-4f0e-bf79-c80abf9bfb31"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="672088b9-b28a-474a-90ba-06f0e15ada59">
+                    <propertyInstance
+                      Id="f97c5cd7-6de8-4291-9d91-4ca6cb2796f4"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f020228e-d693-4703-a62e-a0bef01a6624"
+            name="List"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="01e04a13-b636-4294-8952-db8d4d598dac"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3DList"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8724ca3c-4539-4a0c-85a3-8d475203be8c"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="33f92b78-bc90-4403-a192-29de56d8e199">
+                    <propertyInstance
+                      Id="92be79c3-5383-46c5-b815-637063cdbd17"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4fc9bd09-2a5c-4dac-8d4c-48647f0102ae">
+                    <propertyInstance
+                      Id="a8457c4b-a192-4088-8444-c22f1a7639a3"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f11dbd67-1de4-47e7-99a0-c18f47338e03">
+                    <propertyInstance
+                      Id="6841c817-60b8-40c9-98c4-c78b464ee909"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="70a0d9a1-a7a8-4046-b3ca-dd9ec07020d3">
+                    <propertyInstance
+                      Id="dd34175d-0f46-4097-9610-d20ae76aa5b9"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e413ef4e-8508-4e98-9c3f-403173c420d3">
+                    <propertyInstance
+                      Id="3eac8d4f-a077-47a6-b6b7-73c971f9f72d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="b909b454-6628-4184-a6bf-c557d54b7f0c"
+                LastKnownName="List&lt;IntentObtainer‎&gt;"
+                LastKnownLocation="Package2_1339.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1fac7eb9-a9f0-434a-b84c-c74d2916dee8"
+            name="Expiration"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b558e137-6a9a-43f7-843f-26ffad7c9421"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3DExpiration"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="590a38a9-30b5-488e-a8a8-b558e9817255"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4edf6815-cc27-4b08-9b43-504230836cf0">
+                    <propertyInstance
+                      Id="f2ccc9d9-e5d6-4bd4-a3d7-e34ec3444886"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="953fbe0d-c7a3-4d14-9970-2bf6913b0861">
+                    <propertyInstance
+                      Id="9b76121c-e3c8-48ed-a559-0b513e7bf2d5"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dac26a48-d7b5-45d9-97b2-c4d640f242f1">
+                    <propertyInstance
+                      Id="dbc4d284-424e-4ab2-98d5-cc4e15db7b34"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="04918545-b953-4c8e-8129-29c6a9f76eb5">
+                    <propertyInstance
+                      Id="b279a155-2877-4e4f-84ce-e6a75c01ae5a"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="411a6058-f3f9-4aac-af69-c035a154073d">
+                    <propertyInstance
+                      Id="f9e42643-581b-4efb-9a8b-4a98f499bb0c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="1b2c18a5-c59f-4cc0-a814-165e6d642a30"
+                LastKnownName="Expiration"
+                LastKnownLocation="Package1_1346.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="5c050c4b-a052-4345-9ed8-7209aa21a0ab"
+            name="Add"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="865c887a-27db-40ac-b389-92b916d30178"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3DAdd OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives.IntentObtainers Type%3DIntentObtainer)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="38daafca-9177-4ed4-9037-9fa67c7207e9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="af500e2a-2640-48ae-9b7f-3c8a68faad17">
+                    <propertyInstance
+                      Id="5b3f0381-5575-4430-b2c1-ae0d1ce651a3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3060d26f-9d01-4b90-b757-71848bb81552">
+                    <propertyInstance
+                      Id="985476ce-a17f-4f98-875e-ee56eeeb9335"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a9083a64-7568-4100-96c7-590de0f980cf">
+                    <propertyInstance
+                      Id="46a09a94-dc5c-4b49-a21d-858b499eb2b1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ab32881-18e8-455f-a038-1ef7ab6efbf1">
+                    <propertyInstance
+                      Id="b248e348-1aee-472e-9fb7-2c002587f141"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d9ee4a61-984f-4678-8142-c935653d216b">
+                    <propertyInstance
+                      Id="b0b644f1-6c69-4086-9ed0-f93eec8a1da2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a644aae-53ac-46de-827c-23e6b8968ed1">
+                    <propertyInstance
+                      Id="24945d67-6c73-4f70-b8ce-725ffb3e7eb6"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="98cb7726-5a8e-4a7a-bb4f-a66c42b6d569"
+                  name="aIntentObtainer"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="340e87b1-dfc9-444c-9dd2-bebd49a9a0a6"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3DAdd OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives.IntentObtainers Type%3DIntentObtainer)]) ParameterIdentifier%3DaIntentObtainer"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="734c88cd-a06a-4d7b-b591-66d7cef37b22"
+                      LastKnownName="IntentObtainer"
+                      LastKnownLocation="Package_1347.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="582802e0-2fff-46dd-b7c5-2a48292fb848"
+            name="Objective"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="6d58d791-5135-4081-90c3-5ee050d3cf5f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6a110d51-af4e-4807-88a8-15532fa002ff"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4ad6b2dd-8498-4a29-93c7-2ca3e20405fd">
+                    <propertyInstance
+                      Id="f49d2a1d-2f75-46dd-82f6-6b6f019aefb6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="891be9bb-0433-4f51-a6fe-daae9f892188">
+                    <propertyInstance
+                      Id="5f7e7ceb-4342-4d54-bbd9-45d2bb70c4fe"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="75409d2e-60bb-432c-8bea-b481b7b46eb4">
+                    <propertyInstance
+                      Id="c6a2e34d-c2d1-412d-9c9f-ae48ffe68b12"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4fcb24ca-7657-40c1-af9d-79b5c9425af2">
+                    <propertyInstance
+                      Id="d55bd8ec-0f2b-4de5-a3a1-56e7a232f24e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a5ef28af-c064-4a1f-9239-070fa7ba0cb6">
+                    <propertyInstance
+                      Id="bb66003d-832c-4469-8493-1fd4d5500f0f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3f40d623-b8a3-45dd-9424-99e400e95fe9">
+                    <propertyInstance
+                      Id="63628801-56fd-492b-bed3-755494c64df6"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f6c2cce3-e829-444f-96e1-8cd91272e03f"
+                  name="aDuration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="a7d7dec2-d250-44ee-ba68-13a75041bf75"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3DaDuration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="97b7a2dc-3971-46eb-8307-9176d4f740e4"
+                      LastKnownName="Int64"
+                      LastKnownLocation="Package_1338.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="842f3500-abb7-4f31-9df5-aee1b53be3b0"
+                  name="aCanBeObtained"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="e411e0d8-84d1-459a-b80d-d3141d46190f"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3DaCanBeObtained"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="02f4942b-9ae0-40d4-914f-065a02b61d3a"
+            name="Objective"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="9ca4d2d6-8ad9-4c4e-a43c-bb422fcc4097"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="31d31b5b-e554-4ad6-84b3-9e3ddf93bea3"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a006939f-0538-44ea-91c8-07eef8632351">
+                    <propertyInstance
+                      Id="8a89e1fe-314f-4f59-9849-b85e22e069f8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1a23281f-dbaa-4af0-90a2-ac2634da09f4">
+                    <propertyInstance
+                      Id="572df848-8576-45a3-bb89-e03d43786d0a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd0ffa40-b179-497e-8190-78b57eedd709">
+                    <propertyInstance
+                      Id="041a7736-434d-4fe1-9cdc-5523d7690720"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="33fdd343-6042-4bf5-b541-dae2013123b2">
+                    <propertyInstance
+                      Id="f6ff7b53-a1d9-48d5-8713-ae7f9de15190"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9fa569c2-5560-42e4-8c45-aa720c3292ae">
+                    <propertyInstance
+                      Id="70798725-a29e-4e54-8e78-6650c0d10fc6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="818b265b-649d-48ea-b46e-921ec9b04625">
+                    <propertyInstance
+                      Id="d08bdc87-6e26-43de-b35d-54de22f392a6"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ccc1a926-8313-48d7-b9ee-198e43261bdc"
+                  name="aExpiration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="fb9fe56f-b9ab-4dc4-8f27-bdb4fdcd279d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3DaExpiration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1b2c18a5-c59f-4cc0-a814-165e6d642a30"
+                      LastKnownName="Expiration"
+                      LastKnownLocation="Package1_1346.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f1076c12-2c95-40b7-b267-1895de5bbf07"
+                  name="aCanBeObtained"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="98138ee8-ae0e-4839-802c-d5d57cb568b5"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3DaCanBeObtained"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="be9f042c-e50a-41fc-8699-64650cf4bde8"
+            name="Start"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="3e40de0e-70f6-4b09-bb20-91462b3db7a0"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3DStart"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="dbcd5a58-542b-4f5d-b0a3-d8ea2d21506d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ca257e3-0111-49fd-b6df-2be0114e8208">
+                    <propertyInstance
+                      Id="210699fb-1d89-4bcf-8027-92ae140805ff"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="59f21e59-7c56-451d-af9d-c42a4df950ff">
+                    <propertyInstance
+                      Id="26deaefe-b3b8-4f71-9b82-a771800a1a2d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b349964-78b1-4965-bf40-4334b6ac2e5b">
+                    <propertyInstance
+                      Id="a47d44f1-964c-4d1d-81f0-cc69acd3e9ab"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="32e6df52-a2ee-4360-bc39-fcf275cf0454">
+                    <propertyInstance
+                      Id="c116d4ee-cf39-4454-b234-e8235de541df"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="457f495c-1b6b-41fb-9bc4-ea414bc72485">
+                    <propertyInstance
+                      Id="ad2ece60-b79d-4930-b2e5-98d68971e8ad"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a1167a6c-415a-4d9b-815a-50d868e617e0">
+                    <propertyInstance
+                      Id="8a525879-3b41-42d5-9b21-26b595f57ac5"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="a3670581-eba1-4c53-8357-d5e3fbfa5d3c"
+            name="Contribute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="aeb89d6a-e67e-4f40-b4a3-f3231803f8e6"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3DContribute OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Apparatus Type%3DOutput)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Apparatus Type%3DInput ParamKind%3DRef)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d778ba48-3973-44c0-b01e-7ff1f1e799b0"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b221695-ab6b-469d-9717-07d0eed6bce2">
+                    <propertyInstance
+                      Id="11f324d9-33ba-4078-a479-6599eee15214"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a416cd05-553c-4565-a386-455433cfbb69">
+                    <propertyInstance
+                      Id="e922cd51-80c9-42da-9158-6b69136a378b"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c65904dc-fd12-433b-9058-23b1c94e0874">
+                    <propertyInstance
+                      Id="fa26be29-cd01-4a10-b560-9ec15bbfd560"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fe916563-2466-41ae-99b8-604a08760052">
+                    <propertyInstance
+                      Id="fc87d635-916e-452d-99e4-26a3b15e82b3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="477588f7-c4b1-4412-882b-8839484266ad">
+                    <propertyInstance
+                      Id="e06ecce0-e491-439b-8c44-8bbd849e48f4"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16e8a9d2-b07a-49f9-8dc6-304dd2014c34">
+                    <propertyInstance
+                      Id="e99d25bb-96a6-4900-961c-873f9929b93a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6256a595-b702-4e47-acff-6a6fed5aaf4e"
+                  name="aApparatusOutput"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="5b2bdf01-f1df-4419-8a56-dc8a2b0417d4"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3DContribute OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Apparatus Type%3DOutput)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Apparatus Type%3DInput ParamKind%3DRef)]) ParameterIdentifier%3DaApparatusOutput"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fe39320f-9137-46b1-ac6f-aba0100f1b13"
+                      LastKnownName="Output"
+                      LastKnownLocation="Package1_1345.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7ae42294-52f3-43ed-81b4-787c691947f9"
+                  name="aApparatusInput"
+                  direction="InOut">
+                  <referencesInternal>
+                    <reference
+                      Id="12537a02-7d59-4d01-9e55-9535e27aea43"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3DContribute OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Apparatus Type%3DOutput)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Apparatus Type%3DInput ParamKind%3DRef)]) ParameterIdentifier%3DaApparatusInput"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="b0d94f59-1f84-482a-a456-3e6ccdba425d"
+                      LastKnownName="Input"
+                      LastKnownLocation="Package1_1345.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7b79d7dc-4928-4ff6-b7b2-94faee40e4b5"
+            name="Create"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="4ea0405f-a3da-4931-9121-0593bcf05464"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3DCreate OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives.IntentObtainers Type%3D(Name%3DIntentObtainer ArrayRank%3D1 ParentType%3DIntentObtainer))])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b315dac5-fc4e-4195-8760-5dc49f8da174"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4d8e44b9-b318-4f8b-a375-49875e2ecda0">
+                    <propertyInstance
+                      Id="94ce2e91-ca06-4890-bc4f-bc0dc2e4b9c9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f0d92a79-8b91-4d27-b027-502022e296c6">
+                    <propertyInstance
+                      Id="98cc4caf-76c7-4f9d-ae0d-c72ede5e603f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="efffed2a-b429-4ee0-a528-c5e9c0049a65">
+                    <propertyInstance
+                      Id="0ff5642f-ac6b-46c8-b728-c87634ce361c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a00e2346-bdff-461c-8535-040e4a25b0e9">
+                    <propertyInstance
+                      Id="305b7e77-5454-45d5-ad6b-513da4ef2b7b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="067cddbc-b765-47cc-857d-ab81ca1c1d36">
+                    <propertyInstance
+                      Id="2ed516fe-9b6d-4b53-82d4-62ff5a7422ac"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7e67fe8d-46d2-424a-a528-f7dc395a7fbb">
+                    <propertyInstance
+                      Id="9213c51d-2590-4e5e-8526-cb7924a23e6f"
+                      name="params"
+                      value="True" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6c15f3b3-d0f4-4a3c-bde3-a99f34fc895f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fb7e0664-112b-4563-be7b-60a55d02d3b5"
+                      LastKnownName="Objective"
+                      LastKnownLocation="Package_1345.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="92c78613-ec55-49cc-b2a9-8ef29e1b7b68"
+                  name="aDuration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="08c52575-f667-42ac-a97b-489857eb0ce3"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3DCreate OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives.IntentObtainers Type%3D(Name%3DIntentObtainer ArrayRank%3D1 ParentType%3DIntentObtainer))]) ParameterIdentifier%3DaDuration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="97b7a2dc-3971-46eb-8307-9176d4f740e4"
+                      LastKnownName="Int64"
+                      LastKnownLocation="Package_1338.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="86fd4094-ec58-484e-b3ee-a9740a8a73f6"
+                  name="aIntentObtainerList"
+                  direction="In"
+                  isOrdered="true">
+                  <referencesInternal>
+                    <reference
+                      Id="f1a34ccf-fb5f-4ec7-a8c0-e50d1598b6ee"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3DCreate OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives.IntentObtainers Type%3D(Name%3DIntentObtainer ArrayRank%3D1 ParentType%3DIntentObtainer))]) ParameterIdentifier%3DaIntentObtainerList"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <lowerValueInternal>
+                    <literalString
+                      Id="10f8188d-8de6-41b5-868b-e72bfaf42658"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="2d302fe7-a611-40cf-bb16-261b01bd952c"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="734c88cd-a06a-4d7b-b591-66d7cef37b22"
+                      LastKnownName="IntentObtainer"
+                      LastKnownLocation="Package_1347.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="68510dcc-d86b-41ea-b348-11d4b392591f"
+            name="Create"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="1a1bd079-5ba3-4a1e-8445-c681f7fca3c0"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3DCreate OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives.IntentObtainers Type%3D(Name%3DIntentObtainer ArrayRank%3D1 ParentType%3DIntentObtainer))])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1565de5d-862d-48bb-a834-f66bc5a17c48"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="849be94b-2f1c-4030-a958-a1d1aef639fd">
+                    <propertyInstance
+                      Id="f8cb277d-fa47-4891-a857-125932bf2a45"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="174210bd-ab8f-4558-b205-60698ad9896a">
+                    <propertyInstance
+                      Id="8dbdd223-638d-4649-ab09-8bfd0eedc9b8"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ca33c1d4-c156-46bd-993b-53ee84d34c8d">
+                    <propertyInstance
+                      Id="9f8c8c44-3ac0-4b2a-9224-1029deeb78ba"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aa3e71c6-917b-4c70-a50e-e20faa923072">
+                    <propertyInstance
+                      Id="18d2a1da-00e9-400f-9139-ba0d2763564b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4daa128a-c72d-4b51-b026-8f769006a961">
+                    <propertyInstance
+                      Id="3af30ec7-3058-4092-aa8d-9163e817428f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54b76b48-acec-4d12-bcc9-075a399ab87c">
+                    <propertyInstance
+                      Id="e14607dc-248e-4f75-93eb-e2af8e223309"
+                      name="params"
+                      value="True" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1e8cd4bc-ee6c-4d7c-8f45-d4b5f4a92cdf"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="fb7e0664-112b-4563-be7b-60a55d02d3b5"
+                      LastKnownName="Objective"
+                      LastKnownLocation="Package_1345.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="78c17212-f506-44a9-af74-e34f588c3a9d"
+                  name="aExpiration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="a41f9a1f-d542-4cf5-9c2b-44e587d9ea22"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3DCreate OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives.IntentObtainers Type%3D(Name%3DIntentObtainer ArrayRank%3D1 ParentType%3DIntentObtainer))]) ParameterIdentifier%3DaExpiration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1b2c18a5-c59f-4cc0-a814-165e6d642a30"
+                      LastKnownName="Expiration"
+                      LastKnownLocation="Package1_1346.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="73517aec-7737-488e-a323-e7ccd06a6299"
+                  name="aIntentObtainerList"
+                  direction="In"
+                  isOrdered="true">
+                  <referencesInternal>
+                    <reference
+                      Id="d83d4725-0761-44d6-ae10-d2c186c7753a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DObjective Member%3D(Name%3DCreate OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)%2C(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives.IntentObtainers Type%3D(Name%3DIntentObtainer ArrayRank%3D1 ParentType%3DIntentObtainer))]) ParameterIdentifier%3DaIntentObtainerList"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <lowerValueInternal>
+                    <literalString
+                      Id="fca3bb16-3f56-4e26-8640-d41750931ed7"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="6d16c006-9458-4e78-98ea-729f9788a706"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="734c88cd-a06a-4d7b-b591-66d7cef37b22"
+                      LastKnownName="IntentObtainer"
+                      LastKnownLocation="Package_1347.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6f10219b-e6de-4c38-88b6-21a3819b800d"
+        name="Emergency"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="acfd82d9-2cd8-4fe5-8b25-9b00130f9bf5"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DEmergency"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="92aaddeb-af0a-4b1c-8251-4f3970163c6e"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="425350e0-f2f8-43ac-ac50-9d7ae68e8687">
+                <propertyInstance
+                  Id="deff6b12-7c34-4ec9-9d0a-b9388be5e1aa"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3b778148-76f9-43f8-8da6-c5aa5af3f4b1">
+                <propertyInstance
+                  Id="3e469114-d7d0-4616-8511-ef99f61c44df"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a498ed63-dfd6-444c-be10-c800acc36059">
+                <propertyInstance
+                  Id="cd53b90f-d082-4616-b262-dd9fc7dd2387"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e9347bf7-115a-4d4e-9239-90230f65d13c">
+                <propertyInstance
+                  Id="9344cd4a-410f-4a5d-b09c-9e2885540690"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="20b9ded3-d190-457f-bbc2-142b30ed8df8">
+                <propertyInstance
+                  Id="a1a4e93b-b70e-4a16-9fb9-324417f96005"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="5d9e40f7-c5a4-4da9-8168-7f45c3740d2f"
+            isSubstitutable="false">
+            <classMoniker
+              Id="fb7e0664-112b-4563-be7b-60a55d02d3b5"
+              LastKnownName="Objective"
+              LastKnownLocation="Package_1345.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="d76bf54d-f4d4-4e4d-a93d-cd1f0e2db680"
+            name="CreateTask"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="1106d73e-b2c0-4bac-96fd-44db569c7299"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DEmergency Member%3DCreateTask"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="21782a72-6642-4c90-9acb-f2250e4508d9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f6a8f9aa-fc94-4187-a54f-e00cdeb25a2a">
+                    <propertyInstance
+                      Id="9d147dc5-90da-485a-a15c-4b592c336dcb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="06ea5a2b-4000-43f7-9cfa-5bdc4c9bee14">
+                    <propertyInstance
+                      Id="8ce3a7fb-ca9e-4017-9e85-a014318558d4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b2e26403-13e3-41e1-898c-1cc7731cd1aa">
+                    <propertyInstance
+                      Id="aa855571-c92a-4416-9caa-9241095b5fe6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="23c8d3cb-a90c-4b39-874e-8404e2860be6">
+                    <propertyInstance
+                      Id="13d62acd-4bbd-49fd-bbe5-595b2667b491"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4b30f5ac-bc40-4c3a-a693-1d4c58394098">
+                    <propertyInstance
+                      Id="f87b55a4-bc6c-4d79-a9f6-0bdf0845c2ec"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2932b5fc-4860-4fd2-810b-bd6d520512cb">
+                    <propertyInstance
+                      Id="b607dd92-a70d-4ec9-a10b-9978113fa920"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="3bba53ef-ba34-4e42-95e1-79e240966018"
+            name="Emergency"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d1f76902-d7f2-4265-a5ba-8a221b91b529"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DEmergency Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="84aa16af-c013-47a9-a83b-119d0cc1c78f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="88a7fa0f-b1b1-44b6-8c54-071aaee8f5b4">
+                    <propertyInstance
+                      Id="8d9da478-4370-4f27-a6c7-c0d6c6756e18"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e993bb8-8955-4e4c-af13-520e4f9c2aea">
+                    <propertyInstance
+                      Id="b1f556a8-17b9-423b-8338-07385a3d8999"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1cbe8491-e44f-42f4-888a-1dd2ed332ac3">
+                    <propertyInstance
+                      Id="520671c3-7786-487e-ae03-850262b6f0e6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5248a910-884f-4bbb-bf29-55bd12707904">
+                    <propertyInstance
+                      Id="0066235d-da75-49ea-b82b-393a41870920"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="caa683c3-0d10-4563-b261-21b751ed92a7">
+                    <propertyInstance
+                      Id="c5184d20-b47a-4a31-9728-4ef38a0e7e24"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bf4727a3-7810-46f9-bcc3-38f2dfd1a5aa">
+                    <propertyInstance
+                      Id="5be41a94-8f46-4e17-9905-6e5bc6aa5b25"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fda55c8e-3a20-4f02-835c-3a66b2e2c32d"
+                  name="aDuration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c67339dd-4fa9-4b34-a133-5c7179b28b40"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DEmergency Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)]) ParameterIdentifier%3DaDuration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="97b7a2dc-3971-46eb-8307-9176d4f740e4"
+                      LastKnownName="Int64"
+                      LastKnownLocation="Package_1338.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5497c29d-7888-4495-9672-814167544b0e"
+            name="Emergency"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="53afda72-bcde-4c66-bf07-1aa68bfd9957"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DEmergency Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ec4e94ae-99fe-4075-862b-670f86c0f625"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e304f03c-6bc5-4f8e-8be9-fd7193e765f9">
+                    <propertyInstance
+                      Id="4c8fa906-75b6-40c0-89fb-ac6f14176142"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8615940b-41ec-4f60-9ddd-1e2872d70e94">
+                    <propertyInstance
+                      Id="81a9c1b7-7470-4356-b4c2-45d37f113f79"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b90ba19f-f06a-4bc0-97ee-8edca5cd4c33">
+                    <propertyInstance
+                      Id="d4dd79c1-3b2f-40c8-9c25-548e64588a2b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c659f18e-2e69-4294-a54b-a2f12f929856">
+                    <propertyInstance
+                      Id="41dac1f0-740d-426f-a2a2-88e0411b03a0"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cebffb89-aae9-4288-8b9f-ed21a9e5636b">
+                    <propertyInstance
+                      Id="099230cf-2417-4cc6-bf3f-12742650cb57"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="144ce170-46cd-46d3-9ecf-82d2ba8b828a">
+                    <propertyInstance
+                      Id="6cf369f9-f139-4430-b6fa-41dd526ec64e"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5263884b-f899-4934-9dbd-49f2dc25e956"
+                  name="aExpiration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="35e4e425-536e-4e65-a7c0-fb0fb46848dd"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DEmergency Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)]) ParameterIdentifier%3DaExpiration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1b2c18a5-c59f-4cc0-a814-165e6d642a30"
+                      LastKnownName="Expiration"
+                      LastKnownLocation="Package1_1346.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5acae369-c2f8-4f10-993d-2066cc651133"
+        name="EmergencyReset"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="0c88df72-3c73-4aa9-a6e4-7cca34e3ca23"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DEmergencyReset"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9574bde6-0ef8-4256-9a69-9e8893677e02"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e7c9badf-1542-4d24-8e78-54632ac3aa5e">
+                <propertyInstance
+                  Id="de39401d-9e70-4dd0-be8d-20efc093ce9a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2e8fc1f0-8c28-4892-a506-e5707c368dac">
+                <propertyInstance
+                  Id="47fef4be-7f3a-43a1-9ede-d2362376a07a"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="96d31124-f507-4609-9bf1-da562e7add81">
+                <propertyInstance
+                  Id="a3461cef-e45f-4544-ba7a-6a9fcbe0ffeb"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="48caccab-427a-45ef-9e6b-b976e49acd31">
+                <propertyInstance
+                  Id="aa4e22f5-11ca-424a-92c4-c04403f52162"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="42dc2116-2d65-403a-896d-4c8545cedd5e">
+                <propertyInstance
+                  Id="4dc46df5-1124-44a5-b0b5-ccafe5a02f6d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="e2a12255-1ecb-4c29-a53d-42ed79e8da7e"
+            isSubstitutable="false">
+            <classMoniker
+              Id="fb7e0664-112b-4563-be7b-60a55d02d3b5"
+              LastKnownName="Objective"
+              LastKnownLocation="Package_1345.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f193663f-79d1-4097-a8a6-f26f2a6e2d3c"
+            name="CreateTask"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e462549d-5b91-44a0-9523-5190d90018e5"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DEmergencyReset Member%3DCreateTask"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7d47de62-4fa8-4cf2-9b1e-eb2f810308b5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0efc47a9-b5dd-4444-9e05-64476f3bcc0f">
+                    <propertyInstance
+                      Id="09d1cbf4-2c04-4cd5-bea5-1904fb1cdde6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aef3a19d-66e7-4db8-a384-10c10425941f">
+                    <propertyInstance
+                      Id="9f90aec4-c645-484f-9df2-58b61c0768a4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="72ab0183-4856-4161-bd78-2778d07f094b">
+                    <propertyInstance
+                      Id="35a2c961-0bcd-476e-9892-5a62a9e43678"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0cb03e09-64f0-4ae3-a32a-17d6f65580d8">
+                    <propertyInstance
+                      Id="6547aff0-deaa-486d-9529-70f1990afa5a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="016c9b07-d8fb-400f-838f-9cf944dcc428">
+                    <propertyInstance
+                      Id="8406b447-9498-4502-a88e-175e2a90f9f7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bffc5a3-fdc7-46ae-9e63-c3feb093ee21">
+                    <propertyInstance
+                      Id="0799ce02-baa2-4244-a9d8-cabd037920d2"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="a4ebc664-270c-48b1-9580-3afa8d91d597"
+            name="EmergencyReset"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="90a15209-ebfd-439a-9e3e-e27111454d7c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DEmergencyReset Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7cc68ec8-5374-4882-ba70-b614f5c57aae"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c741fbb-fea3-497b-ae20-b8e82c2ffdba">
+                    <propertyInstance
+                      Id="e8a7a379-077c-46ab-a7b2-72b7dad9f94e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0e947933-5ff8-48d9-82be-17db6635a65a">
+                    <propertyInstance
+                      Id="6a48bd75-5d88-441d-ae44-6d4c1a6cc248"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="84accf7d-65a7-4687-bf0a-e30781e02834">
+                    <propertyInstance
+                      Id="78b5914a-7d72-44ab-99ef-ff83a2df4dfa"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6d5ce909-f0ad-4c06-a577-45239d36afea">
+                    <propertyInstance
+                      Id="f4fd2441-b103-4367-b88b-4e16373dcd00"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="211d6bc6-efb0-4266-84fc-c0fe30fd7fe0">
+                    <propertyInstance
+                      Id="1847f7d8-5e6d-420d-b3f3-e78374d372f4"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a79e96e2-6d48-4e06-885e-d76c0953780e">
+                    <propertyInstance
+                      Id="2071f0e8-3089-49b1-bf40-915fa28fa7c5"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="959353c9-4091-469a-8f14-eaddc6153baf"
+                  name="aDuration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="97a26228-d913-4f95-9337-66300abb8e91"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DEmergencyReset Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)]) ParameterIdentifier%3DaDuration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="97b7a2dc-3971-46eb-8307-9176d4f740e4"
+                      LastKnownName="Int64"
+                      LastKnownLocation="Package_1338.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="66806f9d-6d8a-4206-a4f3-a3c3150d6071"
+            name="EmergencyReset"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5c0cda9f-cd12-408e-b6e6-e709bf0b7bcb"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DEmergencyReset Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="95be7939-72bb-4bf3-bf0c-c40a6005e7fe"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae08406d-c349-4417-835b-848aefcf37a0">
+                    <propertyInstance
+                      Id="f8f06b6b-7e7b-462a-adca-8f020794689a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="25ccca68-2490-4dba-b03e-01f330607b1e">
+                    <propertyInstance
+                      Id="905e97f0-2092-40ce-b3a0-8e41594cab6b"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8691422d-8792-4721-95b3-2662120a0155">
+                    <propertyInstance
+                      Id="affe2b68-8afd-46b4-9479-ccc3f2baae71"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="28b280b0-92b3-4777-94e5-007bc9fe923b">
+                    <propertyInstance
+                      Id="e970162f-73f5-44dc-8339-f5914bf98588"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f11e13cc-99fc-435a-b61e-03c8a2eac96c">
+                    <propertyInstance
+                      Id="49460978-a6f2-43d7-9eb5-5c7ec677273e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="07d8a529-a92e-4815-a413-3d73aebf5223">
+                    <propertyInstance
+                      Id="0a4b5ec3-56cf-4117-9b3d-aec33b1f8965"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5ef601e0-003d-4370-8b16-b8468a0d7ab6"
+                  name="aExpiration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="348c0ac1-fbc9-48b3-818d-52c76e583aff"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DEmergencyReset Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)]) ParameterIdentifier%3DaExpiration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1b2c18a5-c59f-4cc0-a814-165e6d642a30"
+                      LastKnownName="Expiration"
+                      LastKnownLocation="Package1_1346.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7adaaad0-00cd-4ae3-b379-805d5c0616ef"
+        name="FlatTrim"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="719c51da-ddff-44a5-81a1-5f063dcb6764"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DFlatTrim"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="2576ea8d-6635-4e13-91e7-32bd6c18d2b2"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="575c484f-0bce-400b-82f0-98c94c8f98a6">
+                <propertyInstance
+                  Id="7499aa29-774c-469e-8397-0f01d092049b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6cafa538-7b13-4e3b-bb4a-0f1d8389e79c">
+                <propertyInstance
+                  Id="ce5196d1-f87e-49f7-a7ab-973be435202b"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1072968f-d7bd-417f-b785-d0b77054ad95">
+                <propertyInstance
+                  Id="7d28da34-a28b-4f7c-98ce-8fcb257e822a"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d605186e-5f9c-420f-afc7-7af7379a47e6">
+                <propertyInstance
+                  Id="d2dd2bd7-3c08-413a-814c-9cc19a913ece"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="76fd9470-a8fb-4f8b-95bd-3cb7a6d6c777">
+                <propertyInstance
+                  Id="473fd555-35e7-4824-8548-2c2cdabd23e3"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="afe0feae-704a-440c-9b05-ca1e3fb88b59"
+            isSubstitutable="false">
+            <classMoniker
+              Id="fb7e0664-112b-4563-be7b-60a55d02d3b5"
+              LastKnownName="Objective"
+              LastKnownLocation="Package_1345.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4f870431-653f-42ad-b341-42a0b85c99be"
+            name="CreateTask"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="71e90c28-f170-4d63-9d61-48a9f67c780a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DFlatTrim Member%3DCreateTask"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="db1de9fd-bddb-4db3-97c0-271aad193068"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="71a4d00d-ba89-431d-82b1-2af532277cca">
+                    <propertyInstance
+                      Id="7f482361-3df5-4161-a02f-3a14057e9676"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="72f8499a-2a73-4d1c-adc9-cbedd771bfde">
+                    <propertyInstance
+                      Id="8dc6e510-6d08-4931-b639-5458b88ee9d2"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="af3217c9-ef77-4df3-886b-d1df963d202b">
+                    <propertyInstance
+                      Id="6589d525-40e8-4af2-ac78-7e7e1815ea4e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d2277130-1aaf-49bc-ba1f-b9a837e72d0b">
+                    <propertyInstance
+                      Id="2a178f80-9298-4d30-9db7-34e3c021e29a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0fc38265-0c3e-4014-a5de-dc26ed0b180e">
+                    <propertyInstance
+                      Id="d39a97a7-9af9-4178-ad26-0a654f5c2a57"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f4c4fc0e-17dc-4d07-a3d8-bf7d2b01edae">
+                    <propertyInstance
+                      Id="f95dc427-8d14-4db4-b05b-20dc46054dcf"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="7c32571f-1a85-41f0-98b9-3a540042e00d"
+            name="FlatTrim"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="21337004-f13c-47a7-83c2-31f3bcdc634c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DFlatTrim Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4cd2bcbc-98f3-4860-8a97-e98e4c0dfa37"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a5016ebc-2dcd-4805-8e7a-f601528a1dea">
+                    <propertyInstance
+                      Id="c4a8db9f-7e56-4ad0-aac7-015202e33f35"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f49ca688-309d-4a10-a50f-7896ddf75edb">
+                    <propertyInstance
+                      Id="dafe8f42-9ae2-4c12-9e36-03917377a6de"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6b10b492-e22b-4d32-8c66-685d51da4dcd">
+                    <propertyInstance
+                      Id="ac844c90-7729-4525-a663-17fd4f2b14e7"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ef9df664-ac02-4107-839f-72e057e03638">
+                    <propertyInstance
+                      Id="4bb701aa-0818-434a-a1fb-b968a728c05c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="66c14a31-e30a-4da0-a5ef-28fc0c41692c">
+                    <propertyInstance
+                      Id="76704394-8ecd-489a-adbe-1d303c9f4ad1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="78f753f0-47d6-4b2e-b96a-871130d8655f">
+                    <propertyInstance
+                      Id="c2e319b9-e222-4b57-8951-6235a6780ece"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="977a5198-6fe5-45c7-b501-4058aae895fb"
+                  name="aDuration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="f90d84c1-6b3f-481e-9d7e-eafecba3f897"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DFlatTrim Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)]) ParameterIdentifier%3DaDuration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="97b7a2dc-3971-46eb-8307-9176d4f740e4"
+                      LastKnownName="Int64"
+                      LastKnownLocation="Package_1338.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="940a2954-b804-4624-bed7-e757c41b5285"
+            name="FlatTrim"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d08e9628-3297-4d1b-91d7-b93cd65a1a31"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DFlatTrim Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6efaaa44-16e9-4e3d-8cdd-a5a3689478c0"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fe673697-889c-4e46-8675-f6baf0a8cd0e">
+                    <propertyInstance
+                      Id="412dd62d-78f4-4579-8919-f897edb483bf"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="85c24c90-9370-4d37-ab0b-7f848875b2ee">
+                    <propertyInstance
+                      Id="99e13374-ab68-4940-bdf7-da021ba6190c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a2729407-6da4-4c1d-92a7-053b2011fe2c">
+                    <propertyInstance
+                      Id="f7009b0f-262e-4aac-88af-f42fcacb80e1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ba77ac91-e49b-4050-a782-6e8502a4c6bb">
+                    <propertyInstance
+                      Id="38b7e171-4798-46b5-8c29-7f5c6018e1c1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0cd7cd5a-3b08-40ef-9244-958200ea51ba">
+                    <propertyInstance
+                      Id="ad60863c-58e3-4be2-9492-10ea2f237ae1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="64a7d75e-302c-4ff2-b9fc-737a6fb446e9">
+                    <propertyInstance
+                      Id="5c18297a-d3a5-48ee-9e4f-da8fb9713bd3"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="595623b2-1a3d-4500-9752-f1247d06a9a7"
+                  name="aExpiration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c09a4893-4aff-4925-8efc-052fea1e9a42"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DFlatTrim Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)]) ParameterIdentifier%3DaExpiration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1b2c18a5-c59f-4cc0-a814-165e6d642a30"
+                      LastKnownName="Expiration"
+                      LastKnownLocation="Package1_1346.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0b80e0ce-2d47-4305-af3d-e09d0d61d7d6"
+        name="Hover"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="333159b9-5c9a-422e-9b83-ec4ee1d0c00f"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DHover"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e6eb3fe4-ceae-4c7d-acfb-bf9540520b77"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2de12bfe-99df-4a22-9af6-06b0ed4f30dd">
+                <propertyInstance
+                  Id="83306133-98f3-45d2-b047-d43e313de38e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9e9fe478-2396-40e1-94ba-bc45de419fcd">
+                <propertyInstance
+                  Id="aa085d6a-2bd8-46ab-bb93-d9afb8b683c5"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6f534ae5-f770-4824-bd9f-09b344a93080">
+                <propertyInstance
+                  Id="37fa9d64-d4a0-4e17-a983-cb1aa933e88f"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="671fe51f-9980-452a-8313-0ec410db464a">
+                <propertyInstance
+                  Id="4be58cbe-6405-4edf-96f5-f04ab3e0b27d"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b6b64390-55f8-4042-8a0e-f6ded32f43bf">
+                <propertyInstance
+                  Id="ebf4e62f-9d3b-4786-9c36-919c33ae8e21"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="dbff6ed9-2aac-4c46-8172-dd48c35e9dba"
+            isSubstitutable="false">
+            <classMoniker
+              Id="fb7e0664-112b-4563-be7b-60a55d02d3b5"
+              LastKnownName="Objective"
+              LastKnownLocation="Package_1345.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="bb74e577-f1a4-4e57-977e-4c713a41ea13"
+            name="CreateTask"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="447228d7-dab0-47e8-8eea-98b80c3a9fd6"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DHover Member%3DCreateTask"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="61a5538e-9233-47d9-b7d7-2fec4a36f95a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5d4bad2b-aad8-4b42-b815-c0376cf6a8bc">
+                    <propertyInstance
+                      Id="4741cff3-ae9f-4594-9284-b85625e88ed9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6b475381-f92b-4dd7-b03b-26b94c2941e1">
+                    <propertyInstance
+                      Id="5b5d0dfd-a87e-49c1-ac89-a5b3c63d2b68"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="52273258-52a5-42bc-9dec-685f01165031">
+                    <propertyInstance
+                      Id="c260e0e4-a9a6-4355-a151-11583d784897"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="555b332e-01d3-434e-9957-1536ea1f918d">
+                    <propertyInstance
+                      Id="ce9c82cc-fcac-4ebd-9d65-05e3e5ede706"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f5788fb-1ce8-41eb-a0ae-459ac4daf64a">
+                    <propertyInstance
+                      Id="881f502c-0d23-429e-a708-6562fd23a523"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="66c00855-7b94-4451-92b7-06bd65f66c87">
+                    <propertyInstance
+                      Id="d2ac6c41-5f13-4f74-9dee-ef252808caab"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="c758569b-03a2-4f0c-b2a9-d1d50a80da7e"
+            name="Hover"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5680c6b0-1447-4070-9033-511c93e2958d"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DHover Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1ef8c0b6-71bf-44ca-8243-934012ad4823"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ffdf1b16-e8ea-4b38-9c8e-87eaf3ab1526">
+                    <propertyInstance
+                      Id="99f0790e-27e4-4c41-bf8c-3a8cb2b1b8ca"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2a7ef97e-5b8d-4c8c-8e8e-81b6c9018441">
+                    <propertyInstance
+                      Id="54d54444-9116-446c-8cd1-3945a42b564a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ec5d135d-654e-45ff-8ebb-a40e67748c0c">
+                    <propertyInstance
+                      Id="6f0eb5a3-7105-415d-ae9a-082b9a0d3ec9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3284b1f7-6bcf-404c-aaea-4494138cfc8a">
+                    <propertyInstance
+                      Id="44c43412-eb37-4eb8-bb8b-7d6f8babe1e5"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b31cb164-40ea-4988-88bc-eae6f2a3614f">
+                    <propertyInstance
+                      Id="c5bbb63c-aa60-46ab-9570-f9009c36cb44"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="82611d9a-cffa-463b-a373-6e000e9f243f">
+                    <propertyInstance
+                      Id="3d93ca0a-a5e6-4db0-90b1-85e59b78f409"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="91c43b66-0c16-4139-b921-5e7c004c9c5a"
+                  name="aDuration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="d7fabe3d-122e-4420-bc94-27f07a525e56"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DHover Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)]) ParameterIdentifier%3DaDuration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="97b7a2dc-3971-46eb-8307-9176d4f740e4"
+                      LastKnownName="Int64"
+                      LastKnownLocation="Package_1338.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3b630456-4019-455c-9c97-0baa51ee6054"
+            name="Hover"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="dd29df9e-ed15-40de-9d52-99058af925aa"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DHover Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="fb89ab67-7cff-4a19-89df-078c5b4f1469"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cce59c15-c767-4a38-8135-67e8fe8d059f">
+                    <propertyInstance
+                      Id="e7ae98bb-c4a1-436b-83a6-ad08c03055ce"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e0c87eab-ff5c-4022-80a5-7e63e8d2f65e">
+                    <propertyInstance
+                      Id="aa2fa9ff-7a97-47fc-bffa-50de49000dde"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1c4addf2-f03f-45aa-80d1-969861d4abff">
+                    <propertyInstance
+                      Id="11fc48d9-6102-4ab3-b9bf-dae897ea974f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a68088b-9888-4d8d-b58b-ad589a929c13">
+                    <propertyInstance
+                      Id="bcfa6b36-8f66-4c98-af89-e7b30d27bd31"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ff3246ad-603c-45d0-b7c0-6c29e9df78e9">
+                    <propertyInstance
+                      Id="739bd92e-f9b0-47b4-a554-b0604979ef4f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="879714d4-0d25-415b-9a04-02b1635f38e9">
+                    <propertyInstance
+                      Id="f1dbc71d-cca8-4081-8de8-231140e300dc"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1097d36e-340c-4b88-9f69-580f64df795f"
+                  name="aExpiration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="bec12d76-962a-4cd7-b77e-f69ea1a6236c"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DHover Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)]) ParameterIdentifier%3DaExpiration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1b2c18a5-c59f-4cc0-a814-165e6d642a30"
+                      LastKnownName="Expiration"
+                      LastKnownLocation="Package1_1346.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4d89b111-533b-4866-b095-77adf78c7938"
+        name="Land"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="0a749b8e-95c4-494f-b9b8-0961390103e1"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DLand"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="7f9a083d-96f4-4b1b-b4fc-7570287dca5c"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bddc2498-b017-4483-be37-9ed0cbad2339">
+                <propertyInstance
+                  Id="2308d6ca-fa5a-4303-9765-e29746a16007"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="44e646c5-75c8-49f3-b2db-2f59bd291945">
+                <propertyInstance
+                  Id="3ad37acb-eb62-4a59-8492-3b113aaea2ed"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0ad680f8-955f-477a-806e-6ac74b58c01f">
+                <propertyInstance
+                  Id="d84c381c-5cb8-455a-a0f0-190e9c005fd6"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="423372ad-c27d-43c9-beae-f38a48bf232a">
+                <propertyInstance
+                  Id="43ad86a1-aa51-40f4-8f83-dc6f9ceece1a"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="919df762-3873-471e-b0a2-b7318d5f721d">
+                <propertyInstance
+                  Id="0c955ff0-7f86-4e38-acdd-86ee1179a7ba"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="fddc1b00-80cb-4d4c-9942-dd79a0c8cad3"
+            isSubstitutable="false">
+            <classMoniker
+              Id="fb7e0664-112b-4563-be7b-60a55d02d3b5"
+              LastKnownName="Objective"
+              LastKnownLocation="Package_1345.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="104bf74b-5284-49a9-be70-9cdbdbeaf3fb"
+            name="CreateTask"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="19bde76b-eebc-4a0d-b92f-33514637ddb5"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DLand Member%3DCreateTask"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b0e0278b-3aac-4c0e-89a0-0de8b432e82e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91f1ff9d-b788-49b8-a52f-4e762943a9be">
+                    <propertyInstance
+                      Id="c37c5843-4d7e-40d8-bb46-a5246a249516"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c313d9d2-8829-4643-89b8-007d7ae606b3">
+                    <propertyInstance
+                      Id="c3501d8f-f109-4003-90d8-314ee09e965d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a999383d-6968-451f-b1ca-9e1e4c50339c">
+                    <propertyInstance
+                      Id="d412e106-5f69-427e-a840-3dd05521526b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4e58238-90b3-4ee1-8a48-caae68c22d1d">
+                    <propertyInstance
+                      Id="70355b04-5cd4-4e1b-934f-3457071c318d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61919417-6f10-4d24-bf2b-f9526d7b2560">
+                    <propertyInstance
+                      Id="5420ed4a-7db5-4ef2-9a67-22421caec845"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c82efc80-2954-4688-beaf-7190122c3584">
+                    <propertyInstance
+                      Id="65241099-6178-41d7-8414-1412bcc9ded4"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="e17bbc2f-198e-413d-8623-1ab9852598d1"
+            name="Land"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="c8b5d5ce-f946-40ad-83a9-f903429aaf96"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DLand Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b6eed57c-0d3c-4b9c-9551-5b59b1d19ec6"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="776b289b-bf11-47b0-aae2-2edd0d6c0f05">
+                    <propertyInstance
+                      Id="8792d2b1-cc53-4b8d-9fec-7c235797329d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="11acc16a-837a-4a60-a408-aef763913d11">
+                    <propertyInstance
+                      Id="8dd8a750-bc8a-494a-8819-91d8a3ac93d5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="22c1602f-61c4-4a99-9526-54605d1df80e">
+                    <propertyInstance
+                      Id="a166067b-634c-4f7f-8916-380659e44173"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c5a6bd3-b70e-4826-a90a-555564d4b21d">
+                    <propertyInstance
+                      Id="ae8bc97e-e358-4a2a-8837-bd3af7a51a7a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3f9fb2e-8690-4ac5-80cf-85ff462b1ed2">
+                    <propertyInstance
+                      Id="f3283b64-58e9-4eef-a1bb-7578de5f515f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c41ec9bc-1fd0-40e7-b4b2-ec0003e5b078">
+                    <propertyInstance
+                      Id="3d172fc4-3f62-43ea-85e0-2d06ccefa122"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b6eea799-4d55-4a4e-b564-297aad6faa82"
+                  name="aDuration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="035bd578-81f5-4396-b3c0-43e1192657cb"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DLand Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)]) ParameterIdentifier%3DaDuration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="97b7a2dc-3971-46eb-8307-9176d4f740e4"
+                      LastKnownName="Int64"
+                      LastKnownLocation="Package_1338.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d2fa88ca-9b33-4301-97d3-b17ec0d99a0c"
+            name="Land"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="4c1f57ea-1b5a-4b21-8b86-bb93db2d3a24"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DLand Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2fd778bd-5e98-464d-9b0e-d73d87aca4e9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="360e841d-0711-4eb4-a3da-cf7917faa0a5">
+                    <propertyInstance
+                      Id="65af76e2-48c6-4af0-a82e-c149833a5bc4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ba5a8292-edde-4342-b766-54433262d366">
+                    <propertyInstance
+                      Id="fb6f129b-ace9-4a95-918c-12c0f9274acd"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c6c79f4c-fbb5-423e-af46-ac1ff2c004b2">
+                    <propertyInstance
+                      Id="f1cadcb9-c21e-4548-9dab-a7c07f1afc24"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d269759a-5288-49ea-b962-19fa9fefc380">
+                    <propertyInstance
+                      Id="3ddc0c15-11ec-4e7a-b5b2-ffbec273a750"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d46a5cb7-ab3e-4888-b467-b3472485fc76">
+                    <propertyInstance
+                      Id="4a9817c8-c77b-44e1-97bd-cb2699fa8b60"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b96be53-1859-45e2-ad3f-ce75edca49ee">
+                    <propertyInstance
+                      Id="9a72b46b-c7ad-420c-a065-06684e39be9f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6bf58f6a-4bfa-4465-89b1-68dbff0e9485"
+                  name="aExpiration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="0195fa9b-84f3-435c-ab40-2b7a6320a467"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DLand Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)]) ParameterIdentifier%3DaExpiration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1b2c18a5-c59f-4cc0-a814-165e6d642a30"
+                      LastKnownName="Expiration"
+                      LastKnownLocation="Package1_1346.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="77a60990-8d21-4f8b-b19a-b36dc726e888"
+        LastKnownName="IntentObtainers"
+        LastKnownLocation="Package_1347.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="446e7451-8488-4135-94cd-55a4f999d51c"
+        name="Takeoff"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="72501f33-39ae-4a8a-abf4-7d3cbf6093ae"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DTakeoff"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e8fbbf46-b7bf-4ba9-950e-b113606246d9"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ac372b5b-12b8-4c8c-a4af-d4c82fd83b63">
+                <propertyInstance
+                  Id="092c8065-832d-4712-9a1d-171439554256"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e9836c3b-7fc2-405a-999a-0ce5348610f9">
+                <propertyInstance
+                  Id="c786d3d2-e61a-43f4-a43c-106fd6ea7f78"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5ca43111-5192-44d4-b294-2caee82fb676">
+                <propertyInstance
+                  Id="ad3a3a1c-c33f-48e7-a39d-a5f1e5557313"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2bb92296-5c23-4cf4-b1f7-0d5a85a02941">
+                <propertyInstance
+                  Id="a228c473-79c0-4e9e-bd73-fdcb0e9363da"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6f05ea18-8362-41d7-bd7f-f5e58b9a4e42">
+                <propertyInstance
+                  Id="955bfe46-f992-4e17-8251-dff67c855052"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="691f19bf-ec50-427d-a560-5dcd8eae58b9"
+            isSubstitutable="false">
+            <classMoniker
+              Id="fb7e0664-112b-4563-be7b-60a55d02d3b5"
+              LastKnownName="Objective"
+              LastKnownLocation="Package_1345.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="56cf667b-f5fe-4e56-807a-33b35f436a2e"
+            name="CreateTask"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="19f0f4aa-eef4-4ac2-a630-7b92d38bb5bb"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DTakeoff Member%3DCreateTask"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="83e97c71-6e10-44e4-a1ec-afe4d3644f13"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="88911515-a1af-4446-b03a-e15e8a405439">
+                    <propertyInstance
+                      Id="bcdb1546-7de6-43a7-8cc1-55ea27b237a5"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8c219245-74dc-41a2-9ae3-ba35f4810f42">
+                    <propertyInstance
+                      Id="e21c2d8a-815f-4270-b5a9-68a320c00f5a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c66616f-4264-4d19-ab5f-e8187fe70101">
+                    <propertyInstance
+                      Id="6e2165a9-7d15-475b-994a-81ff47afedb4"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c2cb420-94df-417d-bafb-b66d406088ba">
+                    <propertyInstance
+                      Id="784fe488-ef0d-431c-94af-afbe40c5b4a2"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="88a55e12-1522-4822-96e9-af9ab07d0ff3">
+                    <propertyInstance
+                      Id="bfe58a52-74d6-41a7-a2eb-d18f15f32d35"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7231d347-3a7d-4b6c-a7f4-4c86feac0bfc">
+                    <propertyInstance
+                      Id="c09b4ae5-ee3f-4684-b513-a5f3dc59c6e8"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="5c7cc735-921d-431c-9ad3-3b84d60ad4e3"
+            name="Takeoff"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="3d6aabaf-7f9e-4fb7-82c0-644dba1ece06"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DTakeoff Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="75c797ed-1358-4517-9662-fbfbdfdfbac0"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b3da3ab4-e9ad-43a4-a771-202ac6bb9ba8">
+                    <propertyInstance
+                      Id="e98b035e-ccea-4d34-bf92-5bf4481817f1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fbe2e971-a980-4924-9867-5ca8b3236456">
+                    <propertyInstance
+                      Id="4ec37181-4079-496a-9ac9-9fe90573a25c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="90ee49f0-bdc2-472d-84e7-50eb1d184f7e">
+                    <propertyInstance
+                      Id="58cdd691-7c46-4971-9944-96045d59b68f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="510e2a3d-7e65-4cda-8031-b9e9dfbe61ac">
+                    <propertyInstance
+                      Id="23662406-1e91-460a-b48b-0b5208472f90"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc640ac3-5813-41d7-a0ce-af6b249d23c9">
+                    <propertyInstance
+                      Id="7f452ac3-3923-4a02-9565-95a857ba528f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a6c92d33-4ae1-4028-95fe-4f432ad539f1">
+                    <propertyInstance
+                      Id="7ca8a5e9-8c74-429f-9542-85cd755e86ed"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="50cba432-9f3c-4ec3-abca-833db9e7a922"
+                  name="aDuration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="383e3bc4-c1b6-4b3a-8dc2-0e3450248225"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DTakeoff Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.0%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt64)]) ParameterIdentifier%3DaDuration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="97b7a2dc-3971-46eb-8307-9176d4f740e4"
+                      LastKnownName="Int64"
+                      LastKnownLocation="Package_1338.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6627a1ad-292d-4296-add1-732cc54c723b"
+            name="Takeoff"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="859f5347-0c52-4f87-91d5-837972da1f0e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DTakeoff Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="83593cbb-3ab8-4903-8a53-efd9bf2b7bbe"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e09ec65f-5e9c-4fe9-b5c9-a9c219a259cb">
+                    <propertyInstance
+                      Id="d8663ce5-19dd-4dab-bb3e-c8b7e3a9878a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b0ff3c0-6174-47af-b45e-7bcad18f664b">
+                    <propertyInstance
+                      Id="7a5a6bd9-9c68-4c91-895c-0d703c9e3d27"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="897a7a2c-00fb-4f2d-a946-8f28259ba785">
+                    <propertyInstance
+                      Id="8c17d8df-e209-4a7f-9e4f-9d7574166269"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dff921e5-08ae-41d3-b43c-6d72a36cb76a">
+                    <propertyInstance
+                      Id="dd429acb-d73a-484f-a208-0e0c71313108"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f2b40bcb-944c-4b28-ba90-2c0e26975707">
+                    <propertyInstance
+                      Id="0880d650-de45-4a3b-ac81-0df74bcf2cae"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2aa970b7-58ab-4e72-8b0d-ae41f1bae27a">
+                    <propertyInstance
+                      Id="2bbe6724-ef5a-45c3-bc7d-315d436d8fa1"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="92e91adf-ba46-4f7d-bf00-7562eda6a5b4"
+                  name="aExpiration"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="2a1c8e79-27de-431d-8c00-d4feba5daba0"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives Type%3DTakeoff Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Tools.Time Type%3DExpiration)]) ParameterIdentifier%3DaExpiration"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1b2c18a5-c59f-4cc0-a814-165e6d642a30"
+                      LastKnownName="Expiration"
+                      LastKnownLocation="Package1_1346.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="fd2508f4-b52c-4fbd-9412-0b4922aad97d"
+  name="Command"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="62e0cffe-b93a-4341-a595-80bb8e8a93ba"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAR.Drone.Client.Command"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <enumeration
+        Id="2335ebfa-6203-49b5-91e6-e0d469065d28"
+        name="FlightMode"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="c29f60b1-9970-4575-865b-e4fb24fe3599"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Client%2Fbin%2FDebug%2FAR.Drone.Client.dll Namespace%3DAR.Drone.Client.Command Type%3DFlightMode"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9f6b0328-286a-4e5f-be33-022605df028f"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6d5029fe-25ca-4a43-9197-dd8a0a950fe9">
+                <propertyInstance
+                  Id="f8e338b8-e1e2-4e1c-8b9b-7fbd0b45e3df"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="191bbbfd-8e45-4f92-b511-6131661aff55">
+                <propertyInstance
+                  Id="f79e9b8d-aca0-454a-9d17-ac243b08fd5d"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="da955c31-eb8f-4440-b899-f22d4ad1f325">
+                <propertyInstance
+                  Id="6f47a7f5-7a65-45a5-a411-eb430fd967c9"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

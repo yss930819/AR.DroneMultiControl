@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="db3799fe-2115-4a3f-a681-077fb1efa7b4"
+  name="Drone"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="14d0a4ba-7fff-4370-88d3-9cbfc84e6de4"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAR.Drone"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="61304e40-f93b-47b0-9c51-edcfff932975"
+        LastKnownName="WinApp"
+        LastKnownLocation="Package2_1337.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="16aca579-ec38-492f-8d5b-d7a2f6859c26"
+        LastKnownName="Video"
+        LastKnownLocation="Package5_1338.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="b7930828-6fbf-4986-9702-7d003dce0890"
+        LastKnownName="Data"
+        LastKnownLocation="Package6_1338.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="27c88ea6-b1aa-4fe1-bd6e-304626b99ca5"
+        LastKnownName="Infrastructure"
+        LastKnownLocation="Package8_1338.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="058d5cdf-60f6-44b2-8027-bd94bdf8bac5"
+        LastKnownName="Client"
+        LastKnownLocation="Package_1339.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="3cc2be07-fcec-460c-a280-eb1b2d8f858a"
+        LastKnownName="Media"
+        LastKnownLocation="Package5_1339.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="93156820-7df3-4f13-b1db-885854908a38"
+        LastKnownName="Avionics"
+        LastKnownLocation="Package7_1339.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="77a60990-8d21-4f8b-b19a-b36dc726e888"
+  name="IntentObtainers"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="5bed21ae-cad7-462a-bab3-5241c9cf9514"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAR.Drone.Avionics.Objectives.IntentObtainers"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="734c88cd-a06a-4d7b-b591-66d7cef37b22"
+        name="IntentObtainer"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="ccc7cb1b-f457-4510-8e14-c0e26e454226"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives.IntentObtainers Type%3D(Name%3DIntentObtainer ArrayRank%3D1 ParentType%3DIntentObtainer)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c2c53b4b-c415-49cb-83d0-52bd7d928a5d"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dd574142-45e3-438a-95c6-e556630ad32d">
+                <propertyInstance
+                  Id="65d85c8a-a653-434f-973b-cb29d5e42fc2"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="01d75554-d1f2-4da0-9876-11c47ef6d7e2">
+                <propertyInstance
+                  Id="da83755e-c827-4181-a5ac-20ceb1ac84d9"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="68fd7950-5b66-41dd-993f-623bf915e830">
+                <propertyInstance
+                  Id="ada63481-5ba5-4b14-844e-1b00fac55490"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="71f2447b-5173-4847-85f4-2284abf1e620">
+                <propertyInstance
+                  Id="fbcab728-4611-4e27-a336-876a5f1bbeaa"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6be3c92d-f0c2-461f-8793-1dc83340b552">
+                <propertyInstance
+                  Id="b5f23552-d42c-4b51-a8fe-d8fa31d1528d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="6a140bdc-4c5d-4cb6-b3ae-93272137519f">
+            <interfaceMoniker
+              Id="56030fd1-6f5a-40b9-93cb-bbd64971b3df"
+              LastKnownName="IEarlyObtainer"
+              LastKnownLocation="Package_1347.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="56030fd1-6f5a-40b9-93cb-bbd64971b3df"
+        name="IEarlyObtainer"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="6050cecb-8641-4a46-a2fe-f05d6352cc0e"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Avionics%2Fbin%2FDebug%2FAR.Drone.Avionics.dll Namespace%3DAR.Drone.Avionics.Objectives.IntentObtainers Type%3DIEarlyObtainer"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="7cab7f5c-e4b2-466a-94a4-e1424a8eae03"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a5297775-b12c-43dd-93ed-d0177cc4f952">
+                <propertyInstance
+                  Id="8b316d61-9c76-4387-ac70-1795ab9e2443"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d416fa64-918b-4645-9fc5-510100b62ab8">
+                <propertyInstance
+                  Id="5a5179f4-c1d9-4718-8a3c-2ebd477f3c09"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7f245a5c-dbb2-45ca-821b-1c4d2d3ce17c">
+                <propertyInstance
+                  Id="373ee243-9336-4778-880b-cec4f20738c0"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6ee68942-568d-4786-94c6-daea773ee179">
+                <propertyInstance
+                  Id="38e10101-128d-48c6-9cac-55df3acedf93"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

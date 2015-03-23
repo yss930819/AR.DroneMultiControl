@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="16aca579-ec38-492f-8d5b-d7a2f6859c26"
+  name="Video"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="9a1445c7-b73f-4eb6-883c-e784d7e6a21f"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAR.Drone.Video"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <enumeration
+        Id="32a200a2-4eaf-4136-8d89-c96c12560de0"
+        name="PixelFormat"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="2203f382-1847-4cf3-8991-43812f3d48a1"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Video%2Fbin%2FDebug%2FAR.Drone.Video.dll Namespace%3DAR.Drone.Video Type%3DPixelFormat"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="33504c41-5c6d-4df1-8f94-a5bf60a63687"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ce86dc54-fd06-4a34-aeb8-403857072502">
+                <propertyInstance
+                  Id="f106cc82-e5c1-40a8-aef9-dd0b39a628d5"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="41c4add5-53c7-449a-a33e-d194ac457c2e">
+                <propertyInstance
+                  Id="2cc8f390-e444-4f0e-bcf2-3d18b72564b5"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8659d52d-2270-4672-835c-12279743f593">
+                <propertyInstance
+                  Id="a8a2f0ae-2bfa-441c-b389-3a7889ce2ab8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="85777082-03bf-4df0-8142-b1f18b35ca51"
+        name="VideoFrame"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="c0b5d767-f273-4faa-8568-166da40044af"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Video%2Fbin%2FDebug%2FAR.Drone.Video.dll Namespace%3DAR.Drone.Video Type%3DVideoFrame"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="87cb9212-3c8a-459b-b656-ed2f5b67b96e"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b72b1c57-883c-43b7-a260-402a6bc789f0">
+                <propertyInstance
+                  Id="aeb11dde-518a-4072-a56d-8ef21095b348"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="372dad55-254b-49ad-a805-65d667bf66b0">
+                <propertyInstance
+                  Id="29cf7407-b5fd-4943-b50c-86f36c64bf2e"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8626ff4f-1101-4bf3-bcb3-e7fdb8ef1964">
+                <propertyInstance
+                  Id="b9125e66-8d7c-4bdd-ad2b-4f24f7b6f027"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f184d646-daff-4cfc-93e8-3404971a2fc6">
+                <propertyInstance
+                  Id="44174363-c69c-4c8f-9f25-2ef4430e9b5c"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="db7180bd-9353-4209-bfcf-2be7922c7bf4">
+                <propertyInstance
+                  Id="43ed152b-6ebc-478f-860f-66b3e8ad513c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="14a4d01a-930c-4784-a888-6389940d304b"
+        name="VideoPacketDecoderWorker"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="c37115db-3786-497e-9761-9959b4c65163"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Video%2Fbin%2FDebug%2FAR.Drone.Video.dll Namespace%3DAR.Drone.Video Type%3DVideoPacketDecoderWorker"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="4e7ecc14-e320-4fb7-9698-8f3e0c0659d8"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8c64f19e-feb3-4353-ad64-0ee0264a48b2">
+                <propertyInstance
+                  Id="eec04d9d-67a8-4b6a-bfda-f64b71bab880"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="306ae92d-14c1-4679-b302-8ce7b3fa2f50">
+                <propertyInstance
+                  Id="7b506f28-3580-4a4b-97ba-f0a3a7b19e3e"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f501b5c6-936d-4b5b-a1d2-859490f076c4">
+                <propertyInstance
+                  Id="a56a4418-c3fe-4d7e-a613-cd303c00f5b1"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f22ec19d-540d-4d4f-ba5a-0fb98e8e3d4d">
+                <propertyInstance
+                  Id="a307cb4f-5f40-44f2-a531-0e0562c667ac"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="caa2c2fc-2bcb-4f71-a212-3c69e985d282">
+                <propertyInstance
+                  Id="591fb7d5-3fd2-4677-963c-a8ad3a061053"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="058d5cdf-60f6-44b2-8027-bd94bdf8bac5"
+  name="Client"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="158f928a-b844-45c2-ae08-8629d426916b"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAR.Drone.Client"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="6c7993a6-d8ce-49e8-a7dd-8ac372ad75ea"
+        name="DroneClient"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="5ca57a74-287c-4d55-92eb-64387706cfed"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Client%2Fbin%2FDebug%2FAR.Drone.Client.dll Namespace%3DAR.Drone.Client Type%3DDroneClient"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="baba9380-7885-4d1b-8e82-65749b832991"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a8922e0f-41cb-4f31-bbef-9fa58e8bf1fb">
+                <propertyInstance
+                  Id="90f2eea8-0959-488f-8574-f264684b7543"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="562807f8-3cf1-45e3-a379-789a7c99a172">
+                <propertyInstance
+                  Id="b1721dfd-75fe-4177-8c6b-5cca60923e00"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="82b7b1f4-35a9-4a0b-af19-8f1eed56168a">
+                <propertyInstance
+                  Id="287627f0-b552-4929-a7a6-69a277653d12"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7becb8b6-0c1a-4958-97b1-65dfe35b79cd">
+                <propertyInstance
+                  Id="1905d2bb-98ee-41e7-9e83-abd584e291b9"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8fbf5a8e-2255-407d-93ee-61b9242edb23">
+                <propertyInstance
+                  Id="b1b07f5e-6fda-40b3-9ea4-3d2d00faf4cf"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="42a79b5d-2c24-41b2-8b32-53a13667fc66"
+            isSubstitutable="false">
+            <classMoniker
+              Id="853186de-f2c1-4149-9a14-e7a404f257fb"
+              LastKnownName="WorkerBase"
+              LastKnownLocation="Package8_1338.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c438214b-2043-475d-aa87-f38789979cdb"
+        LastKnownName="Configuration"
+        LastKnownLocation="Package3_1339.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="fd2508f4-b52c-4fbd-9412-0b4922aad97d"
+        LastKnownName="Command"
+        LastKnownLocation="Package3_1345.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

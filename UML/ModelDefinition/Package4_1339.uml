@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="cec9318b-cb27-439d-aef2-3dbaccfd31cf"
+  name="Navigation"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="92fc973a-1cf1-4545-beda-ea740f2f1e9c"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAR.Drone.Data.Navigation"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="f65a4350-78d4-44a2-a655-33897c9e1c19"
+        name="NavigationData"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="269ff33c-bd0f-4c9e-8211-4170103f4ed4"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Data%2Fbin%2FDebug%2FAR.Drone.Data.dll Namespace%3DAR.Drone.Data.Navigation Type%3DNavigationData"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="52e33408-437b-4275-a7e3-7e97745dc2ff"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="50532b45-66c2-49a6-b47c-586a678e0c32">
+                <propertyInstance
+                  Id="5fa03ed1-9be7-41d4-9524-bba937890181"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ca969cbc-4580-4d36-9a94-43c86cc7b76b">
+                <propertyInstance
+                  Id="824e6fd0-165a-45e0-9aaa-86de9d8989d7"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bec87c76-c5e0-47a6-b1e4-3d6789c02eed">
+                <propertyInstance
+                  Id="facb1f06-b2f6-442f-a0db-97b587f0be67"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ea5b0205-a38b-4fa2-b06a-3c04abb9732a">
+                <propertyInstance
+                  Id="def176ba-2aa4-43c1-9b67-0a90cce310b1"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0f65fc6f-e836-4482-ba00-6b7f6a411dbb">
+                <propertyInstance
+                  Id="3fc6643c-430a-43b0-a1b6-76323a2364d7"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

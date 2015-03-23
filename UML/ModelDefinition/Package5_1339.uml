@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="3cc2be07-fcec-460c-a280-eb1b2d8f858a"
+  name="Media"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="f3d463a2-bdf9-4476-8930-e5a3cb79b8d6"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAR.Drone.Media"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="047efe62-ab18-471f-b180-1426a62cdb59"
+        name="PacketRecorder"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="f9345dc1-97a8-4786-b7a5-a88edc3f8334"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Media%2Fbin%2FDebug%2FAR.Drone.Media.dll Namespace%3DAR.Drone.Media Type%3DPacketRecorder"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="53494b6d-cf44-44f9-9532-e6cdd9fea8b3"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4b40a344-8958-4800-a4d8-b65d3cb10703">
+                <propertyInstance
+                  Id="01cebe31-3a54-4b60-9daf-d61636d72db9"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="84f5ca23-1942-404f-93de-4ef5c70f9ed4">
+                <propertyInstance
+                  Id="a84c6f55-5398-4995-9a65-5de8343eac9d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d43ad025-cfe5-470a-8215-1b533246a4f2">
+                <propertyInstance
+                  Id="ce9092a7-107e-4a58-b358-68bc77833eb7"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="209448f7-0d84-42a4-8bac-72a9a4468ef4">
+                <propertyInstance
+                  Id="4dbf72af-dd82-455d-a5c9-dd0307cf8ad7"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3a55f583-f52b-4d8d-a175-fa08c6793461">
+                <propertyInstance
+                  Id="93bc5e1c-3c70-40a3-a467-d2e06edfc465"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

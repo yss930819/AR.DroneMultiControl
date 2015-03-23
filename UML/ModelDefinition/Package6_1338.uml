@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="b7930828-6fbf-4986-9702-7d003dce0890"
+  name="Data"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="25014e91-fbbf-4281-8253-8cf5b2a25691"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAR.Drone.Data"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="924d9806-c442-4d2d-9030-d1c37619b335"
+        name="NavigationPacket"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="682ee3f4-7b4f-4875-963e-8e6635c918cf"
+            handle="viewcode://./CodeSchema_Struct?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Data%2Fbin%2FDebug%2FAR.Drone.Data.dll Namespace%3DAR.Drone.Data Type%3DNavigationPacket"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="3f43f5ba-6d1d-407b-9edb-2de117bb973d"
+            name="struct"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="aaea5fd3-bb7a-45ed-bd27-4242c4d0c08c">
+                <propertyInstance
+                  Id="b0b2da19-00a5-48d2-8485-b2af7de749e8"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d3991cb7-6815-4d12-b76c-bf5597851ecf">
+                <propertyInstance
+                  Id="c9369b05-c072-40a5-83c0-4a8c92f991f1"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="29cd888f-4b09-4442-ab0a-a729ee094e42">
+                <propertyInstance
+                  Id="f2d48456-ce43-4a7f-8d95-59b696f5815c"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f3563fea-eb74-4ec6-abdb-4d08487eec2c">
+                <propertyInstance
+                  Id="830c15d7-49de-4cd2-ad9b-45916664618a"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c4c78c36-9ed1-4ec0-8c81-f99beffd85c8"
+        name="VideoPacket"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="845f1dd4-2bd5-4204-b2a8-e0048b33bde5"
+            handle="viewcode://./CodeSchema_Struct?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Data%2Fbin%2FDebug%2FAR.Drone.Data.dll Namespace%3DAR.Drone.Data Type%3DVideoPacket"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="75a81695-77f1-45a4-a5ed-8644901902e4"
+            name="struct"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9c7b2c38-2d71-4016-834b-d237e01f6166">
+                <propertyInstance
+                  Id="5ab4d354-9c59-451e-9278-5474155e3224"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ef966f12-73cb-40d3-a567-a229477f763f">
+                <propertyInstance
+                  Id="46b1d7d3-9c54-4862-b560-3ebd64e2e43c"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3f005447-1282-40b3-96d4-96618df052cf">
+                <propertyInstance
+                  Id="09686f01-8d2e-454a-91fa-d6da1f4f09e2"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f019747d-6c1c-4ce1-9ec4-659b6ed77fc8">
+                <propertyInstance
+                  Id="f2362ec7-df88-4735-aab9-04074733bd3f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="cec9318b-cb27-439d-aef2-3dbaccfd31cf"
+        LastKnownName="Navigation"
+        LastKnownLocation="Package4_1339.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

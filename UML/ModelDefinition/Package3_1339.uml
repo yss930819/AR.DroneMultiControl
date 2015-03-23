@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="c438214b-2043-475d-aa87-f38789979cdb"
+  name="Configuration"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="6d87157f-5e16-41c6-bce9-bd74e5f08e44"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAR.Drone.Client.Configuration"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="79e2fc6a-f34a-49a8-b8a4-319341f22482"
+        name="Settings"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="1d58c119-875c-4c5f-bbc6-200c92f570c9"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FD:%2Fyss%2FAR.DroneMultiControl%2FAR.Drone.Client%2Fbin%2FDebug%2FAR.Drone.Client.dll Namespace%3DAR.Drone.Client.Configuration Type%3DSettings"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c03b3d42-c87f-4378-8448-f8c038bdc9f0"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4513ad76-959d-44db-8fe3-2d5f6a636d92">
+                <propertyInstance
+                  Id="8aada0bf-490e-4697-a1d5-8e93e6a3ce09"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="72b4a10d-a791-4901-b6c0-b4710dac5ee5">
+                <propertyInstance
+                  Id="8c71a613-9ccc-4a32-8295-cb94ccdebb5f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fb0e9bfb-db5d-4dc0-91ef-4df54e343f9d">
+                <propertyInstance
+                  Id="d6cc9347-75ea-411b-b56c-ae3cc0429d6e"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="12a009ba-20d3-4481-986b-54b477cd00a7">
+                <propertyInstance
+                  Id="548bc084-8647-47aa-9c22-26fce9078a61"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="504728e6-d34d-4b3d-9972-ce8e960c3c74">
+                <propertyInstance
+                  Id="1e98c61d-91c9-440d-a69c-9955e3581c09"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

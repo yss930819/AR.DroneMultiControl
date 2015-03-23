@@ -46,7 +46,7 @@ namespace AR.Drone.WinApp
             _videoPacketDecoderWorker = new VideoPacketDecoderWorker(PixelFormat.BGR24, true, OnVideoPacketDecoded);
             _videoPacketDecoderWorker.Start();
 
-            _droneClient = new DroneClient("192.168.1.1");
+            _droneClient = new DroneClient("192.168.1.50");
             _droneClient.NavigationPacketAcquired += OnNavigationPacketAcquired;
             _droneClient.VideoPacketAcquired += OnVideoPacketAcquired;
             _droneClient.NavigationDataAcquired += data => _navigationData = data;
