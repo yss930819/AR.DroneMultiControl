@@ -3,7 +3,8 @@
  * 注释 杨率帅
  *
  * 本代码为SDK 的单机控制类 
- * 从WorkerBase 类继承
+ * 从WorkerBase 类继承 需要实现Loop虚函数来完成自己的
+ * 
  */
 
 using System;
@@ -24,10 +25,16 @@ namespace AR.Drone.Client
 {
     public class DroneClient : WorkerBase
     {
+        #region 变量定义
+
+        //定义默认的主机地址
         private const string DefaultHostname = "192.168.1.1";
+        //定义默认的应答超时时间
         private const int AckControlAndWaitForConfirmationTimeout = 1000;
 
+        //线程安全的队列，用于存储控制序列
         private readonly ConcurrentQueue<AtCommand> _commandQueue;
+        //
         private NavigationData _navigationData;
         private StateRequest _stateRequest;
 
@@ -36,6 +43,16 @@ namespace AR.Drone.Client
         private readonly NavdataAcquisition _navdataAcquisition;
         private readonly VideoAcquisition _videoAcquisition;
 
+        #endregion
+
+
+        #region 构造函数
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="hostname">填入飞机的ip地址</param>
+        /// <returns></returns>
         public DroneClient(string hostname)
         {
             _networkConfiguration = new NetworkConfiguration(hostname);
@@ -51,8 +68,14 @@ namespace AR.Drone.Client
         {
         }
 
+        #endregion
+
+
+
         /// <summary>
         /// Watchdog.
+        /// 看门狗
+        /// 
         /// </summary>
         /// <param name="token">Cancellation token.</param>
         protected override void Loop(CancellationToken token)
@@ -365,6 +388,14 @@ namespace AR.Drone.Client
 
         #endregion
 
+
+
+        /// <summary>
+        /// 重写Dispose函数
+        /// 在类要被销毁时实现对非托管资源的释放
+        /// 同时调用基本类的函数同时释放
+        /// </summary>
+        /// <returns></returns>
         protected override void DisposeOverride()
         {
             base.DisposeOverride();

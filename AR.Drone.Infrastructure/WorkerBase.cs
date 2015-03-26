@@ -29,8 +29,14 @@ namespace AR.Drone.Infrastructure
             get { return _cancellationTokenSource != null; }
         }
 
+        
         public event Action<Object, Exception> UnhandledException;
 
+
+        /// <summary>
+        /// 启动线程
+        /// </summary>
+        /// <returns></returns>
         public void Start()
         {
             if (_cancellationTokenSource != null)
@@ -110,6 +116,8 @@ namespace AR.Drone.Infrastructure
 
         /// <summary>
         /// 虚函数让使用者完成实现其在线程中想完成的
+        /// token已给出，不需要传递
+        /// 
         /// </summary>
         /// <param name="token">由CancellationTokenSource得到的Token</param>
         /// <returns></returns>

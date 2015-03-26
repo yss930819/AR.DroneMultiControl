@@ -1,0 +1,550 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AR.Drone.Client.Command.AtCommand" Collapsed="true">
+    <Position X="13.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\AtCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Command.CalibrateCommand" Collapsed="true">
+    <Position X="4.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAEAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\CalibrateCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Command.CommandSender" Collapsed="true">
+    <Position X="4" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAACAAAAAAAAAAAAAAAKAAEAAAAAAAA=</HashCode>
+      <FileName>Command\CommandSender.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Command.ComWdgCommand" Collapsed="true">
+    <Position X="11.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\ComWdgCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Command.ConfigCommand" Collapsed="true">
+    <Position X="15.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\ConfigCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Command.ConfigIdsCommand" Collapsed="true">
+    <Position X="18" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAgAAAAAACAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Command\ConfigIdsCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Command.ControlCommand" Collapsed="true">
+    <Position X="20.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Command\ControlCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Command.FlatTrimCommand" Collapsed="true">
+    <Position X="22.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\FlatTrimCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Command.ProgressCommand" Collapsed="true">
+    <Position X="6.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAgAAAAAAAAAAAAAgAAQAAIAAABA=</HashCode>
+      <FileName>Command\ProgressiveCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Command.ProgressWithMagnetoCommand" Collapsed="true">
+    <Position X="9" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAQAgAAAAAAAAAAAAAgAAQEAIAAABA=</HashCode>
+      <FileName>Command\ProgressWithMagnetoCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Command.RefCommand" Collapsed="true">
+    <Position X="13.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAACAAAAAAAAAAAAAACAAAAAAAAAgAAAQAAAAA=</HashCode>
+      <FileName>Command\RefCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Configuration.ConfigurationAcquisition" Collapsed="true">
+    <Position X="31.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEBAAAEAAAAAAAAAAEBAgAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ConfigurationAcquisition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Configuration.SectionBase" Collapsed="true">
+    <Position X="16" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAMAAgAQAQBAAAgAAABAAAACAgAAAQABAAAEAAAgA=</HashCode>
+      <FileName>Configuration\SectionBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Configuration.GeneralSection" Collapsed="true">
+    <Position X="4.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAABIAAQKIAAIAAACAAAAAAAEAAACBAAAIAAEAhAg=</HashCode>
+      <FileName>Configuration\Sections.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Configuration.ControlSection" Collapsed="true">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FRKAACADAFgIAAAAAQISAIEEAAACQIQFAEAAYQAgIAA=</HashCode>
+      <FileName>Configuration\Sections.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Configuration.NetworkSection" Collapsed="true">
+    <Position X="11.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAgIQAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\Sections.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Configuration.PicSection" Collapsed="true">
+    <Position X="13.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAACAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\Sections.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Configuration.VideoSection" Collapsed="true">
+    <Position X="16" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAMAgAQAECAAAAAAIAAIAEAAhACAAAAAAAACAAgA=</HashCode>
+      <FileName>Configuration\Sections.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Configuration.LedsSection" Collapsed="true">
+    <Position X="18.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Configuration\Sections.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Configuration.DetectSection" Collapsed="true">
+    <Position X="20.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAACAAwACAAAAAAI=</HashCode>
+      <FileName>Configuration\Sections.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Configuration.SyslogSection" Collapsed="true">
+    <Position X="22.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAgAAAQAAAAA=</HashCode>
+      <FileName>Configuration\Sections.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Configuration.UserboxSection" Collapsed="true">
+    <Position X="25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\Sections.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Configuration.GpsSection" Collapsed="true">
+    <Position X="27.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAIgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\Sections.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Configuration.CustomSection" Collapsed="true">
+    <Position X="7" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAIAAAAEAAAAAAAAAgggAA=</HashCode>
+      <FileName>Configuration\Sections.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Configuration.Settings" Collapsed="true">
+    <Position X="31.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAgAAAkAAAALAgAAAACACAAABAAAAAAQAAAAAQIAEo=</HashCode>
+      <FileName>Configuration\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.DroneClient">
+    <Position X="11.25" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AATGBAYJAAAAgAJAEEAAAAICFEAQAgAMA4QAASCAgBg=</HashCode>
+      <FileName>DroneClient.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_commandSender" />
+      <Field Name="_navdataAcquisition" />
+      <Field Name="_networkConfiguration" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_commandQueue" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="AR.Drone.Client.NetworkConfiguration" Collapsed="true">
+    <Position X="18" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>NetworkConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Navigation.NavdataAcquisition" Collapsed="true">
+    <Position X="6.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAIAACBAAAQAIAAAAAEAAAAAAACAAEAAAQAAAA=</HashCode>
+      <FileName>Navigation\NavdataAcquisition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Video.VideoAcquisition" Collapsed="true">
+    <Position X="8.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAIAAAAAIAAAAAAAAAAAAABQAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Video\VideoAcquisition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Client.Video.VideoFrameTypeConverter" Collapsed="true">
+    <Position X="33.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Video\VideoFrameTypeConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AR.Drone.Data.ConversionHelper" Collapsed="true">
+    <Position X="33.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AR.Drone.Data.Navigation.Native.NavdataBagParser" Collapsed="true">
+    <Position X="36.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AR.Drone.Data.Navigation.NavdataConverter" Collapsed="true">
+    <Position X="38.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AR.Drone.Data.Navigation.NavigationPacketParser" Collapsed="true">
+    <Position X="40.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AR.Drone.Infrastructure.ConcurrentQueueExtensions" Collapsed="true">
+    <Position X="29.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AR.Drone.Infrastructure.DisposableBase" Collapsed="true">
+    <Position X="7.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AR.Drone.Infrastructure.InteropHelper" Collapsed="true">
+    <Position X="35" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AR.Drone.Infrastructure.WorkerBase" Collapsed="true">
+    <Position X="7.25" Y="11" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Struct Name="AR.Drone.Client.Configuration.FlightAnimation" Collapsed="true">
+    <Position X="29.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAAAAAAACAAAEAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Configuration\FlightAnimation.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="AR.Drone.Client.Configuration.UserboxCommand" Collapsed="true">
+    <Position X="33.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgAAAAAAAAAAAEAEQCAAAAAAAIAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Configuration\UserboxCommand.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="AR.Drone.Client.LedAnimation" Collapsed="true">
+    <Position X="31.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAACAAAEAAAAAAAAAIAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Configuration\LedAnimation.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="AR.Drone.Client.Video.Native.parrot_video_encapsulation_t" Collapsed="true">
+    <Position X="29.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IABCISAAAABADgAIAIAAEAAAMgAkgAQAAAAAACgAAQA=</HashCode>
+      <FileName>Video\Native\parrot_video_encapsulation_t.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="AR.Drone.Data.NavigationPacket" Collapsed="true">
+    <Position X="40.25" Y="10" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.VideoPacket" Collapsed="true">
+    <Position X="40.25" Y="11" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.navdata_option_t" Collapsed="true">
+    <Position X="40.25" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.navdata_t" Collapsed="true">
+    <Position X="40.25" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.NavdataBag" Collapsed="true">
+    <Position X="38.5" Y="10" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Math.matrix33_t" Collapsed="true">
+    <Position X="33.25" Y="6" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Math.vector21_t" Collapsed="true">
+    <Position X="35" Y="11" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Math.vector31_t" Collapsed="true">
+    <Position X="36.75" Y="11" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_adc_data_frame_t" Collapsed="true">
+    <Position X="35" Y="6" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_altitude_t" Collapsed="true">
+    <Position X="36.75" Y="6" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_cks_t" Collapsed="true">
+    <Position X="38.5" Y="6" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_demo_t" Collapsed="true">
+    <Position X="40.25" Y="6" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_euler_angles_t" Collapsed="true">
+    <Position X="29.75" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_games_t" Collapsed="true">
+    <Position X="31.5" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_gyros_offsets_t" Collapsed="true">
+    <Position X="33.25" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_hdvideo_stream_t" Collapsed="true">
+    <Position X="35" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_kalman_pressure_t" Collapsed="true">
+    <Position X="36.75" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_magneto_t" Collapsed="true">
+    <Position X="38.5" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_phys_measures_t" Collapsed="true">
+    <Position X="29.75" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_pressure_raw_t" Collapsed="true">
+    <Position X="31.5" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_pwm_t" Collapsed="true">
+    <Position X="33.25" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_raw_measures_t" Collapsed="true">
+    <Position X="35" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_rc_references_t" Collapsed="true">
+    <Position X="36.75" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_references_t" Collapsed="true">
+    <Position X="38.5" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_time_t" Collapsed="true">
+    <Position X="29.75" Y="9" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_trackers_send_t" Collapsed="true">
+    <Position X="31.5" Y="9" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_trims_t" Collapsed="true">
+    <Position X="33.25" Y="9" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_video_stream_t" Collapsed="true">
+    <Position X="35" Y="9" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_vision_detect_t" Collapsed="true">
+    <Position X="36.75" Y="9" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_vision_of_t" Collapsed="true">
+    <Position X="38.5" Y="9" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_vision_perf_t" Collapsed="true">
+    <Position X="40.25" Y="9" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_vision_raw_t" Collapsed="true">
+    <Position X="29.75" Y="10" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_vision_t" Collapsed="true">
+    <Position X="31.5" Y="10" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_watchdog_t" Collapsed="true">
+    <Position X="33.25" Y="10" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_wifi_t" Collapsed="true">
+    <Position X="35" Y="10" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.navdata_wind_speed_t" Collapsed="true">
+    <Position X="36.75" Y="10" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.screen_point_t" Collapsed="true">
+    <Position X="31.5" Y="11" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Struct Name="AR.Drone.Data.Navigation.Native.Options.velocities_t" Collapsed="true">
+    <Position X="38.5" Y="11" Width="1.5" />
+    <TypeIdentifier />
+  </Struct>
+  <Enum Name="AR.Drone.Client.Command.ControlMode" Collapsed="true">
+    <Position X="29.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAKAAAAAAAAAAAAAAAAABAAAQAAAAAAIQAAEAAAAA=</HashCode>
+      <FileName>Command\ControlMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AR.Drone.Client.Command.Device" Collapsed="true">
+    <Position X="35" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\Device.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AR.Drone.Client.Command.FlightMode" Collapsed="true">
+    <Position X="38.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACQAAAAAAAAAAAAAAAAAAAEAAAQAAAAAAAAA=</HashCode>
+      <FileName>Command\FlightMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AR.Drone.Client.Command.RefMode" Collapsed="true">
+    <Position X="38.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAACAAAAAAAAAgAAAQAAAAA=</HashCode>
+      <FileName>Command\RefMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AR.Drone.Client.Configuration.FlightAnimationType" Collapsed="true">
+    <Position X="36.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAGAACgAAAAIiAgA0AAQBCIAAAAACEAGIAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\FlightAnimationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AR.Drone.Client.Configuration.NavdataOptions" Collapsed="true">
+    <Position X="33.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QABAAAgAwQAYIgQAAAACgAhAAAASEAABAIiGAAEAgQA=</HashCode>
+      <FileName>Configuration\NavdataOptions.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AR.Drone.Client.Configuration.UserboxCommandType" Collapsed="true">
+    <Position X="29.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQDAAAAAAAAAAAAAAAAAAAAAAIAAgAAAAAAA=</HashCode>
+      <FileName>Configuration\UserboxCommandType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AR.Drone.Client.Configuration.VideoBitrateControlMode" Collapsed="true">
+    <Position X="31.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAABAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\VideoBitrateControlMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AR.Drone.Client.Configuration.VideoChannelType" Collapsed="true">
+    <Position X="33.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAIAABQAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\VideoChannelType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AR.Drone.Client.Configuration.VideoCodecType" Collapsed="true">
+    <Position X="35" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEQAAAAAAhGYACIAAgBAAAAAAIAE=</HashCode>
+      <FileName>Configuration\VideoCodecType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AR.Drone.Client.LedAnimationType" Collapsed="true">
+    <Position X="29.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAgQAAABAAkACAAAAAEEAAMBEAQAAwQJAABBAAAA=</HashCode>
+      <FileName>Configuration\LedAnimationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AR.Drone.Client.StateRequest" Collapsed="true">
+    <Position X="40.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgABAQEAABA=</HashCode>
+      <FileName>StateRequest.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AR.Drone.Client.Video.Native.parrot_video_encapsulation_frametypes_t" Collapsed="true">
+    <Position X="36.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIg=</HashCode>
+      <FileName>Video\Native\parrot_video_encapsulation_frametypes_t.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AR.Drone.Data.VideoFrameType" Collapsed="true">
+    <Position X="36.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="AR.Drone.Data.Navigation.Native.CTRL_STATES" Collapsed="true">
+    <Position X="31.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="AR.Drone.Data.Navigation.Native.def_ardrone_state_mask_t" Collapsed="true">
+    <Position X="33.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="AR.Drone.Data.Navigation.Native.FLYING_STATES" Collapsed="true">
+    <Position X="40.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="AR.Drone.Data.Navigation.Native.navdata_tag_t" Collapsed="true">
+    <Position X="31.5" Y="13" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="AR.Drone.Data.Navigation.NavigationState" Collapsed="true">
+    <Position X="35" Y="13" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

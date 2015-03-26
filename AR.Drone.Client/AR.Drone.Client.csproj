@@ -106,6 +106,7 @@
   </Target>
   -->
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Configuration\Sections.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Sections.cs</LastGenOutput>

@@ -1,7 +1,22 @@
+/*
+ * 时间 2015 3 25
+ * 注释 杨率帅
+ *
+ * 本代码为导航数据信息
+ * 是数据基本服务
+ * 提供了飞机上可读下来的数据集
+ * 
+ */
+
+
 using System.Runtime.InteropServices;
 
 namespace AR.Drone.Data.Navigation
 {
+    /*
+     * 导航数据类，
+     * 使用该类即可知道所有导航信息
+     */ 
     public class NavigationData
     {
         public NavigationState State;
@@ -18,6 +33,9 @@ namespace AR.Drone.Data.Navigation
     }
 
     [StructLayout(LayoutKind.Sequential)]
+    /**
+     * 电池信息
+     */
     public struct Battery
     {
         public bool Low;
@@ -31,6 +49,9 @@ namespace AR.Drone.Data.Navigation
     }
 
     [StructLayout(LayoutKind.Sequential)]
+    /**
+     * 三方向速度
+     */
     public struct Vector3
     {
         public float X; // meter/second
@@ -44,6 +65,9 @@ namespace AR.Drone.Data.Navigation
     }
 
     [StructLayout(LayoutKind.Sequential)]
+    /**
+     * 电机 
+     */
     public struct Magneto
     {
         public Vector3 Rectified;
@@ -51,6 +75,9 @@ namespace AR.Drone.Data.Navigation
     }
 
     [StructLayout(LayoutKind.Sequential)]
+    /**
+     * wifi信号质量
+     */ 
     public struct Wifi
     {
         public float LinkQuality; // 1 is perfect, less than 1 is worse
@@ -62,6 +89,9 @@ namespace AR.Drone.Data.Navigation
     }
 
     [StructLayout(LayoutKind.Sequential)]
+    /*
+     * 视频流编号
+     */ 
     public struct Video
     {
         public uint FrameNumber;
