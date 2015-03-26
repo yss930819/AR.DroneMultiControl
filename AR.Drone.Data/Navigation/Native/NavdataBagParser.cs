@@ -1,3 +1,14 @@
+/*
+ * 时间 2015 3 26
+ * 注释 杨率帅
+ * 
+ * 导航数据包解析器 调用
+ * 通过本类可以解析飞机传回的byte[]数据的内容
+ * 并将解析好的内容赋值给NavdataBag
+ * 
+ */
+
+
 using System;
 using AR.Drone.Data.Navigation.Native.Options;
 
@@ -5,8 +16,16 @@ namespace AR.Drone.Data.Navigation.Native
 {
     public class NavdataBagParser
     {
+        //定义包头
         private const int NavdataHeader = 0x55667788;
 
+        /// <summary>
+        /// 这里使用指针进行不安全代码操作
+        /// 用于解析
+        /// </summary>
+        /// <param name="packet">导航包</param>
+        /// <param name="navigationData">解析后的导航结构体</param>
+        /// <returns>返回true解析成功，返回false解析失败</returns>
         public static unsafe bool TryParse(ref NavigationPacket packet, out NavdataBag navigationData)
         {
             byte[] data = packet.Data;
@@ -15,14 +34,17 @@ namespace AR.Drone.Data.Navigation.Native
             if (data.Length < sizeof (navdata_t))
                 return false;
 
+            //指向托管变量的指针，防止其地址改变
             fixed (byte* pData = &data[0])
             {
+                //判断包头是否正确
                 navdata_t navdata = *(navdata_t*) pData;
                 if (navdata.header == NavdataHeader)
                 {
                     navigationData.ardrone_state = navdata.ardrone_state;
 
                     int offset = sizeof (navdata_t);
+                    //读取剩余数据
                     while (offset < data.Length)
                     {
                         var option = (navdata_option_t*) (pData + offset);

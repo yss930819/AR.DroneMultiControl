@@ -1,3 +1,10 @@
+/*
+ * 时间 2015 3 26
+ * 注释 杨率帅
+ * 
+ * 枚举类
+ * 各种导航数据结构体标签
+ */
 namespace AR.Drone.Data.Navigation.Native
 {
     public enum navdata_tag_t : ushort

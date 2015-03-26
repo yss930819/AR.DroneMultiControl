@@ -66,7 +66,7 @@ namespace AR.Drone.Data.Navigation
 
     [StructLayout(LayoutKind.Sequential)]
     /**
-     * 电机 
+     * 电机速度 
      */
     public struct Magneto
     {

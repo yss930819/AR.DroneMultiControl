@@ -1,3 +1,12 @@
+/*
+ * 时间 2015 3 26
+ * 注释 杨率帅
+ * 
+ * 导航数据包结构体
+ * 存储飞机传回的导航数据结构体
+ * 具体内容查询各结构体 
+ */
+
 using System.Runtime.InteropServices;
 using AR.Drone.Data.Navigation.Native.Options;
 

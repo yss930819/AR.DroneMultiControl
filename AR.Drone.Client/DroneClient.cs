@@ -5,6 +5,7 @@
  * 本代码为SDK 的单机控制类 
  * 从WorkerBase 类继承 需要实现Loop虚函数来完成自己的
  * 
+ * 
  */
 
 using System;
@@ -34,13 +35,18 @@ namespace AR.Drone.Client
 
         //线程安全的队列，用于存储控制序列
         private readonly ConcurrentQueue<AtCommand> _commandQueue;
-        //
+        //飞机飞行的状态数据
         private NavigationData _navigationData;
+        //状态需求？
         private StateRequest _stateRequest;
 
+        //指令发送类
         private readonly CommandSender _commandSender;
+        //
         private readonly NetworkConfiguration _networkConfiguration;
+        //
         private readonly NavdataAcquisition _navdataAcquisition;
+        //
         private readonly VideoAcquisition _videoAcquisition;
 
         #endregion

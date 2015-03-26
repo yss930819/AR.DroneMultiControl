@@ -3,6 +3,7 @@
  * 注释 杨率帅
  *
  * 本代码为程序主界面代码
+ * 从Form 继承
  */
 
 using System;
@@ -30,6 +31,7 @@ namespace AR.Drone.WinApp
 {
     public partial class MainForm : Form
     {
+        #region 成员变量
         //使用到的视频文件格式信息常量
         private const string ARDroneTrackFileExt = ".ardrone";
         private const string ARDroneTrackFilesFilter = "AR.Drone track files (*.ardrone)|*.ardrone";
@@ -45,10 +47,15 @@ namespace AR.Drone.WinApp
         private Bitmap _frameBitmap;
         private uint _frameNumber;
         private NavigationData _navigationData;
+        //导航数据包
         private NavigationPacket _navigationPacket;
         private PacketRecorder _packetRecorderWorker;
+        //文件流
         private FileStream _recorderStream;
+        //自动驾驶
         private Autopilot _autopilot;
+
+        #endregion
 
         public MainForm()
         {
@@ -57,11 +64,13 @@ namespace AR.Drone.WinApp
             _videoPacketDecoderWorker = new VideoPacketDecoderWorker(PixelFormat.BGR24, true, OnVideoPacketDecoded);
             _videoPacketDecoderWorker.Start();
 
+            //创建新的无人机连接
             _droneClient = new DroneClient("192.168.1.1");
             _droneClient.NavigationPacketAcquired += OnNavigationPacketAcquired;
             _droneClient.VideoPacketAcquired += OnVideoPacketAcquired;
             _droneClient.NavigationDataAcquired += data => _navigationData = data;
 
+            //定时器更新允许
             tmrStateUpdate.Enabled = true;
             tmrVideoUpdate.Enabled = true;
 
@@ -142,19 +151,29 @@ namespace AR.Drone.WinApp
             pbVideo.Image = _frameBitmap;
         }
 
+        /// <summary>
+        /// 更新Tree view 中的参数
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private void tmrStateUpdate_Tick(object sender, EventArgs e)
         {
             tvInfo.BeginUpdate();
 
+            //标签一
             TreeNode node = tvInfo.Nodes.GetOrCreate("ClientActive");
             node.Text = string.Format("Client Active: {0}", _droneClient.IsActive);
 
+            //标签二
             node = tvInfo.Nodes.GetOrCreate("Navigation Data");
             if (_navigationData != null) DumpBranch(node.Nodes, _navigationData);
 
+            //标签三
             node = tvInfo.Nodes.GetOrCreate("Configuration");
             if (_settings != null) DumpBranch(node.Nodes, _settings);
 
+            //标签四
             TreeNode vativeNode = tvInfo.Nodes.GetOrCreate("Native");
 
             NavdataBag navdataBag;
