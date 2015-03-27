@@ -56,6 +56,7 @@ namespace AR.Drone.Infrastructure
         
         /// <summary>
         /// 停止线程
+        /// 发送Cancel指令
         /// </summary>
         /// <returns></returns>
         public void Stop()

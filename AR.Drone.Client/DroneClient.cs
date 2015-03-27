@@ -4,7 +4,7 @@
  *
  * 本代码为SDK 的单机控制类 
  * 从WorkerBase 类继承 需要实现Loop虚函数来完成自己的
- * 
+ * 会启动指令发送线程
  * 
  */
 
@@ -42,7 +42,7 @@ namespace AR.Drone.Client
 
         //指令发送类
         private readonly CommandSender _commandSender;
-        //
+        //网络配置器，只存有host主机地址
         private readonly NetworkConfiguration _networkConfiguration;
         //
         private readonly NavdataAcquisition _navdataAcquisition;
@@ -91,6 +91,9 @@ namespace AR.Drone.Client
                 if (_navdataAcquisition.IsAlive == false) _navdataAcquisition.Start();
                 Thread.Sleep(10);
             }
+
+            //循环结束时
+            //消除所有启动的线程
 
             if (_navdataAcquisition.IsAlive) _navdataAcquisition.Stop();
             if (_commandSender.IsAlive) _commandSender.Stop();
