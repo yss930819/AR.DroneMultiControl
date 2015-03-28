@@ -1,3 +1,11 @@
+/*
+ * 时间 2015 3 28
+ * 注释 杨率帅
+ *
+ * 本构造函数为视频封装的详细数据
+ * 
+ * 
+ */
 using System.Runtime.InteropServices;
 
 namespace AR.Drone.Client.Video.Native

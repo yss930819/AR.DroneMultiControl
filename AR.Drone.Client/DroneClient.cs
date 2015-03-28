@@ -6,6 +6,11 @@
  * 从WorkerBase 类继承 需要实现Loop虚函数来完成自己的
  * 会启动指令发送线程
  * 
+ * 里面提供了三个事件
+ * NavigationPacketAcquired
+ * NavigationDataAcquired
+ * VideoPacketAcquired
+ * 
  */
 
 using System;
@@ -44,9 +49,9 @@ namespace AR.Drone.Client
         private readonly CommandSender _commandSender;
         //网络配置器，只存有host主机地址
         private readonly NetworkConfiguration _networkConfiguration;
-        //
+        //navdata数据获取类
         private readonly NavdataAcquisition _navdataAcquisition;
-        //
+        //视频数据获取类
         private readonly VideoAcquisition _videoAcquisition;
 
         #endregion
@@ -81,6 +86,7 @@ namespace AR.Drone.Client
         /// <summary>
         /// Watchdog.
         /// 看门狗
+        /// 启动navdata获取线程获取
         /// 
         /// </summary>
         /// <param name="token">Cancellation token.</param>
@@ -114,6 +120,12 @@ namespace AR.Drone.Client
             if (_videoAcquisition.IsAlive) _videoAcquisition.Stop();
         }
 
+        /// <summary>
+        /// 为订阅NavdataPacketAcquired的类发送信息
+        /// 通知其事件发生。
+        /// </summary>
+        /// <param name="packet"></param>
+        /// <returns></returns>
         private void OnNavdataPacketAcquired(NavigationPacket packet)
         {
             if (NavigationPacketAcquired != null)
@@ -122,6 +134,13 @@ namespace AR.Drone.Client
             UpdateNavigationData(packet);
         }
 
+
+        /// <summary>
+        /// 更新NavgationData
+        /// 
+        /// </summary>
+        /// <param name="packet"></param>
+        /// <returns></returns>
         private void UpdateNavigationData(NavigationPacket packet)
         {
             NavigationData navigationData;
@@ -134,6 +153,7 @@ namespace AR.Drone.Client
                 ProcessStateTransitions(navigationData.State);
             }
         }
+
 
         private void OnNavigationDataAcquired(NavigationData navigationData)
         {

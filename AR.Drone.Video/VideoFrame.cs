@@ -1,3 +1,11 @@
+/*
+ * 时间 2015 3 28
+ * 注释 杨率帅
+ *
+ * 本代码为 视频数据的Frame
+ * 存储视视频数据的相应参数
+ */
+
 using System.Runtime.InteropServices;
 
 namespace AR.Drone.Video

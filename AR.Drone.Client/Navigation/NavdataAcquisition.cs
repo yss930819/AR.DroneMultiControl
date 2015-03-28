@@ -100,20 +100,22 @@ namespace AR.Drone.Client.Navigation
                         }
                         else
                         {
-                            //接收数据
+                            //接收数据，阻塞式
                             byte[] data = udpClient.Receive(ref remoteEp);
-                            //创建新的
+                            //创建新的packet
                             var packet = new NavigationPacket
                                 {
                                     Timestamp = DateTime.UtcNow.Ticks,
                                     Data = data
                                 };
-
+                            //重启超时计时器
                             swNavdataTimeout.Restart();
 
+                            //设置正在获取状态为真
                             _isAcquiring = true;
                             _onAcquisitionStarted();
 
+                            //发送以获取到的包
                             _packetAcquired(packet);
                         }
 
@@ -126,6 +128,8 @@ namespace AR.Drone.Client.Navigation
                 }
                 finally
                 {
+                    //若之前状态为正在获取
+                    //就将其关闭，并发送事件
                     if (_isAcquiring)
                     {
                         _isAcquiring = false;
