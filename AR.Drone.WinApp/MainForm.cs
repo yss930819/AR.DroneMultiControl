@@ -42,7 +42,7 @@ namespace AR.Drone.WinApp
         private readonly DroneClient _droneClient;
         //视频框架
         private readonly List<PlayerForm> _playerForms;
-        //
+        //视频包解析工具
         private readonly VideoPacketDecoderWorker _videoPacketDecoderWorker;
         private Settings _settings;
         private VideoFrame _frame;
@@ -51,8 +51,9 @@ namespace AR.Drone.WinApp
         private NavigationData _navigationData;
         //导航数据包
         private NavigationPacket _navigationPacket;
+        //包数据保存类
         private PacketRecorder _packetRecorderWorker;
-        //视频文件流
+        //视频存储文件流
         private FileStream _recorderStream;
         //自动驾驶
         private Autopilot _autopilot;
@@ -62,8 +63,8 @@ namespace AR.Drone.WinApp
         private bool _writeFile = false;
         //Navdata文件流
         private FileStream _navdataFileStream;
-        private StreamWriter _navdataWriteStream;
-        //视频存储文件
+        private PacketRecorder _navdataPacketRecorder;
+        //视频存储位置
         private string _vedioDir = System.Environment.CurrentDirectory + @"/vedio";
 
         #endregion
@@ -151,6 +152,8 @@ namespace AR.Drone.WinApp
         /// <returns></returns>
         private void OnNavigationPacketAcquired(NavigationPacket packet)
         {
+
+            // 将数据包入队 准备写入文件
             if (_packetRecorderWorker != null && _packetRecorderWorker.IsAlive)
                 _packetRecorderWorker.EnqueuePacket(packet);
 
@@ -166,6 +169,7 @@ namespace AR.Drone.WinApp
         /// <returns></returns>
         private void OnVideoPacketAcquired(VideoPacket packet)
         {
+            //将视频包入队 准备写入文件
             if (_packetRecorderWorker != null && _packetRecorderWorker.IsAlive)
                 _packetRecorderWorker.EnqueuePacket(packet);
             if (_videoPacketDecoderWorker.IsAlive)
@@ -207,12 +211,6 @@ namespace AR.Drone.WinApp
             else
                 VideoHelper.UpdateBitmap(ref _frameBitmap, ref _frame);
 
-            //存储图像
-            if (_writeFile)
-            {
-                _frameBitmap.Save(_vedioDir +@"/"+ _frame.Timestamp+".bmp", System.Drawing.Imaging.ImageFormat.Bmp);
-            }
-
             pbVideo.Image = _frameBitmap;
         }
 
@@ -252,12 +250,6 @@ namespace AR.Drone.WinApp
                 var flying_state = (FLYING_STATES) (navdataBag.demo.ctrl_state & 0xffff);
                 node = vativeNode.Nodes.GetOrCreate("flying_state");
                 node.Text = string.Format("Ctrl State: {0}", flying_state);
-
-                //将navdataBag 写入文件
-                if (_writeFile)
-                {
-                    WriteNavdata(navdataBag);
-                }
                 
 
                 DumpBranch(vativeNode.Nodes, navdataBag);
@@ -268,6 +260,12 @@ namespace AR.Drone.WinApp
                 btnAutopilot.ForeColor = Color.Black;
         }
 
+        /// <summary>
+        /// 解析生成树
+        /// </summary>
+        /// <param name="nodes"></param>
+        /// <param name="o"></param>
+        /// <returns></returns>
         private void DumpBranch(TreeNodeCollection nodes, object o)
         {
             Type type = o.GetType();
@@ -452,6 +450,12 @@ namespace AR.Drone.WinApp
             sendConfigTask.Start();
         }
 
+        
+        /// <summary>
+        /// 停止录像
+        /// 释放使用的资源
+        /// </summary>
+        /// <returns></returns>
         private void StopRecording()
         {
             if (_packetRecorderWorker != null)
@@ -460,13 +464,33 @@ namespace AR.Drone.WinApp
                 _packetRecorderWorker.Join();
                 _packetRecorderWorker = null;
             }
+            if (_navdataPacketRecorder != null)
+            {
+                _navdataPacketRecorder.Stop();
+                _navdataPacketRecorder.Join();
+                _navdataPacketRecorder = null;
+            }
             if (_recorderStream != null)
             {
                 _recorderStream.Dispose();
                 _recorderStream = null;
             }
+
+            if (_navdataFileStream != null)
+            {
+                _navdataFileStream.Dispose();
+                _navdataFileStream = null;
+            }
         }
 
+        
+        /// <summary>
+        /// 开始记录视频
+        /// 按钮点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private void btnStartRecording_Click(object sender, EventArgs e)
         {
             string path = string.Format("flight_{0:yyyy_MM_dd_HH_mm}" + ARDroneTrackFileExt, DateTime.Now);
@@ -484,11 +508,25 @@ namespace AR.Drone.WinApp
             }
         }
 
+        /// <summary>
+        /// 停止记录视频
+        /// 按钮点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private void btnStopRecording_Click(object sender, EventArgs e)
         {
             StopRecording();
         }
 
+
+        /// <summary>
+        /// 视屏会看按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private void btnReplay_Click(object sender, EventArgs e)
         {
             using (var dialog = new OpenFileDialog {DefaultExt = ARDroneTrackFileExt, Filter = ARDroneTrackFilesFilter})
@@ -582,60 +620,42 @@ namespace AR.Drone.WinApp
         /// <returns></returns>
         private void btnFileWrite_Click(object sender, EventArgs e)
         {
-            if (btnFileWrite.Text.Equals("写文件"))
-            {
-                string file = string.Format(@"navdata_{0:yyyy_MM_dd_HH_mm}.txt", DateTime.Now);
-                string dir = System.Environment.CurrentDirectory + @"/navdata";
-                btnFileWrite.Text = "停  止";
-                if (!Directory.Exists(dir))
-                {
-                    Directory.CreateDirectory(dir);
-                }
-                if (!Directory.Exists(_vedioDir))
-                {
-                    Directory.CreateDirectory(_vedioDir);
-                }
+            //if (btnFileWrite.Text.Equals("写文件"))
+            //{
+            //    string navdataFile = string.Format(@"navdata_{0:yyyy_MM_dd_HH_mm}.nav", DateTime.Now);
+            //    string vedioFile = string.Format(@"vedio_{0:yyyy_MM_dd_HH_mm}.vedio", DateTime.Now);
+            //    string dir = System.Environment.CurrentDirectory + @"/navdata";
+            //    btnFileWrite.Text = "停  止";
+            //    if (!Directory.Exists(dir))
+            //    {
+            //        Directory.CreateDirectory(dir);
+            //    }
+            //    if (!Directory.Exists(_vedioDir))
+            //    {
+            //        Directory.CreateDirectory(_vedioDir);
+            //    }
 
-                try
-                {
-	                _navdataFileStream = new FileStream(dir+@"/"+file, FileMode.OpenOrCreate);
-	                _navdataWriteStream = new StreamWriter(_navdataFileStream);
-                    _navdataWriteStream.WriteLine("开始时间：" + DateTime.UtcNow.Ticks);
-                    _navdataWriteStream.Flush();
-                    _writeFile = true;
-                }
-                catch (System.Exception ex)
-                {
-                    Trace.Write("文件创建失败", "我的文件输出流");
-                }
-            }
-            else if (btnFileWrite.Text.Equals("停  止"))
-            {
-                _navdataWriteStream.WriteLine("结束时间：" + DateTime.UtcNow.Ticks);
-                _navdataWriteStream.Flush();
-                //关闭文件流
-                _navdataWriteStream.Close();
-                _navdataFileStream.Close();
-                _writeFile = false;
-                btnFileWrite.Text = "写文件";
-            }
+            //    try
+            //    {
+            //        _navdataFileStream = new FileStream(dir+@"/"+ navdataFile, FileMode.OpenOrCreate);
+            //        _recorderStream = new FileStream(_vedioDir + "/" + vedioFile, FileMode.OpenOrCreate);
+            //        _packetRecorderWorker = new PacketRecorder(_recorderStream);
+            //        _packetRecorderWorker.Start();
+            //        _navdataPacketRecorder = new PacketRecorder(_navdataFileStream);
+            //        _navdataPacketRecorder.Start();
+            //    }
+            //    catch (System.Exception ex)
+            //    {
+            //        Trace.Write("文件创建失败", "我的文件输出流");
+            //    }
+            //}
+            //else if (btnFileWrite.Text.Equals("停  止"))
+            //{
+            //    _navdataFileStream.Close();
+            //    _writeFile = false;
+            //    btnFileWrite.Text = "写文件";
+            //}
 
-        }
-
-
-        
-        /// <summary>
-        /// Navdata数据写入文件
-        /// </summary>
-        /// <param name="navdataBag"></param>
-        /// <returns></returns>
-        private void WriteNavdata(NavdataBag navdataBag)
-        {
-            _navdataWriteStream.WriteLine("--------------------开始------------------------");
-            _navdataWriteStream.WriteLine("timestamp:" + _navigationPacket.Timestamp);
-            _navdataWriteStream.WriteLine("deno:" + navdataBag.demo.ToString());
-            _navdataWriteStream.WriteLine("--------------------结束------------------------");
-            _navdataWriteStream.Flush();
         }
 
     }

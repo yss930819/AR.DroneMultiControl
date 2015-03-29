@@ -91,6 +91,10 @@
       <Project>{DD02DB21-14CF-4E03-BEE2-AFB2B1C49A4D}</Project>
       <Name>AR.Drone.Media</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AR.Drone.MyTool\AR.Drone.MyTool.csproj">
+      <Project>{66843f57-f51d-40b3-88a7-58939815199f}</Project>
+      <Name>AR.Drone.MyTool</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AR.Drone.Video\AR.Drone.Video.csproj">
       <Project>{36C63293-4C2D-41EC-B231-FAF55845C014}</Project>
       <Name>AR.Drone.Video</Name>

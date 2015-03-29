@@ -1,4 +1,13 @@
-﻿using System.Collections.Concurrent;
+﻿/*
+ * 时间 2015 3 29
+ * 注释 杨率帅
+ *
+ * 本代码为 Packet数据保存类
+ * 可以保存两种数据包
+ * 
+ */
+
+using System.Collections.Concurrent;
 using System.IO;
 using System.Threading;
 using AR.Drone.Infrastructure;

@@ -33,23 +33,24 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnReplay = new System.Windows.Forms.Button();
             this.tmrVideoUpdate = new System.Windows.Forms.Timer(this.components);
+            this.btnDecode = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbVideo)).BeginInit();
             this.SuspendLayout();
             // 
             // pbVideo
             // 
             this.pbVideo.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbVideo.Location = new System.Drawing.Point(12, 12);
+            this.pbVideo.Location = new System.Drawing.Point(12, 11);
             this.pbVideo.Name = "pbVideo";
-            this.pbVideo.Size = new System.Drawing.Size(640, 360);
+            this.pbVideo.Size = new System.Drawing.Size(640, 332);
             this.pbVideo.TabIndex = 3;
             this.pbVideo.TabStop = false;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(577, 378);
+            this.btnClose.Location = new System.Drawing.Point(577, 349);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(75, 21);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -57,9 +58,9 @@
             // 
             // btnReplay
             // 
-            this.btnReplay.Location = new System.Drawing.Point(496, 377);
+            this.btnReplay.Location = new System.Drawing.Point(496, 348);
             this.btnReplay.Name = "btnReplay";
-            this.btnReplay.Size = new System.Drawing.Size(75, 23);
+            this.btnReplay.Size = new System.Drawing.Size(75, 21);
             this.btnReplay.TabIndex = 5;
             this.btnReplay.Text = "Replay";
             this.btnReplay.UseVisualStyleBackColor = true;
@@ -70,11 +71,23 @@
             this.tmrVideoUpdate.Interval = 20;
             this.tmrVideoUpdate.Tick += new System.EventHandler(this.tmrVideoUpdate_Tick);
             // 
+            // btnDecode
+            // 
+            this.btnDecode.Location = new System.Drawing.Point(415, 349);
+            this.btnDecode.Name = "btnDecode";
+            this.btnDecode.Size = new System.Drawing.Size(75, 21);
+            this.btnDecode.TabIndex = 6;
+            this.btnDecode.Text = "解码";
+            this.btnDecode.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDecode.UseVisualStyleBackColor = true;
+            this.btnDecode.Click += new System.EventHandler(this.btnDecode_Click);
+            // 
             // PlayerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 410);
+            this.ClientSize = new System.Drawing.Size(662, 378);
+            this.Controls.Add(this.btnDecode);
             this.Controls.Add(this.btnReplay);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pbVideo);
@@ -92,5 +105,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnReplay;
         private System.Windows.Forms.Timer tmrVideoUpdate;
+        private System.Windows.Forms.Button btnDecode;
     }
 }
