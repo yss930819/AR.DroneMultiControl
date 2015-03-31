@@ -1,3 +1,14 @@
+/*
+ * 时间 2015 3 30
+ * 注释 杨率帅
+ * 
+ * 从AtCommand 类继承
+ * 实现了Land
+ * takeoff
+ * 和 Emergency几种状态
+ * 
+ */
+
 namespace AR.Drone.Client.Command
 {
     public class RefCommand : AtCommand

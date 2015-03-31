@@ -79,7 +79,9 @@ namespace AR.Drone.Client.Command
             int sequenceNumber = 1;
 
             //使用using方便之后释放udpClient 资源
-            using (var udpClient = new UdpClient(CommandPort))
+            //using (var udpClient = new UdpClient(CommandPort))
+            //不绑定本地端口
+            using (var udpClient = new UdpClient())
             {
                 udpClient.Connect(_configuration.DroneHostname, CommandPort);
 
@@ -104,7 +106,7 @@ namespace AR.Drone.Client.Command
                             }
 
                             AtCommand command;
-                            //从列表中读取指令并添加到流中
+                            //从队列中读取指令并添加到流中
                             while (_commandQueue.TryDequeue(out command))
                             {
                                 AddCommand(ms, command, ref sequenceNumber);

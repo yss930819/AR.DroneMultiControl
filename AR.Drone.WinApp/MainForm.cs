@@ -5,6 +5,9 @@
  * 本代码为程序主界面代码
  * 从Form 继承
  * 为整个代码的详细函数
+ * 
+ * 修改构造函数可以连接多架无人机
+ * 
  */
 
 using System;
@@ -37,7 +40,7 @@ namespace AR.Drone.WinApp
         private const string ARDroneTrackFileExt = ".ardrone";
         private const string ARDroneTrackFilesFilter = "AR.Drone track files (*.ardrone)|*.ardrone";
 
-   
+
         //无人机类
         private readonly DroneClient _droneClient;
         //视频框架
@@ -60,18 +63,23 @@ namespace AR.Drone.WinApp
 
         #region 写文件相关变量
         //写文件开关
-        private bool _writeFile = false;
+        //private bool _writeFile = false;
         //Navdata文件流
-        private FileStream _navdataFileStream;
-        private PacketRecorder _navdataPacketRecorder;
+        //  private FileStream _navdataFileStream;
+        // private PacketRecorder _navdataPacketRecorder;
         //视频存储位置
-        private string _vedioDir = System.Environment.CurrentDirectory + @"/vedio";
+        // private string _vedioDir = System.Environment.CurrentDirectory + @"/vedio";
 
         #endregion
 
         #endregion
 
         public MainForm()
+            : this("192.168.1.13")
+        {
+        }
+
+        public MainForm(String host)
         {
             InitializeComponent();
 
@@ -80,7 +88,7 @@ namespace AR.Drone.WinApp
             _videoPacketDecoderWorker.Start();
 
             //创建新的无人机连接
-            _droneClient = new DroneClient("192.168.1.1");
+            _droneClient = new DroneClient(host);
             //导航数据获取事件，添加事件响应
             _droneClient.NavigationPacketAcquired += OnNavigationPacketAcquired;
             _droneClient.VideoPacketAcquired += OnVideoPacketAcquired;
@@ -93,9 +101,37 @@ namespace AR.Drone.WinApp
             _playerForms = new List<PlayerForm>();
 
             _videoPacketDecoderWorker.UnhandledException += UnhandledException;
+
         }
 
-        
+        public MainForm(DroneClient droneClient)
+        {
+
+            InitializeComponent();
+
+            //视频解码设置
+            _videoPacketDecoderWorker = new VideoPacketDecoderWorker(PixelFormat.BGR24, true, OnVideoPacketDecoded);
+            _videoPacketDecoderWorker.Start();
+
+            //创建新的无人机连接
+            _droneClient = droneClient;
+            //导航数据获取事件，添加事件响应
+            _droneClient.NavigationPacketAcquired += OnNavigationPacketAcquired;
+            _droneClient.VideoPacketAcquired += OnVideoPacketAcquired;
+            _droneClient.NavigationDataAcquired += data => _navigationData = data;
+
+            //定时器更新允许
+            tmrStateUpdate.Enabled = true;
+            tmrVideoUpdate.Enabled = true;
+
+            _playerForms = new List<PlayerForm>();
+
+            _videoPacketDecoderWorker.UnhandledException += UnhandledException;
+
+
+        }
+
+
         /// <summary>
         /// 错误处理不份
         /// 让用户拷贝错误信息自行处理
@@ -108,7 +144,7 @@ namespace AR.Drone.WinApp
             MessageBox.Show(exception.ToString(), "Unhandled Exception (Ctrl+C)", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        
+
         /// <summary>
         /// 重写Load代码
         /// 判断客户端类型
@@ -121,7 +157,7 @@ namespace AR.Drone.WinApp
             Text += Environment.Is64BitProcess ? " [64-bit]" : " [32-bit]";
         }
 
-        
+
         /// <summary>
         /// 重写关闭代码
         /// 将开启的资源关闭
@@ -144,7 +180,7 @@ namespace AR.Drone.WinApp
             base.OnClosed(e);
         }
 
-        
+
         /// <summary>
         /// 响应NavigationPacket获取委托
         /// </summary>
@@ -243,14 +279,14 @@ namespace AR.Drone.WinApp
             NavdataBag navdataBag;
             if (_navigationPacket.Data != null && NavdataBagParser.TryParse(ref _navigationPacket, out navdataBag))
             {
-                var ctrl_state = (CTRL_STATES) (navdataBag.demo.ctrl_state >> 0x10);
+                var ctrl_state = (CTRL_STATES)(navdataBag.demo.ctrl_state >> 0x10);
                 node = vativeNode.Nodes.GetOrCreate("ctrl_state");
                 node.Text = string.Format("Ctrl State: {0}", ctrl_state);
 
-                var flying_state = (FLYING_STATES) (navdataBag.demo.ctrl_state & 0xffff);
+                var flying_state = (FLYING_STATES)(navdataBag.demo.ctrl_state & 0xffff);
                 node = vativeNode.Nodes.GetOrCreate("flying_state");
                 node.Text = string.Format("Ctrl State: {0}", flying_state);
-                
+
 
                 DumpBranch(vativeNode.Nodes, navdataBag);
             }
@@ -269,7 +305,7 @@ namespace AR.Drone.WinApp
         private void DumpBranch(TreeNodeCollection nodes, object o)
         {
             Type type = o.GetType();
-         
+
             foreach (FieldInfo fieldInfo in type.GetFields())
             {
                 TreeNode node = nodes.GetOrCreate(fieldInfo.Name);
@@ -300,7 +336,7 @@ namespace AR.Drone.WinApp
             }
         }
 
-#region 控制按钮响应事件
+        #region 控制按钮响应事件
 
         private void btnFlatTrim_Click(object sender, EventArgs e)
         {
@@ -410,17 +446,17 @@ namespace AR.Drone.WinApp
 
                         settings.Custom.SessionId = Settings.NewId();
                         _droneClient.Send(settings);
-                        
+
                         _droneClient.AckControlAndWaitForConfirmation();
 
                         settings.Custom.ProfileId = Settings.NewId();
                         _droneClient.Send(settings);
-                        
+
                         _droneClient.AckControlAndWaitForConfirmation();
 
                         settings.Custom.ApplicationId = Settings.NewId();
                         _droneClient.Send(settings);
-                        
+
                         _droneClient.AckControlAndWaitForConfirmation();
                     }
 
@@ -450,7 +486,7 @@ namespace AR.Drone.WinApp
             sendConfigTask.Start();
         }
 
-        
+
         /// <summary>
         /// 停止录像
         /// 释放使用的资源
@@ -464,26 +500,26 @@ namespace AR.Drone.WinApp
                 _packetRecorderWorker.Join();
                 _packetRecorderWorker = null;
             }
-            if (_navdataPacketRecorder != null)
-            {
-                _navdataPacketRecorder.Stop();
-                _navdataPacketRecorder.Join();
-                _navdataPacketRecorder = null;
-            }
+            //             if (_navdataPacketRecorder != null)
+            //             {
+            //                 _navdataPacketRecorder.Stop();
+            //                 _navdataPacketRecorder.Join();
+            //                 _navdataPacketRecorder = null;
+            //             }
             if (_recorderStream != null)
             {
                 _recorderStream.Dispose();
                 _recorderStream = null;
             }
 
-            if (_navdataFileStream != null)
-            {
-                _navdataFileStream.Dispose();
-                _navdataFileStream = null;
-            }
+            //             if (_navdataFileStream != null)
+            //             {
+            //                 _navdataFileStream.Dispose();
+            //                 _navdataFileStream = null;
+            //             }
         }
 
-        
+
         /// <summary>
         /// 开始记录视频
         /// 按钮点击事件
@@ -495,7 +531,7 @@ namespace AR.Drone.WinApp
         {
             string path = string.Format("flight_{0:yyyy_MM_dd_HH_mm}" + ARDroneTrackFileExt, DateTime.Now);
 
-            using (var dialog = new SaveFileDialog {DefaultExt = ARDroneTrackFileExt, Filter = ARDroneTrackFilesFilter, FileName = path})
+            using (var dialog = new SaveFileDialog { DefaultExt = ARDroneTrackFileExt, Filter = ARDroneTrackFilesFilter, FileName = path })
             {
                 if (dialog.ShowDialog(this) == DialogResult.OK)
                 {
@@ -522,20 +558,20 @@ namespace AR.Drone.WinApp
 
 
         /// <summary>
-        /// 视屏会看按钮
+        /// 视屏回放按钮
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         /// <returns></returns>
         private void btnReplay_Click(object sender, EventArgs e)
         {
-            using (var dialog = new OpenFileDialog {DefaultExt = ARDroneTrackFileExt, Filter = ARDroneTrackFilesFilter})
+            using (var dialog = new OpenFileDialog { DefaultExt = ARDroneTrackFileExt, Filter = ARDroneTrackFilesFilter })
             {
                 if (dialog.ShowDialog(this) == DialogResult.OK)
                 {
                     StopRecording();
 
-                    var playerForm = new PlayerForm {FileName = dialog.FileName};
+                    var playerForm = new PlayerForm { FileName = dialog.FileName };
                     playerForm.Closed += (o, args) => _playerForms.Remove(o as PlayerForm);
                     _playerForms.Add(playerForm);
                     playerForm.Show(this);
@@ -543,7 +579,7 @@ namespace AR.Drone.WinApp
             }
         }
 
-#endregion
+        #endregion
 
 
         // Make sure '_autopilot' variable is initialized with an object
@@ -611,7 +647,7 @@ namespace AR.Drone.WinApp
             }
         }
 
-        
+
         /// <summary>
         /// 写文件按钮
         /// </summary>

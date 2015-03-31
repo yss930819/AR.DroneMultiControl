@@ -77,7 +77,10 @@ namespace AR.Drone.Client.Navigation
         {
             _isAcquiring = false;
             //新建UDP客户端端口
-            using (var udpClient = new UdpClient(NavdataPort))
+            
+            //using (var udpClient = new UdpClient(NavdataPort))
+            //测试不绑定本地端口 有一个会看不到导航数据
+            using (var udpClient = new UdpClient())
                 try
                 {
                     //与飞机连接
@@ -86,7 +89,9 @@ namespace AR.Drone.Client.Navigation
                     //发数据确认连接可行
                     SendKeepAliveSignal(udpClient);
                     //接收任何ip传入NavdataPort的数据
-                    var remoteEp = new IPEndPoint(IPAddress.Any, NavdataPort);
+                    //var remoteEp = new IPEndPoint(IPAddress.Any, NavdataPort);
+                    //只接受固定ip
+                    var remoteEp = new IPEndPoint(IPAddress.Parse(_configuration.DroneHostname), NavdataPort);
 
                     //定位超时时间的变量
                     Stopwatch swKeepAlive = Stopwatch.StartNew();

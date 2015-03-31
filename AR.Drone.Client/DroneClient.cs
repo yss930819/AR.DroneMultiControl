@@ -137,7 +137,6 @@ namespace AR.Drone.Client
 
         /// <summary>
         /// 更新NavgationData
-        /// 
         /// </summary>
         /// <param name="packet"></param>
         /// <returns></returns>
@@ -155,12 +154,22 @@ namespace AR.Drone.Client
         }
 
 
+        /// <summary>
+        /// 导航数据接收事件发送消息
+        /// </summary>
+        /// <param name="navigationData"></param>
+        /// <returns></returns>
         private void OnNavigationDataAcquired(NavigationData navigationData)
         {
             if (NavigationDataAcquired != null)
                 NavigationDataAcquired(navigationData);
         }
 
+        /// <summary>
+        /// 解析NavigationState状态
+        /// </summary>
+        /// <param name="state"></param>
+        /// <returns></returns>
         private void ProcessStateTransitions(NavigationState state)
         {
             if (state.HasFlag(NavigationState.Bootstrap))
@@ -277,6 +286,7 @@ namespace AR.Drone.Client
             return task;
         }
 
+        //发送控制指令
         public void Send(AtCommand command)
         {
             _commandQueue.Enqueue(command);
@@ -365,6 +375,7 @@ namespace AR.Drone.Client
 
         /// <summary>
         /// This command controls the drone flight motions.
+        /// 控制飞机指令模块
         /// </summary>
         /// <param name="mode">Enabling the use of progressive commands and/or the Combined Yaw mode (bitfield).</param>
         /// <param name="roll">Drone left-right tilt - value in range [−1..1].</param>

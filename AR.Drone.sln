@@ -26,6 +26,8 @@ Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UML", "UML\UML.modelproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AR.Drone.MyTool", "AR.Drone.MyTool\AR.Drone.MyTool.csproj", "{66843F57-F51D-40B3-88A7-58939815199F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AR.Drone.Multi", "AR.Drone.Multi\AR.Drone.Multi.csproj", "{076164A3-5353-490F-9635-A83E95BBFD94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +74,10 @@ Global
 		{66843F57-F51D-40B3-88A7-58939815199F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66843F57-F51D-40B3-88A7-58939815199F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66843F57-F51D-40B3-88A7-58939815199F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{076164A3-5353-490F-9635-A83E95BBFD94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{076164A3-5353-490F-9635-A83E95BBFD94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{076164A3-5353-490F-9635-A83E95BBFD94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{076164A3-5353-490F-9635-A83E95BBFD94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
