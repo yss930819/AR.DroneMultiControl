@@ -61,21 +61,17 @@ namespace AR.Drone.WinApp
         //自动驾驶
         private Autopilot _autopilot;
 
-        #region 写文件相关变量
-        //写文件开关
-        //private bool _writeFile = false;
-        //Navdata文件流
-        //  private FileStream _navdataFileStream;
-        // private PacketRecorder _navdataPacketRecorder;
-        //视频存储位置
-        // private string _vedioDir = System.Environment.CurrentDirectory + @"/vedio";
+        #region 点到点控制相关变量
+
+        private bool _isP2P;
+
 
         #endregion
 
         #endregion
 
         public MainForm()
-            : this("192.168.1.13")
+            : this("192.168.1.1")
         {
         }
 
@@ -133,7 +129,7 @@ namespace AR.Drone.WinApp
 
 
         /// <summary>
-        /// 错误处理不份
+        /// 错误处理部分
         /// 让用户拷贝错误信息自行处理
         /// </summary>
         /// <param name="sender"></param>
@@ -407,7 +403,9 @@ namespace AR.Drone.WinApp
 
         private void btnForward_Click(object sender, EventArgs e)
         {
-            _droneClient.Progress(FlightMode.Progressive, pitch: -0.05f);
+            String _str = TestTB.Text;
+            float _tmp = float.Parse(_str);
+            _droneClient.Progress(FlightMode.Progressive, pitch: _tmp);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -649,50 +647,62 @@ namespace AR.Drone.WinApp
 
 
         /// <summary>
-        /// 写文件按钮
+        /// 点到点控制测试按钮
+        /// 测试点到点控制
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         /// <returns></returns>
         private void btnFileWrite_Click(object sender, EventArgs e)
         {
-            //if (btnFileWrite.Text.Equals("写文件"))
-            //{
-            //    string navdataFile = string.Format(@"navdata_{0:yyyy_MM_dd_HH_mm}.nav", DateTime.Now);
-            //    string vedioFile = string.Format(@"vedio_{0:yyyy_MM_dd_HH_mm}.vedio", DateTime.Now);
-            //    string dir = System.Environment.CurrentDirectory + @"/navdata";
-            //    btnFileWrite.Text = "停  止";
-            //    if (!Directory.Exists(dir))
-            //    {
-            //        Directory.CreateDirectory(dir);
-            //    }
-            //    if (!Directory.Exists(_vedioDir))
-            //    {
-            //        Directory.CreateDirectory(_vedioDir);
-            //    }
-
-            //    try
-            //    {
-            //        _navdataFileStream = new FileStream(dir+@"/"+ navdataFile, FileMode.OpenOrCreate);
-            //        _recorderStream = new FileStream(_vedioDir + "/" + vedioFile, FileMode.OpenOrCreate);
-            //        _packetRecorderWorker = new PacketRecorder(_recorderStream);
-            //        _packetRecorderWorker.Start();
-            //        _navdataPacketRecorder = new PacketRecorder(_navdataFileStream);
-            //        _navdataPacketRecorder.Start();
-            //    }
-            //    catch (System.Exception ex)
-            //    {
-            //        Trace.Write("文件创建失败", "我的文件输出流");
-            //    }
-            //}
-            //else if (btnFileWrite.Text.Equals("停  止"))
-            //{
-            //    _navdataFileStream.Close();
-            //    _writeFile = false;
-            //    btnFileWrite.Text = "写文件";
-            //}
+            if (btnP2P.Text.Equals("点到点"))
+            {
+                btnP2P.Text = "停  止";
+                tmrPointToPoint.Enabled = true;
+                _isP2P = true;
+            }
+            else if(btnP2P.Text.Equals("停  止"))
+            {
+                btnP2P.Text = "点到点";
+                tmrPointToPoint.Enabled = false;
+                _isP2P = false;
+                if (!_isP2P && _droneClient.NavigationData.State == NavigationState.Flying)
+                {
+                    _droneClient.Land();
+                }
+            }
 
         }
+
+        /// <summary>
+        /// 点到点控制的控制律位置
+        /// 采样周期为10Hz
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        private void tmrPointToPoint_Tick(object sender, EventArgs e)
+        {
+
+            Trace.WriteLine("激活" + DateTime.Now);
+            if (_isP2P && _droneClient.NavigationData.State == NavigationState.Landed)
+            {
+                _droneClient.Takeoff();
+
+            }
+
+            //待更新控制率部分
+            else if (_isP2P && _droneClient.NavigationData.State == NavigationState.Flying)
+            {
+
+                //先获取当前位置信息
+                //更具偏航角确定飞行方向
+
+                Trace.WriteLine("已经在 飞了");
+            }
+
+        }
+
 
     }
 }

@@ -56,7 +56,9 @@
             this.btnStopRecording = new System.Windows.Forms.Button();
             this.btnReplay = new System.Windows.Forms.Button();
             this.btnAutopilot = new System.Windows.Forms.Button();
-            this.btnFileWrite = new System.Windows.Forms.Button();
+            this.btnP2P = new System.Windows.Forms.Button();
+            this.tmrPointToPoint = new System.Windows.Forms.Timer(this.components);
+            this.TestTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbVideo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -319,22 +321,35 @@
             this.btnAutopilot.UseVisualStyleBackColor = true;
             this.btnAutopilot.Click += new System.EventHandler(this.btnAutopilot_Click);
             // 
-            // btnFileWrite
+            // btnP2P
             // 
-            this.btnFileWrite.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnFileWrite.Location = new System.Drawing.Point(12, 435);
-            this.btnFileWrite.Name = "btnFileWrite";
-            this.btnFileWrite.Size = new System.Drawing.Size(75, 23);
-            this.btnFileWrite.TabIndex = 0;
-            this.btnFileWrite.Text = "写文件";
-            this.btnFileWrite.Click += new System.EventHandler(this.btnFileWrite_Click);
+            this.btnP2P.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnP2P.Location = new System.Drawing.Point(12, 435);
+            this.btnP2P.Name = "btnP2P";
+            this.btnP2P.Size = new System.Drawing.Size(75, 23);
+            this.btnP2P.TabIndex = 0;
+            this.btnP2P.Text = "点到点";
+            this.btnP2P.Click += new System.EventHandler(this.btnFileWrite_Click);
+            // 
+            // tmrPointToPoint
+            // 
+            this.tmrPointToPoint.Tick += new System.EventHandler(this.tmrPointToPoint_Tick);
+            // 
+            // TestTB
+            // 
+            this.TestTB.Location = new System.Drawing.Point(420, 376);
+            this.TestTB.Name = "TestTB";
+            this.TestTB.Size = new System.Drawing.Size(74, 21);
+            this.TestTB.TabIndex = 26;
+            this.TestTB.Text = "-0.05";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 492);
-            this.Controls.Add(this.btnFileWrite);
+            this.Controls.Add(this.TestTB);
+            this.Controls.Add(this.btnP2P);
             this.Controls.Add(this.btnAutopilot);
             this.Controls.Add(this.btnReplay);
             this.Controls.Add(this.btnStopRecording);
@@ -364,6 +379,7 @@
             this.Text = "AR.Drone Control";
             ((System.ComponentModel.ISupportInitialize)(this.pbVideo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -396,7 +412,9 @@
         private System.Windows.Forms.Button btnStopRecording;
         private System.Windows.Forms.Button btnReplay;
         private System.Windows.Forms.Button btnAutopilot;
-        private System.Windows.Forms.Button btnFileWrite;
+        private System.Windows.Forms.Button btnP2P;
+        private System.Windows.Forms.Timer tmrPointToPoint;
+        private System.Windows.Forms.TextBox TestTB;
     }
 }
 

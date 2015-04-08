@@ -7,6 +7,7 @@ namespace AR.Drone.Client.Command
     {
         /// <summary>
         /// The hover.
+        /// 悬停
         /// </summary>
         Hover = 0,
 
@@ -22,6 +23,7 @@ namespace AR.Drone.Client.Command
 
         /// <summary>
         /// The absolute control.
+        /// 绝对控制
         /// </summary>
         AbsoluteControl = 1 << 2
     }
