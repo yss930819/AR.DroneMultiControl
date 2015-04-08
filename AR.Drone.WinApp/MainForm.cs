@@ -661,12 +661,12 @@ namespace AR.Drone.WinApp
                 tmrPointToPoint.Enabled = true;
                 _isP2P = true;
             }
-            else if(btnP2P.Text.Equals("停  止"))
+            else if (btnP2P.Text.Equals("停  止"))
             {
                 btnP2P.Text = "点到点";
                 tmrPointToPoint.Enabled = false;
                 _isP2P = false;
-                if (!_isP2P && _droneClient.NavigationData.State == NavigationState.Flying)
+                if (!_isP2P && ((_navigationData.State & NavigationState.Flying) != 0))
                 {
                     _droneClient.Land();
                 }
@@ -683,16 +683,21 @@ namespace AR.Drone.WinApp
         /// <returns></returns>
         private void tmrPointToPoint_Tick(object sender, EventArgs e)
         {
-
-            Trace.WriteLine("激活" + DateTime.Now);
-            if (_isP2P && _droneClient.NavigationData.State == NavigationState.Landed)
+            if (_navigationData != null)
             {
-                _droneClient.Takeoff();
-
+                Trace.WriteLine("激活" + DateTime.Now + _navigationData.State);
             }
 
+
+            //if (_isP2P && ((_navigationData.State == (NavigationState.Command | NavigationState.Landed)) ||
+            //    (_navigationData.State) == (NavigationState.Command | NavigationState.Landed | NavigationState.Watchdog)))
+            if (_isP2P && ((_navigationData.State & NavigationState.Landed) != 0))
+            {
+                _droneClient.Takeoff();
+                Trace.WriteLine("起飞");
+            }
             //待更新控制率部分
-            else if (_isP2P && _droneClient.NavigationData.State == NavigationState.Flying)
+            else if (_isP2P && ((_navigationData.State & NavigationState.Flying) != 0))
             {
 
                 //先获取当前位置信息

@@ -33,8 +33,8 @@ namespace AR.Drone.WinApp
                 case PlatformID.Win32Windows:
 
                     //此处为为FFmpeg库文件的地址
-                    string ffmpegPath = string.Format(@"FFmpeg/bin/windows/{0}", Environment.Is64BitProcess ? "x64" : "x86");
-                    //string ffmpegPath = string.Format(@"../../../FFmpeg/bin/windows/{0}", Environment.Is64BitProcess ? "x64" : "x86");
+                    //string ffmpegPath = string.Format(@"FFmpeg/bin/windows/{0}", Environment.Is64BitProcess ? "x64" : "x86");
+                    string ffmpegPath = string.Format(@"../../../FFmpeg/bin/windows/{0}", Environment.Is64BitProcess ? "x64" : "x86");
 
                     InteropHelper.RegisterLibrariesSearchPath(ffmpegPath);
                     break;
