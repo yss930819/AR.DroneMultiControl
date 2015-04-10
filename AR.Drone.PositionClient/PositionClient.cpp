@@ -1,5 +1,7 @@
 // 这是主 DLL 文件。
 
+// 通过本文件调用已经写好的类实现数据的传输
+
 #include "stdafx.h"
 #include "quadrotor.h"
 #include "PositionClient.h"
@@ -39,7 +41,7 @@ void PositionClient::RecevieData()
 	addrClient = new SOCKADDR_IN();
 
 	err=recvfrom(sockSrv,(char *)(_quadrotor),length,0,(SOCKADDR*)addrClient,pLen);
-	cout<< len<<"::"<<*pLen<<"::"<<addrClient<<"::"<<sockSrv<<endl;
+	//cout<< len<<"::"<<*pLen<<"::"<<addrClient<<"::"<<sockSrv<<endl;
 	cout<<err<<endl;
 
 	if (err!=-1)
@@ -57,6 +59,13 @@ void PositionClient::RecevieData()
 	}      
 }
 
+//************************************
+// Method:    initSocket
+// FullName:  AR::Drone::Client::PositionClient::initSocket
+// Access:    public 
+// Returns:   void
+// Qualifier: 调用获取数据之前必须调用本函数
+//************************************
 void AR::Drone::Client::PositionClient::initSocket()
 {
 	//SOCKET初始化
@@ -91,6 +100,21 @@ void AR::Drone::Client::PositionClient::initSocket()
 	
 	len = sizeof(SOCKADDR);
 	length = sizeof(quadrotor);
+}
+
+double AR::Drone::Client::PositionClient::getlongitude()
+{
+	return _quadrotor->longitude;
+}
+
+double AR::Drone::Client::PositionClient::getlatitude()
+{
+	return _quadrotor->latitude;
+}
+
+double AR::Drone::Client::PositionClient::getpsi()
+{
+	return _quadrotor->psi;
 }
 
 

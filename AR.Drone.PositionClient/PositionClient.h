@@ -17,6 +17,9 @@ namespace AR{
 				~PositionClient();
 				void RecevieData();
 				void initSocket();
+				double getlongitude();
+				double getlatitude();
+				double getpsi();
 			private:
 				SOCKET sockSrv;
 				int len;

@@ -30,6 +30,7 @@ using AR.Drone.Video;
 using AR.Drone.Avionics;
 using AR.Drone.Avionics.Objectives;
 using AR.Drone.Avionics.Objectives.IntentObtainers;
+using AR.Drone.MyTool;
 
 namespace AR.Drone.WinApp
 {
@@ -63,7 +64,43 @@ namespace AR.Drone.WinApp
 
         #region 点到点控制相关变量
 
+        private int temp = 0;
+
+        private const float _aimX = 300f;
+        private const float _aimY = 300f;
+        private const float gate = 0.2f;
+        private const float T = 0.1f;
+
+
         private bool _isP2P;
+        private PositionClient _positionClient;
+        //获取位置数据的线程
+        private readonly MyViconPosition _viconPositionGet;
+
+        private float dx;
+        private float dy;
+
+        private float psi;
+        private float currentX;
+        private float currentY;
+
+        private float _controlX;
+        private float[] Xerror = { 0, 0 };
+        private float Xerror_dot;
+        private float inte_x = 0;
+        private float P_pitch = -0.08f;
+        private float D_pitch = -0.9f;
+        private float I_pitch = -0.3f;
+
+
+        private float _controlY;
+        private float[] Yerror = { 0, 0 };
+        private float Yerror_dot;
+        private float inte_y = 0;
+        private float P_roll = -0.08f;
+        private float D_roll = -0.9f;
+        private float I_roll = -0.2f;
+
 
 
         #endregion
@@ -98,6 +135,11 @@ namespace AR.Drone.WinApp
 
             _videoPacketDecoderWorker.UnhandledException += UnhandledException;
 
+            //点到点部分
+            //数据初始化
+            _positionClient = new PositionClient();
+            _viconPositionGet = new MyViconPosition(_positionClient);
+
         }
 
         public MainForm(DroneClient droneClient)
@@ -123,6 +165,12 @@ namespace AR.Drone.WinApp
             _playerForms = new List<PlayerForm>();
 
             _videoPacketDecoderWorker.UnhandledException += UnhandledException;
+
+            //点到点部分
+            //数据初始化
+            _positionClient = new PositionClient();
+            _viconPositionGet = new MyViconPosition(_positionClient);
+
 
 
         }
@@ -172,6 +220,12 @@ namespace AR.Drone.WinApp
 
             _droneClient.Dispose();
             _videoPacketDecoderWorker.Dispose();
+            _viconPositionGet.Dispose();
+
+            if (_positionClient != null)
+            {
+                //~_positionClient();
+            }
 
             base.OnClosed(e);
         }
@@ -657,26 +711,30 @@ namespace AR.Drone.WinApp
         {
             if (btnP2P.Text.Equals("点到点"))
             {
+                temp = 0;
                 btnP2P.Text = "停  止";
                 tmrPointToPoint.Enabled = true;
                 _isP2P = true;
+                _viconPositionGet.Start();
             }
             else if (btnP2P.Text.Equals("停  止"))
             {
                 btnP2P.Text = "点到点";
                 tmrPointToPoint.Enabled = false;
                 _isP2P = false;
-                if (!_isP2P && ((_navigationData.State & NavigationState.Flying) != 0))
+                if (!_isP2P && (_navigationData.State.HasFlag(NavigationState.Flying)))
                 {
                     _droneClient.Land();
                 }
+                _viconPositionGet.Stop();
+                _viconPositionGet.Join();
             }
 
         }
 
         /// <summary>
         /// 点到点控制的控制律位置
-        /// 采样周期为10Hz
+        /// 指令周期为10Hz
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -691,20 +749,68 @@ namespace AR.Drone.WinApp
 
             //if (_isP2P && ((_navigationData.State == (NavigationState.Command | NavigationState.Landed)) ||
             //    (_navigationData.State) == (NavigationState.Command | NavigationState.Landed | NavigationState.Watchdog)))
-            if (_isP2P && ((_navigationData.State & NavigationState.Landed) != 0))
+            if (_isP2P && (_navigationData.State.HasFlag(NavigationState.Landed)))
             {
                 _droneClient.Takeoff();
                 Trace.WriteLine("起飞");
+                temp = 0;
             }
             //待更新控制率部分
-            else if (_isP2P && ((_navigationData.State & NavigationState.Flying) != 0))
+            else if (_isP2P && (_navigationData.State.HasFlag(NavigationState.Flying)) && (temp > 60))
             {
 
                 //先获取当前位置信息
-                //更具偏航角确定飞行方向
+                if (_positionClient != null)
+                {
+                    currentX = (float)_positionClient.getlongitude();
+                    currentY = (float)_positionClient.getlatitude();
+                    psi = (float)_positionClient.getpsi();
 
-                Trace.WriteLine("已经在 飞了");
+                    if (currentY > 2000.0 || currentY < -2000.0 || currentX > 2000.0 || currentX < -2000.0)
+                    {
+                        _droneClient.Hover();
+                        Trace.WriteLine("停23");
+                        return;
+                    }
+
+                }
+                //读取设置的PD值
+                P_pitch = float.Parse(tbPPitch.Text);
+                D_pitch = float.Parse(tbDPitch.Text);
+                P_roll = float.Parse(tbPRoll.Text);
+                D_roll = float.Parse(tbDRoll.Text);
+
+                Trace.WriteLine("P:" + P_pitch + "  D:" + D_pitch);
+
+                //X方向控制
+                Xerror[1] = Xerror[0];
+                Xerror[0] = (_aimX - currentX) / 1000.0f;
+                Xerror_dot = (Xerror[0] - Xerror[1]) / T;
+                Trace.WriteLine("x速度：" + Xerror_dot);
+                Trace.WriteLine("x误差：" + Xerror[0]);
+                _controlX = P_pitch * Xerror[0] + I_pitch * inte_x + D_pitch * Xerror_dot;
+                if (_controlX > gate) _controlX = gate;
+                if (_controlX < -gate) _controlX = -gate;
+
+                //Y方向控制
+                Yerror[1] = Yerror[0];
+                Yerror[0] = (_aimY - currentY) / 1000;
+                Yerror_dot = (Yerror[0] - Yerror[1]) / T;
+                Trace.WriteLine("y速度：" + Yerror_dot);
+                Trace.WriteLine("y误差：" + Yerror[0]);
+                _controlY = P_roll * Yerror[0] + I_roll * inte_y + D_roll * Yerror_dot;
+
+                if (_controlY > gate) _controlY = gate;
+                if (_controlY < -gate) _controlY = -gate;
+
+                _droneClient.Progress(FlightMode.Progressive, roll: _controlY, pitch: _controlX);
             }
+
+            if (temp < 80)
+            {
+                temp++;
+            }
+
 
         }
 

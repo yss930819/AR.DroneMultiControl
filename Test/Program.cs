@@ -24,10 +24,10 @@ namespace Test
 
                 i++;
 
-                if (i >= 10)
-                {
-                    flag = false;
-                }
+                //if (i >= 10)
+                //{
+                //    flag = false;
+                //}
             }
 
             Console.ReadKey();

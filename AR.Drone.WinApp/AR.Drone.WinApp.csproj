@@ -95,6 +95,10 @@
       <Project>{66843f57-f51d-40b3-88a7-58939815199f}</Project>
       <Name>AR.Drone.MyTool</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AR.Drone.PositionClient\AR.Drone.PositionClient.vcxproj">
+      <Project>{c1223ee6-c9e8-4ed3-91c5-0c6a7c932100}</Project>
+      <Name>AR.Drone.PositionClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AR.Drone.Video\AR.Drone.Video.csproj">
       <Project>{36C63293-4C2D-41EC-B231-FAF55845C014}</Project>
       <Name>AR.Drone.Video</Name>
