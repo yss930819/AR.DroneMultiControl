@@ -1,4 +1,5 @@
 // AR.Drone.PositionClient.h
+#include "Stdafx.h"
 
 #pragma once
 
@@ -19,6 +20,7 @@ namespace AR{
 				void initSocket();
 				double getlongitude();
 				double getlatitude();
+				double getaltitude();
 				double getpsi();
 			private:
 				SOCKET sockSrv;

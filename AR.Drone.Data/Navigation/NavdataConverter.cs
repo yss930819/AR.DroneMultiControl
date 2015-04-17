@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+ * 
+ * 注释 杨率帅
+ * 时间 2015/4/10
+ * 
+ * Navadata数据解码
+ * 得出正确结果
+ * 
+ */ 
+
+using System;
 using AR.Drone.Data.Navigation.Native;
 
 namespace AR.Drone.Data.Navigation

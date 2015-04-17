@@ -30,9 +30,14 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Relese 64|AnyCPU'">
+    <OutputPath>bin\Relese 64\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,12 +48,20 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="positionStruct.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AR.Drone.PositionClient\AR.Drone.PositionClient.vcxproj">
       <Project>{c1223ee6-c9e8-4ed3-91c5-0c6a7c932100}</Project>
       <Name>AR.Drone.PositionClient</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AR.Drone.Vicon\AR.Drone.Vicon.vcxproj">
+      <Project>{c85d5196-bad7-4c0c-a7c5-78a42aa85909}</Project>
+      <Name>AR.Drone.Vicon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

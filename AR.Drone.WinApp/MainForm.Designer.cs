@@ -67,6 +67,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.tbPGaz = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbVideo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +78,7 @@
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 21);
             this.btnStart.TabIndex = 0;
-            this.btnStart.Text = "Activate";
+            this.btnStart.Text = "连接";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
@@ -86,7 +88,7 @@
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 21);
             this.btnStop.TabIndex = 1;
-            this.btnStop.Text = "Deactivate";
+            this.btnStop.Text = "断开";
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
@@ -105,7 +107,7 @@
             this.btnFlatTrim.Name = "btnFlatTrim";
             this.btnFlatTrim.Size = new System.Drawing.Size(75, 21);
             this.btnFlatTrim.TabIndex = 3;
-            this.btnFlatTrim.Text = "Flat Trim";
+            this.btnFlatTrim.Text = "平稳";
             this.btnFlatTrim.UseVisualStyleBackColor = true;
             this.btnFlatTrim.Click += new System.EventHandler(this.btnFlatTrim_Click);
             // 
@@ -115,7 +117,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 21);
             this.button2.TabIndex = 4;
-            this.button2.Text = "Takeoff";
+            this.button2.Text = "起飞";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -125,7 +127,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 21);
             this.button3.TabIndex = 5;
-            this.button3.Text = "Land";
+            this.button3.Text = "降落";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -135,7 +137,7 @@
             this.btnEmergency.Name = "btnEmergency";
             this.btnEmergency.Size = new System.Drawing.Size(83, 21);
             this.btnEmergency.TabIndex = 6;
-            this.btnEmergency.Text = "Emergency";
+            this.btnEmergency.Text = "急停";
             this.btnEmergency.UseVisualStyleBackColor = true;
             this.btnEmergency.Click += new System.EventHandler(this.btnEmergency_Click);
             // 
@@ -150,7 +152,7 @@
             this.btnSwitchCam.Name = "btnSwitchCam";
             this.btnSwitchCam.Size = new System.Drawing.Size(89, 21);
             this.btnSwitchCam.TabIndex = 8;
-            this.btnSwitchCam.Text = "Video Channel";
+            this.btnSwitchCam.Text = "相机切换";
             this.btnSwitchCam.UseVisualStyleBackColor = true;
             this.btnSwitchCam.Click += new System.EventHandler(this.btnSwitchCam_Click);
             // 
@@ -160,7 +162,7 @@
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(75, 21);
             this.btnUp.TabIndex = 9;
-            this.btnUp.Text = "Up";
+            this.btnUp.Text = "上升";
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
@@ -170,7 +172,7 @@
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(75, 21);
             this.btnDown.TabIndex = 10;
-            this.btnDown.Text = "Down";
+            this.btnDown.Text = "下降";
             this.btnDown.UseVisualStyleBackColor = true;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
@@ -180,7 +182,7 @@
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(75, 21);
             this.btnLeft.TabIndex = 11;
-            this.btnLeft.Text = "Left";
+            this.btnLeft.Text = "向左";
             this.btnLeft.UseVisualStyleBackColor = true;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
@@ -190,7 +192,7 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 21);
             this.btnBack.TabIndex = 12;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "向后";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -200,7 +202,7 @@
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(75, 21);
             this.btnRight.TabIndex = 13;
-            this.btnRight.Text = "Right";
+            this.btnRight.Text = "向右";
             this.btnRight.UseVisualStyleBackColor = true;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
@@ -210,7 +212,7 @@
             this.btnForward.Name = "btnForward";
             this.btnForward.Size = new System.Drawing.Size(75, 21);
             this.btnForward.TabIndex = 14;
-            this.btnForward.Text = "Forward";
+            this.btnForward.Text = "前进";
             this.btnForward.UseVisualStyleBackColor = true;
             this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
             // 
@@ -220,7 +222,7 @@
             this.btnTurnLeft.Name = "btnTurnLeft";
             this.btnTurnLeft.Size = new System.Drawing.Size(75, 21);
             this.btnTurnLeft.TabIndex = 15;
-            this.btnTurnLeft.Text = "Turn Left";
+            this.btnTurnLeft.Text = "左偏航";
             this.btnTurnLeft.UseVisualStyleBackColor = true;
             this.btnTurnLeft.Click += new System.EventHandler(this.btnTurnLeft_Click);
             // 
@@ -230,7 +232,7 @@
             this.btnTurnRight.Name = "btnTurnRight";
             this.btnTurnRight.Size = new System.Drawing.Size(75, 21);
             this.btnTurnRight.TabIndex = 16;
-            this.btnTurnRight.Text = "Turn Right";
+            this.btnTurnRight.Text = "右偏航";
             this.btnTurnRight.UseVisualStyleBackColor = true;
             this.btnTurnRight.Click += new System.EventHandler(this.btnTurnRight_Click);
             // 
@@ -240,7 +242,7 @@
             this.btnHover.Name = "btnHover";
             this.btnHover.Size = new System.Drawing.Size(75, 21);
             this.btnHover.TabIndex = 17;
-            this.btnHover.Text = "Hover";
+            this.btnHover.Text = "悬停";
             this.btnHover.UseVisualStyleBackColor = true;
             this.btnHover.Click += new System.EventHandler(this.btnHover_Click);
             // 
@@ -265,7 +267,7 @@
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(83, 21);
             this.btnReset.TabIndex = 19;
-            this.btnReset.Text = "Reset";
+            this.btnReset.Text = "重置";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
@@ -275,7 +277,7 @@
             this.btnReadConfig.Name = "btnReadConfig";
             this.btnReadConfig.Size = new System.Drawing.Size(89, 21);
             this.btnReadConfig.TabIndex = 20;
-            this.btnReadConfig.Text = "Read Config";
+            this.btnReadConfig.Text = "读取配置";
             this.btnReadConfig.UseVisualStyleBackColor = true;
             this.btnReadConfig.Click += new System.EventHandler(this.btnReadConfig_Click);
             // 
@@ -285,7 +287,7 @@
             this.btnSendConfig.Name = "btnSendConfig";
             this.btnSendConfig.Size = new System.Drawing.Size(89, 21);
             this.btnSendConfig.TabIndex = 21;
-            this.btnSendConfig.Text = "Send Config";
+            this.btnSendConfig.Text = "发送配置";
             this.btnSendConfig.UseVisualStyleBackColor = true;
             this.btnSendConfig.Click += new System.EventHandler(this.btnSendConfig_Click);
             // 
@@ -295,7 +297,7 @@
             this.btnStartRecording.Name = "btnStartRecording";
             this.btnStartRecording.Size = new System.Drawing.Size(75, 21);
             this.btnStartRecording.TabIndex = 22;
-            this.btnStartRecording.Text = "Start Rec.";
+            this.btnStartRecording.Text = "开始录像";
             this.btnStartRecording.UseVisualStyleBackColor = true;
             this.btnStartRecording.Click += new System.EventHandler(this.btnStartRecording_Click);
             // 
@@ -305,7 +307,7 @@
             this.btnStopRecording.Name = "btnStopRecording";
             this.btnStopRecording.Size = new System.Drawing.Size(75, 21);
             this.btnStopRecording.TabIndex = 23;
-            this.btnStopRecording.Text = "Stop Rec.";
+            this.btnStopRecording.Text = "停止录像";
             this.btnStopRecording.UseVisualStyleBackColor = true;
             this.btnStopRecording.Click += new System.EventHandler(this.btnStopRecording_Click);
             // 
@@ -315,7 +317,7 @@
             this.btnReplay.Name = "btnReplay";
             this.btnReplay.Size = new System.Drawing.Size(75, 21);
             this.btnReplay.TabIndex = 24;
-            this.btnReplay.Text = "Replay";
+            this.btnReplay.Text = "回放";
             this.btnReplay.UseVisualStyleBackColor = true;
             this.btnReplay.Click += new System.EventHandler(this.btnReplay_Click);
             // 
@@ -325,7 +327,7 @@
             this.btnAutopilot.Name = "btnAutopilot";
             this.btnAutopilot.Size = new System.Drawing.Size(75, 21);
             this.btnAutopilot.TabIndex = 25;
-            this.btnAutopilot.Text = "Auto&pilot";
+            this.btnAutopilot.Text = "自动驾驶";
             this.btnAutopilot.UseVisualStyleBackColor = true;
             this.btnAutopilot.Click += new System.EventHandler(this.btnAutopilot_Click);
             // 
@@ -341,6 +343,7 @@
             // 
             // tmrPointToPoint
             // 
+            this.tmrPointToPoint.Interval = 50;
             this.tmrPointToPoint.Tick += new System.EventHandler(this.tmrPointToPoint_Tick);
             // 
             // TestTB
@@ -419,11 +422,30 @@
             this.label4.TabIndex = 36;
             this.label4.Text = "roll";
             // 
+            // tbPGaz
+            // 
+            this.tbPGaz.Location = new System.Drawing.Point(93, 537);
+            this.tbPGaz.Name = "tbPGaz";
+            this.tbPGaz.Size = new System.Drawing.Size(74, 21);
+            this.tbPGaz.TabIndex = 37;
+            this.tbPGaz.Text = "-0.05";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(52, 540);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(23, 12);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "gaz";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 591);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.tbPGaz);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -507,6 +529,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbPGaz;
+        private System.Windows.Forms.Label label5;
     }
 }
 

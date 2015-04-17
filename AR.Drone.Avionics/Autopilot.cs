@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ * 自动驾驶部分代码
+ * 可以向里面添加命令
+ * 然后飞机自动驾驶
+ * 
+ * 
+ */ 
+
+using System;
 using System.Collections.Concurrent;
 using System.Threading;
 using AR.Drone.Avionics.Tools.Time;

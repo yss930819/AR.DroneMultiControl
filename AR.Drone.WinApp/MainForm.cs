@@ -19,6 +19,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 using AR.Drone.Client;
 using AR.Drone.Client.Command;
 using AR.Drone.Client.Configuration;
@@ -31,6 +32,7 @@ using AR.Drone.Avionics;
 using AR.Drone.Avionics.Objectives;
 using AR.Drone.Avionics.Objectives.IntentObtainers;
 using AR.Drone.MyTool;
+using AR.Drone.Vicon;
 
 namespace AR.Drone.WinApp
 {
@@ -66,23 +68,25 @@ namespace AR.Drone.WinApp
 
         private int temp = 0;
 
-        private const float _aimX = 300f;
-        private const float _aimY = 300f;
-        private const float gate = 0.2f;
-        private const float T = 0.1f;
+        private const float T = 0.05f;
 
 
         private bool _isP2P;
+        private bool _ispositionErr;
         private PositionClient _positionClient;
+        private ViconClient _viconClient;
         //获取位置数据的线程
         private readonly MyViconPosition _viconPositionGet;
 
         private float dx;
         private float dy;
+        private double c;
+        private double s;
 
-        private float psi;
+        private double psi;
         private float currentX;
         private float currentY;
+        private float currentZ;
 
         private float _controlX;
         private float[] Xerror = { 0, 0 };
@@ -101,78 +105,139 @@ namespace AR.Drone.WinApp
         private float D_roll = -0.9f;
         private float I_roll = -0.2f;
 
+        private float _controlZ;
+        //   private float[] Yerror = { 0, 0 };
+        //   private float Yerror_dot;
+        //   private float inte_y = 0;
+        private float P_gaz = -0.08f;
 
+
+        #endregion
+
+        #region 李闯
+
+        //Navdata文件流
+        private PositionWrite _pwrite;
+
+        private FileStream _viconFileStream;
+        private StreamWriter _viconWriteStream;
+
+
+        #endregion
+
+        #region 初始化参数
+
+        private bool _isVedio;
+        private bool _isNavadata;
+        private bool _isViconRead;
+
+        private float _aimX = 600f;
+        private float _aimY = 0f;
+        private float _aimZ = 800f;
+        private float gate = 0.08f;
 
         #endregion
 
         #endregion
 
+
+        #region 构造函数
         public MainForm()
-            : this("192.168.1.1")
+            : this("192.168.1.13")
         {
         }
 
         public MainForm(String host)
+            : this(new DroneClient(host))
         {
-            InitializeComponent();
-
-            //视频解码设置
-            _videoPacketDecoderWorker = new VideoPacketDecoderWorker(PixelFormat.BGR24, true, OnVideoPacketDecoded);
-            _videoPacketDecoderWorker.Start();
-
-            //创建新的无人机连接
-            _droneClient = new DroneClient(host);
-            //导航数据获取事件，添加事件响应
-            _droneClient.NavigationPacketAcquired += OnNavigationPacketAcquired;
-            _droneClient.VideoPacketAcquired += OnVideoPacketAcquired;
-            _droneClient.NavigationDataAcquired += data => _navigationData = data;
-
-            //定时器更新允许
-            tmrStateUpdate.Enabled = true;
-            tmrVideoUpdate.Enabled = true;
-
-            _playerForms = new List<PlayerForm>();
-
-            _videoPacketDecoderWorker.UnhandledException += UnhandledException;
-
-            //点到点部分
-            //数据初始化
-            _positionClient = new PositionClient();
-            _viconPositionGet = new MyViconPosition(_positionClient);
-
         }
+
 
         public MainForm(DroneClient droneClient)
         {
 
             InitializeComponent();
 
-            //视频解码设置
-            _videoPacketDecoderWorker = new VideoPacketDecoderWorker(PixelFormat.BGR24, true, OnVideoPacketDecoded);
-            _videoPacketDecoderWorker.Start();
+            InitApp();
 
             //创建新的无人机连接
             _droneClient = droneClient;
-            //导航数据获取事件，添加事件响应
-            _droneClient.NavigationPacketAcquired += OnNavigationPacketAcquired;
             _droneClient.VideoPacketAcquired += OnVideoPacketAcquired;
+            _droneClient.NavigationPacketAcquired += OnNavigationPacketAcquired;
             _droneClient.NavigationDataAcquired += data => _navigationData = data;
+            //视频解码设置
+            if (_isVedio)
+            {
+                _videoPacketDecoderWorker = new VideoPacketDecoderWorker(PixelFormat.BGR24, true, OnVideoPacketDecoded);
+                _videoPacketDecoderWorker.Start();
+                _videoPacketDecoderWorker.UnhandledException += UnhandledException;
+                tmrVideoUpdate.Enabled = true;
 
-            //定时器更新允许
-            tmrStateUpdate.Enabled = true;
-            tmrVideoUpdate.Enabled = true;
+            }
+
+
+
+            if (_isNavadata)
+            {
+                //导航数据获取事件，添加事件响应
+
+
+                //定时器更新允许
+                tmrStateUpdate.Enabled = true;
+            }
+
 
             _playerForms = new List<PlayerForm>();
 
-            _videoPacketDecoderWorker.UnhandledException += UnhandledException;
+
 
             //点到点部分
             //数据初始化
-            _positionClient = new PositionClient();
-            _viconPositionGet = new MyViconPosition(_positionClient);
+            if (_isViconRead)
+            {
+                _viconClient = new ViconClient();
+                _viconPositionGet = new MyViconPosition(_viconClient);
+                _viconPositionGet.OnViconPositionRecieve += OnViconPositionRecieve;
+
+                //写文件线程
+                //_pwrite = new PositionWrite(System.Environment.CurrentDirectory, string.Format(@"vicon_{0:yyyy_MM_dd_HH_mm}.txt", DateTime.Now));
+
+            }
+            else
+            {
+                _positionClient = new PositionClient();
+                _viconPositionGet = new MyViconPosition(_positionClient);
+                _viconPositionGet.OnViconPositionRecieve += OnViconPositionRecieve;
+            }
 
 
+        }
 
+        #endregion
+
+
+        /// <summary>
+        /// 参数初始化
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private void InitApp()
+        {
+            String tmp = ConfigurationManager.AppSettings["isVideo"];
+            _isVedio = int.Parse(tmp).Equals(1);
+            tmp = ConfigurationManager.AppSettings["isNavaData"];
+            _isNavadata = int.Parse(tmp).Equals(1);
+            tmp = ConfigurationManager.AppSettings["isViconRead"];
+            _isViconRead = int.Parse(tmp).Equals(1);
+
+            tmp = ConfigurationManager.AppSettings["aimX"];
+            _aimX = float.Parse(tmp);
+            tmp = ConfigurationManager.AppSettings["aimY"];
+            _aimY = float.Parse(tmp);
+            tmp = ConfigurationManager.AppSettings["aimZ"];
+            _aimZ = float.Parse(tmp);
+            tmp = ConfigurationManager.AppSettings["gate"];
+            gate = float.Parse(tmp);
         }
 
 
@@ -219,13 +284,24 @@ namespace AR.Drone.WinApp
             StopRecording();
 
             _droneClient.Dispose();
-            _videoPacketDecoderWorker.Dispose();
+            if (_videoPacketDecoderWorker != null)
+            {
+                _videoPacketDecoderWorker.Dispose();
+            }
+
             _viconPositionGet.Dispose();
 
-            if (_positionClient != null)
+            if (_pwrite != null)
             {
-                //~_positionClient();
+                _pwrite.Stop();
+                _pwrite.Join();
+                _pwrite.Dispose();
             }
+            if (_viconPositionGet != null)
+            {
+                _viconPositionGet.Dispose();
+            }
+
 
             base.OnClosed(e);
         }
@@ -265,6 +341,45 @@ namespace AR.Drone.WinApp
         private void OnVideoPacketDecoded(VideoFrame frame)
         {
             _frame = frame;
+        }
+
+        /// <summary>
+        /// 获取到Vicon位置数据
+        /// </summary>
+        /// <returns></returns>
+        private unsafe void OnViconPositionRecieve()
+        {
+            //if (_viconWriteStream != null)
+            //{
+
+            ////    getCurrentPosition();
+            //    _viconWriteStream.WriteLine();
+            //    _viconWriteStream.WriteLine(DateTime.UtcNow.Ticks + ",x:" + currentX + ",y:" + currentY + ",z:" + currentZ + "p:" + psi);
+            //    _viconWriteStream.WriteLine("x:" + _controlX + ",y:" + _controlY + ",z:" + _controlZ);
+
+            ////    _viconWriteStream.WriteLine();
+            //    _viconWriteStream.Flush();
+
+            //}
+            if (_viconClient != null)
+            {
+                AR.Drone.MyTool.position p = *(AR.Drone.MyTool.position*)_viconClient.pos;
+                if (p.TZ != 0 && p.EZ != 0)
+                {
+                    _ispositionErr = false;
+                    currentX = (float)p.TX;
+                    currentY = (float)p.TY;
+                    currentZ = (float)p.TZ;
+                    //psi = p.EZ;
+                    psi = 0.0;
+                }
+                else
+                {
+                    _ispositionErr = true;
+                }
+            }
+
+            //_pwrite.EnqueuePacket(p);
         }
 
 
@@ -552,23 +667,25 @@ namespace AR.Drone.WinApp
                 _packetRecorderWorker.Join();
                 _packetRecorderWorker = null;
             }
-            //             if (_navdataPacketRecorder != null)
-            //             {
-            //                 _navdataPacketRecorder.Stop();
-            //                 _navdataPacketRecorder.Join();
-            //                 _navdataPacketRecorder = null;
-            //             }
             if (_recorderStream != null)
             {
                 _recorderStream.Dispose();
                 _recorderStream = null;
             }
-
-            //             if (_navdataFileStream != null)
-            //             {
-            //                 _navdataFileStream.Dispose();
-            //                 _navdataFileStream = null;
-            //             }
+            if (_viconPositionGet != null)
+            {
+                _viconPositionGet.Stop();
+            }
+            if (_viconWriteStream != null)
+            {
+                _viconWriteStream.Dispose();
+                _viconWriteStream = null;
+            }
+            if (_viconFileStream != null)
+            {
+                _viconFileStream.Dispose();
+                _viconFileStream = null;
+            }
         }
 
 
@@ -592,6 +709,17 @@ namespace AR.Drone.WinApp
                     _recorderStream = new FileStream(dialog.FileName, FileMode.OpenOrCreate);
                     _packetRecorderWorker = new PacketRecorder(_recorderStream);
                     _packetRecorderWorker.Start();
+
+                    _viconPositionGet.Start();
+                    _pwrite.Start();
+
+                    //string file = string.Format(@"vicon_{0:yyyy_MM_dd_HH_mm}.txt", DateTime.Now);
+                    //string dir = Path.GetDirectoryName(dialog.FileName);
+                    //_viconFileStream = new FileStream(dir + @"/" + file, FileMode.OpenOrCreate);
+                    //_viconWriteStream = new StreamWriter(_viconFileStream);
+
+                    //_viconPositionGet.Start();
+
                 }
             }
         }
@@ -656,11 +784,13 @@ namespace AR.Drone.WinApp
         {
             _autopilot.ClearObjectives();
 
+            const float turn = (float)(-Math.PI / 2);
+            float heading = _droneClient.NavigationData.Yaw;
+
             // Do two 36 degrees turns left and right if the drone is already flying
             if (_droneClient.NavigationData.State.HasFlag(NavigationState.Flying))
             {
-                const float turn = (float)(Math.PI / 5);
-                float heading = _droneClient.NavigationData.Yaw;
+
 
                 _autopilot.EnqueueObjective(Objective.Create(2000, new Heading(heading + turn, aCanBeObtained: true)));
                 _autopilot.EnqueueObjective(Objective.Create(2000, new Heading(heading - turn, aCanBeObtained: true)));
@@ -669,15 +799,54 @@ namespace AR.Drone.WinApp
             else // Just take off if the drone is on the ground
             {
                 _autopilot.EnqueueObjective(new FlatTrim(1000));
-                _autopilot.EnqueueObjective(new Takeoff(3500));
+                _autopilot.EnqueueObjective(new Takeoff(5000));
+
+                _autopilot.EnqueueObjective(
+               Objective.Create(3000,
+                   new VelocityX(0.0f),
+                   new VelocityY(0.0f),
+                   new Altitude(1.0f),
+                   new Heading(heading)
+               )
+           );
+
+                //  _autopilot.EnqueueObjective(Objective.Create(3000, new Heading(heading + turn, aCanBeObtained: true)));
+                //  _autopilot.EnqueueObjective(Objective.Create(3000, new Heading(heading - turn, aCanBeObtained: true)));
+                //  _autopilot.EnqueueObjective(Objective.Create(3000, new Heading(heading, aCanBeObtained: true)));
             }
+
+            _autopilot.EnqueueObjective(
+                Objective.Create(2000,
+                    new VelocityX(0.1f),
+                    new VelocityY(0.0f),
+                    new Altitude(1.0f),
+                    new Heading(turn)
+                )
+            );
+            _autopilot.EnqueueObjective(
+            Objective.Create(2000,
+                new VelocityX(0.0f),
+                new VelocityY(0.0f),
+                new Altitude(1.0f),
+                new Heading(turn)
+            )
+        );
+            _autopilot.EnqueueObjective(
+            Objective.Create(2000,
+                new VelocityX(0.0f),
+                new VelocityY(0.0f),
+                new Altitude(1.0f),
+                new Heading(turn)
+            )
+        );
 
             // One could use hover, but the method below, allows to gain/lose/maintain desired altitude
             _autopilot.EnqueueObjective(
-                Objective.Create(3000,
+                Objective.Create(5000,
                     new VelocityX(0.0f),
                     new VelocityY(0.0f),
-                    new Altitude(1.0f)
+                    new Altitude(1.0f),
+                    new Heading(turn)
                 )
             );
 
@@ -711,6 +880,7 @@ namespace AR.Drone.WinApp
         {
             if (btnP2P.Text.Equals("点到点"))
             {
+                viconWriteInit();
                 temp = 0;
                 btnP2P.Text = "停  止";
                 tmrPointToPoint.Enabled = true;
@@ -721,6 +891,8 @@ namespace AR.Drone.WinApp
             {
                 btnP2P.Text = "点到点";
                 tmrPointToPoint.Enabled = false;
+                _controlX = 0;
+                _controlY = 0;
                 _isP2P = false;
                 if (!_isP2P && (_navigationData.State.HasFlag(NavigationState.Flying)))
                 {
@@ -728,10 +900,61 @@ namespace AR.Drone.WinApp
                 }
                 _viconPositionGet.Stop();
                 _viconPositionGet.Join();
+                StopRecording();
             }
+
+            /**************************自动驾驶仪部分*****************************/
+            //if (btnP2P.Text.Equals("点到点"))
+            //{
+            //    CreateAutopilot();
+            //    if (_autopilot.Active) _autopilot.Active = false;
+            //    else
+            //    {
+            //        _autopilot.ClearObjectives();
+            //        _autopilot.EnqueueObjective(new FlatTrim(1000));
+            //        _autopilot.EnqueueObjective(new Takeoff(3000));
+
+            //        _autopilot.EnqueueObjective(
+            //       Objective.Create(3000,
+            //           new VelocityX(0.0f),
+            //           new VelocityY(0.0f),
+            //           new Altitude(1.0f)
+            //       )
+            //   );
+            //        _autopilot.Active = true;
+            //        btnAutopilot.ForeColor = Color.Red;
+            //    }
+            //    temp = 0;
+            //    btnP2P.Text = "停  止";
+            //    tmrPointToPoint.Enabled = true;
+            //}
+            //else if (btnP2P.Text.Equals("停  止"))
+            //{
+            //    btnP2P.Text = "点到点";
+            //    tmrPointToPoint.Enabled = false;
+            //    _autopilot.ClearObjectives();
+
+            //    _autopilot.EnqueueObjective(
+            //    Objective.Create(3000,
+            //        new VelocityX(0.0f),
+            //        new VelocityY(0.0f),
+            //        new Altitude(1.0f)
+            //    )
+            //);
+
+            //    _autopilot.EnqueueObjective(new Land(5000));
+
+            //    _autopilot.Active = true;
+            //}
 
         }
 
+        private void viconWriteInit()
+        {
+            string file = string.Format(@"vicon_{0:yyyy_MM_dd_HH_mm}.txt", DateTime.Now);
+            _viconFileStream = new FileStream(System.Environment.CurrentDirectory + @"/" + file, FileMode.OpenOrCreate);
+            _viconWriteStream = new StreamWriter(_viconFileStream);
+        }
         /// <summary>
         /// 点到点控制的控制律位置
         /// 指令周期为10Hz
@@ -747,24 +970,22 @@ namespace AR.Drone.WinApp
             }
 
 
-            //if (_isP2P && ((_navigationData.State == (NavigationState.Command | NavigationState.Landed)) ||
-            //    (_navigationData.State) == (NavigationState.Command | NavigationState.Landed | NavigationState.Watchdog)))
-            if (_isP2P && (_navigationData.State.HasFlag(NavigationState.Landed)))
-            {
-                _droneClient.Takeoff();
-                Trace.WriteLine("起飞");
-                temp = 0;
-            }
-            //待更新控制率部分
-            else if (_isP2P && (_navigationData.State.HasFlag(NavigationState.Flying)) && (temp > 60))
+            ////if (_isP2P && ((_navigationData.State == (NavigationState.Command | NavigationState.Landed)) ||
+            ////    (_navigationData.State) == (NavigationState.Command | NavigationState.Landed | NavigationState.Watchdog)))
+            //if (_isP2P && (_navigationData.State.HasFlag(NavigationState.Landed)))
+            //{
+            //    _droneClient.Takeoff();
+            //    Trace.WriteLine("起飞");
+            //    temp = 0;
+            //}
+            ////待更新控制率部分
+            if (_isP2P && (_navigationData.State.HasFlag(NavigationState.Flying)) && !_ispositionErr)
             {
 
                 //先获取当前位置信息
                 if (_positionClient != null)
                 {
-                    currentX = (float)_positionClient.getlongitude();
-                    currentY = (float)_positionClient.getlatitude();
-                    psi = (float)_positionClient.getpsi();
+                    //getCurrentPosition();
 
                     if (currentY > 2000.0 || currentY < -2000.0 || currentX > 2000.0 || currentX < -2000.0)
                     {
@@ -772,15 +993,26 @@ namespace AR.Drone.WinApp
                         Trace.WriteLine("停23");
                         return;
                     }
-
                 }
+
+               
+
+                c = Math.Cos(psi);
+                s = Math.Cos(psi);
+
                 //读取设置的PD值
                 P_pitch = float.Parse(tbPPitch.Text);
                 D_pitch = float.Parse(tbDPitch.Text);
                 P_roll = float.Parse(tbPRoll.Text);
                 D_roll = float.Parse(tbDRoll.Text);
+                P_gaz = float.Parse(tbPGaz.Text);
 
                 Trace.WriteLine("P:" + P_pitch + "  D:" + D_pitch);
+
+                //高度控制
+                _controlZ = P_gaz * (_aimZ - currentZ) / 1000.0f;
+                if (_controlZ > gate) _controlZ = gate;
+                if (_controlZ < -gate) _controlZ = -gate;
 
                 //X方向控制
                 Xerror[1] = Xerror[0];
@@ -789,9 +1021,10 @@ namespace AR.Drone.WinApp
                 Trace.WriteLine("x速度：" + Xerror_dot);
                 Trace.WriteLine("x误差：" + Xerror[0]);
                 _controlX = P_pitch * Xerror[0] + I_pitch * inte_x + D_pitch * Xerror_dot;
+
                 if (_controlX > gate) _controlX = gate;
                 if (_controlX < -gate) _controlX = -gate;
-
+                
                 //Y方向控制
                 Yerror[1] = Yerror[0];
                 Yerror[0] = (_aimY - currentY) / 1000;
@@ -803,17 +1036,57 @@ namespace AR.Drone.WinApp
                 if (_controlY > gate) _controlY = gate;
                 if (_controlY < -gate) _controlY = -gate;
 
-                _droneClient.Progress(FlightMode.Progressive, roll: _controlY, pitch: _controlX);
-            }
+                ////限幅
+                //float len = (float)Math.Sqrt(_controlY * _controlY + _controlX * _controlX);
+                //if (len > gate)
+                //{
+                //    _controlX = gate * _controlX / len;
+                //    _controlY = gate * _controlY / len;
+                //}
 
-            if (temp < 80)
+                ////坐标变换：
+                //_controlX = (float)(c * _controlX - s * _controlY);
+                //_controlY = (float)(c * _controlY + s * _controlX);
+
+                _droneClient.Progress(FlightMode.Progressive, roll: _controlY, pitch: _controlX, gaz: _controlZ);
+            }
+            else if (_ispositionErr)
             {
-                temp++;
+                _controlY = 0;
+                _controlX = 0;
+                _controlZ = 0;
+                _droneClient.Hover();
             }
 
+            if (_viconWriteStream != null)
+            {
+
+                //    getCurrentPosition();
+                _viconWriteStream.WriteLine();
+                _viconWriteStream.WriteLine(DateTime.UtcNow.Ticks + ",x:" + currentX + ",y:" + currentY + ",z:" + currentZ + "p:" + psi);
+                _viconWriteStream.WriteLine("x:" + _controlX + ",y:" + _controlY + ",z:" + _controlZ);
+
+                //    _viconWriteStream.WriteLine();
+                _viconWriteStream.Flush();
+
+            }
+
+
+            /******************** 自动驾驶仪部分动态添加任务 ******************************/
+            //const float turn = (float)(Math.PI / 5);
+            //float heading = _droneClient.NavigationData.Yaw;
+
+            //_autopilot.EnqueueObjective(Objective.Create(1000, new Heading(heading + turn, aCanBeObtained: true)));
 
         }
 
+        //private void getCurrentPosition()
+        //{
+        //    currentX = (float)_positionClient.getlongitude();
+        //    currentY = (float)_positionClient.getlatitude();
+        //    currentZ = (float)_positionClient.getaltitude();
+        //    psi = _positionClient.getpsi();
+        //}
 
     }
 }

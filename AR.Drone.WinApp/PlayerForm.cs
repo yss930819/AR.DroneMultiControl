@@ -7,6 +7,8 @@
  * 通过本窗体可以将之前存储的数据进行解码
  * 同时可以回放录制的视频
  * 
+ * 修复小bug 在点击replay时报错问题
+ * 
  */
 
 
@@ -218,8 +220,12 @@ namespace AR.Drone.WinApp
             if (_frame == null || _frameNumber == _frame.Number)
                 return;
             _frameNumber = _frame.Number;
-            _totalWriteStream.WriteLine("%% frameNumber%%");
-            _totalWriteStream.WriteLine("" + _frame.Number);
+            if (_totalWriteStream != null)
+            {
+                _totalWriteStream.WriteLine("%% frameNumber%%");
+                _totalWriteStream.WriteLine("" + _frame.Number);
+            }
+            
 
             if (_frameBitmap == null)
                 _frameBitmap = VideoHelper.CreateBitmap(ref _frame);

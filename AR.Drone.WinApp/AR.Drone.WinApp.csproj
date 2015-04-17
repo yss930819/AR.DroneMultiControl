@@ -36,8 +36,13 @@
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Relese 64|AnyCPU'">
+    <OutputPath>bin\Relese 64\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -99,6 +104,10 @@
       <Project>{c1223ee6-c9e8-4ed3-91c5-0c6a7c932100}</Project>
       <Name>AR.Drone.PositionClient</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AR.Drone.Vicon\AR.Drone.Vicon.vcxproj">
+      <Project>{c85d5196-bad7-4c0c-a7c5-78a42aa85909}</Project>
+      <Name>AR.Drone.Vicon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AR.Drone.Video\AR.Drone.Video.csproj">
       <Project>{36C63293-4C2D-41EC-B231-FAF55845C014}</Project>
       <Name>AR.Drone.Video</Name>
@@ -109,6 +118,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
   </ItemGroup>

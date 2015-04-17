@@ -5,30 +5,29 @@ using System.Text;
 using System.Net.Sockets;
 using System.Diagnostics;
 using System.Net;
+using System.Configuration;
 using AR.Drone.Client;
+using AR.Drone.Vicon;
 
 namespace Test
 {
     class Program
     {
 
-        static void Main(string[] args)
+        static unsafe void Main(string[] args)
         {
-            bool flag = true;
+            ViconClient v = new ViconClient();
+            
+            v.init();
             int i = 0;
-            PositionClient _p = new PositionClient();
-            _p.initSocket();
-            while (flag)
+            while(!i.Equals(100))
             {
-                _p.RecevieData();
-
-                i++;
-
-                //if (i >= 10)
-                //{
-                //    flag = false;
-                //}
+                v.MyRecieve();
+                position _p = *(position*) v.pos;
+                Console.WriteLine(_p.times);
+                i++;                
             }
+            
 
             Console.ReadKey();
         }

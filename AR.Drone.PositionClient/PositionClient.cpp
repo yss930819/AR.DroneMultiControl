@@ -33,15 +33,14 @@ PositionClient::~PositionClient()
 
 void PositionClient::RecevieData()
 {
-	cout<< "ÔËÐÐ"<<length<<endl;
+
 	int err;
 	
 	int* pLen = new int();
 	*pLen = len;
-	addrClient = new SOCKADDR_IN();
+	
 
 	err=recvfrom(sockSrv,(char *)(_quadrotor),length,0,(SOCKADDR*)addrClient,pLen);
-	//cout<< len<<"::"<<*pLen<<"::"<<addrClient<<"::"<<sockSrv<<endl;
 	cout<<err<<endl;
 
 	if (err!=-1)
@@ -100,6 +99,8 @@ void AR::Drone::Client::PositionClient::initSocket()
 	
 	len = sizeof(SOCKADDR);
 	length = sizeof(quadrotor);
+
+	addrClient = new SOCKADDR_IN();
 }
 
 double AR::Drone::Client::PositionClient::getlongitude()
@@ -115,6 +116,11 @@ double AR::Drone::Client::PositionClient::getlatitude()
 double AR::Drone::Client::PositionClient::getpsi()
 {
 	return _quadrotor->psi;
+}
+
+double AR::Drone::Client::PositionClient::getaltitude()
+{
+	return _quadrotor->altitude;
 }
 
 

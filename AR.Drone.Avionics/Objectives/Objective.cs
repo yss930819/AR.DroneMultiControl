@@ -1,4 +1,9 @@
-﻿using System.Collections.Generic;
+﻿/*
+ * 自驾仪使用到的基本类
+ * 
+ */ 
+
+using System.Collections.Generic;
 using AR.Drone.Avionics.Objectives.IntentObtainers;
 using AR.Drone.Avionics.Tools.Time;
 

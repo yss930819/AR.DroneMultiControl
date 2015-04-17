@@ -16,6 +16,7 @@ TestResults
 # Build results
 [Dd]ebug/
 [Rr]elease/
+[Rr]elease 64/
 
 *_i.c
 *_p.c
@@ -116,3 +117,8 @@ UpgradeLog*.XML
 .DS_Store
 
 FFmpeg/include
+/AR.Drone.WinApp/bin
+/x64
+/AR.Drone.Avionics/bin
+/AR.Drone.Data/bin
+Relese 64/

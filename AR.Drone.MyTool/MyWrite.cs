@@ -82,6 +82,8 @@ namespace AR.Drone.MyTool
         {
             _packetQueue.Enqueue(packet);
         }
+
+
         #endregion
 
         protected override void Loop(CancellationToken token)
