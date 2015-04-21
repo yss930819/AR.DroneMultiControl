@@ -24,6 +24,7 @@ using AR.Drone.Infrastructure;
 using AR.Drone.Data.Navigation.Native;
 using AR.Drone.Video;
 using System.Reflection;
+using AR.Drone.Data.Navigation;
 
 
 
@@ -42,6 +43,9 @@ namespace AR.Drone.MyTool
         private readonly VideoPacketDecoder _videoDecoder;
         //存储
         private Bitmap _frameBitmap;
+        private NavdataBag _navdataBag;
+        private FileStream _navigationDataFile;
+        private StreamWriter _navigationDataWriter;
 
         //写结束事件
         public event Action OnWriteEnd;
@@ -59,6 +63,9 @@ namespace AR.Drone.MyTool
 
             _vedioDir = _dir + @"/" + _fileName + @"/vedio";
             _navdataDir = _dir + @"/" + _fileName + @"/navdata";
+
+            _navigationDataFile = new FileStream(_dir + @"/" + _fileName + ".nav",FileMode.OpenOrCreate);
+            _navigationDataWriter = new StreamWriter(_navigationDataFile);
 
 
             //创建vedio文件夹
@@ -89,7 +96,7 @@ namespace AR.Drone.MyTool
         protected override void Loop(CancellationToken token)
         {
             _packetQueue.Flush();
-            int num = 0;
+            //int num = 0;
             while (token.IsCancellationRequested == false || !_packetQueue.IsEmpty)
             {
                 object packet = null;
@@ -98,11 +105,14 @@ namespace AR.Drone.MyTool
                     if (packet is NavigationPacket)
                     {
                         var navigationPacket = (NavigationPacket)packet;
-                        Write(navigationPacket);
+                        NavdataBagParser.TryParse(ref navigationPacket, out _navdataBag);
+                        var navigationData = NavdataConverter.ToNavigationData(_navdataBag);
+                        Write(navigationPacket, navigationData);
+                        //Write(navigationPacket);
                     }
                     else if (packet is VideoPacket)
                     {
-                        num++;
+                        //num++;
                         var videoPacket = (VideoPacket)packet;
                         Write(videoPacket);
                     }
@@ -120,6 +130,22 @@ namespace AR.Drone.MyTool
                 OnWriteEnd();
             }
 
+        }
+
+        #region 写文件函数
+        /// <summary>
+        /// 写导航数据文件
+        /// NavigationData
+        /// </summary>
+        /// <param name="navigationPacket"></param>
+        /// <param name="navigationData"></param>
+        /// <returns></returns>
+        private void Write(NavigationPacket navigationPacket, NavigationData navigationData)
+        {
+            _navigationDataWriter.WriteLine(navigationPacket.Timestamp + " " + navigationData.Yaw
+                     + " " + navigationData.Pitch + " " + navigationData.Roll + " " + navigationData.Altitude
+                     + " " + navigationData.Velocity.X + " " + navigationData.Velocity.Y + " " + navigationData.Velocity.Z);
+            _navigationDataWriter.Flush();
         }
 
         /// <summary>
@@ -149,6 +175,7 @@ namespace AR.Drone.MyTool
 
         /// <summary>
         /// 写导航数据文件
+        /// NavgationBag
         /// </summary>
         /// <param name="navigationPacket"></param>
         /// <returns></returns>
@@ -167,6 +194,8 @@ namespace AR.Drone.MyTool
                 }
             }
         }
+        
+        #endregion
 
         #region 导航数据遍历
         private void DumpBranch(StreamWriter navWriter, Object o)

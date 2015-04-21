@@ -148,7 +148,7 @@ namespace AR.Drone.Data.Navigation.Native
                     navigationData.wifi = *(navdata_wifi_t*) option;
                     break;
                 case navdata_tag_t.NAVDATA_ZIMMU_3000_TAG:
-                    // do nothing
+                    navigationData.gps = *(navdata_gps_t*)option;
                     break;
                 case navdata_tag_t.NAVDATA_NUM_TAGS:
                     // do nothing

@@ -42,6 +42,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Navigation\Native\Options\navdata_gps.cs" />
     <Compile Include="Navigation\NavigationData.cs" />
     <Compile Include="Navigation\NavigationState.cs" />
     <Compile Include="NavigationPacket.cs" />

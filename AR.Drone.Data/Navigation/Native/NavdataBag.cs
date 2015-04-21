@@ -43,6 +43,7 @@ namespace AR.Drone.Data.Navigation.Native
         public navdata_kalman_pressure_t kalman_pressure;
         public navdata_hdvideo_stream_t hdvideo_stream;
         public navdata_wifi_t wifi;
+        public navdata_gps_t gps;
         public navdata_cks_t cks;
     }
 }

@@ -143,7 +143,7 @@ namespace AR.Drone.WinApp
 
         #region 构造函数
         public MainForm()
-            : this("192.168.1.13")
+            : this("192.168.1.1")
         {
         }
 
@@ -629,6 +629,7 @@ namespace AR.Drone.WinApp
 
                     settings.General.NavdataDemo = false;
                     settings.General.NavdataOptions = NavdataOptions.All;
+                    //settings.General.NavdataOptions = NavdataOptions.GPS;
 
                     settings.Video.BitrateCtrlMode = VideoBitrateControlMode.Dynamic;
                     settings.Video.Bitrate = 1000;
