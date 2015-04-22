@@ -332,10 +332,13 @@ namespace AR.Drone.WinApp
         private void OnVideoPacketAcquired(VideoPacket packet)
         {
             //将视频包入队 准备写入文件
-            if (_packetRecorderWorker != null && _packetRecorderWorker.IsAlive)
-                _packetRecorderWorker.EnqueuePacket(packet);
-            if (_videoPacketDecoderWorker.IsAlive)
-                _videoPacketDecoderWorker.EnqueuePacket(packet);
+            if (_isVedio)
+            {
+                if (_packetRecorderWorker != null && _packetRecorderWorker.IsAlive)
+                    _packetRecorderWorker.EnqueuePacket(packet);
+                if (_videoPacketDecoderWorker.IsAlive)
+                    _videoPacketDecoderWorker.EnqueuePacket(packet);
+            }
         }
 
         private void OnVideoPacketDecoded(VideoFrame frame)
@@ -712,7 +715,7 @@ namespace AR.Drone.WinApp
                     _packetRecorderWorker.Start();
 
                     _viconPositionGet.Start();
-                    _pwrite.Start();
+                    //_pwrite.Start();
 
                     //string file = string.Format(@"vicon_{0:yyyy_MM_dd_HH_mm}.txt", DateTime.Now);
                     //string dir = Path.GetDirectoryName(dialog.FileName);

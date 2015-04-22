@@ -55,6 +55,11 @@ namespace AR.Drone.Data.Navigation
 
             navigationData.Wifi.LinkQuality = 1.0f - ConversionHelper.ToSingle(navdataBag.wifi.link_quality);
 
+            navigationData.GPS.latitude = navdataBag.gps.latitude;
+            navigationData.GPS.longitude = navdataBag.gps.longitude;
+            navigationData.GPS.latFuse = navdataBag.gps.latFuse;
+            navigationData.GPS.lonFuse = navdataBag.gps.lonFuse;
+
             return navigationData;
         }
 

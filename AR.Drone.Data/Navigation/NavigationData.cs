@@ -30,6 +30,7 @@ namespace AR.Drone.Data.Navigation
         public float Time; // seconds
         public Video Video;
         public Wifi Wifi;
+        public GPS GPS;
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -99,6 +100,23 @@ namespace AR.Drone.Data.Navigation
         public override string ToString()
         {
             return string.Format("{{FrameNumber:{0}}}", FrameNumber);
+        }
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    /**
+     * GPS数据信息
+     */
+    public struct GPS
+    {
+        public double latitude;
+        public double longitude;
+        public double latFuse;
+        public double lonFuse;
+
+        public override string ToString()
+        {
+            return string.Format("{{latitude:{0} longitude:{1} latFuse:{2} lonFuse:{3}}}", latitude, longitude, latFuse);
         }
     }
 }

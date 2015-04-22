@@ -142,9 +142,11 @@ namespace AR.Drone.MyTool
         /// <returns></returns>
         private void Write(NavigationPacket navigationPacket, NavigationData navigationData)
         {
-            _navigationDataWriter.WriteLine(navigationPacket.Timestamp + " " + navigationData.Yaw
-                     + " " + navigationData.Pitch + " " + navigationData.Roll + " " + navigationData.Altitude
-                     + " " + navigationData.Velocity.X + " " + navigationData.Velocity.Y + " " + navigationData.Velocity.Z);
+            //_navigationDataWriter.WriteLine(navigationPacket.Timestamp + " " + navigationData.Yaw
+            //         + " " + navigationData.Pitch + " " + navigationData.Roll + " " + navigationData.Altitude
+            //         + " " + navigationData.Velocity.X + " " + navigationData.Velocity.Y + " " + navigationData.Velocity.Z);
+            _navigationDataWriter.WriteLine(navigationData.GPS.latitude + " " + navigationData.GPS.longitude + " " +
+                navigationData.GPS.latFuse + " " + navigationData.GPS.lonFuse);
             _navigationDataWriter.Flush();
         }
 
