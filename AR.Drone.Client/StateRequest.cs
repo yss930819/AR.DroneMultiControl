@@ -8,7 +8,7 @@
 
 namespace AR.Drone.Client
 {
-    internal enum StateRequest
+    public  enum StateRequest
     {
         None,
         Land,

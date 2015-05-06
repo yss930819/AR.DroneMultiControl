@@ -1,0 +1,48 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="TestTwoDrone.MainWindow"
+        Title="MainWindow" Height="514" Width="753" KeyDown="Window_KeyDown_1" KeyUp="Window_KeyUp_1">
+    <Grid x:Name="MyWindow"  >
+        <TextBox x:Name="tb_ip" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,10,435,0" Text="192.168.1.1" />
+        <Button x:Name="bt_link" Content="连接" Margin="0,10,337,0" VerticalAlignment="Top" Height="23" HorizontalAlignment="Right" Width="75" Click="bt_link_Click"/>
+        <Button x:Name="btn_test" Content="测试按钮" Margin="214,38,0,0" Click="btn_test_Click" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75"/>
+        <Button x:Name="btn_delete" Content="删除" Margin="0,38,337,0" VerticalAlignment="Top" Height="23" Click="btn_delete_Click" HorizontalAlignment="Right" Width="75"/>
+        <!-- 飞机显示列表 -->
+        <ListView x:Name="lv_droneList" Margin="0,10,10,10" HorizontalAlignment="Right" Width="308" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="编号" Width="30" DisplayMemberBinding="{Binding ID}"/>
+                    <GridViewColumn Header="名字" Width="60" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="IP地址" Width="100"  DisplayMemberBinding="{Binding IP}"/>
+                    <GridViewColumn Header="连接" Width="40"  DisplayMemberBinding="{Binding IsConected}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="344" Margin="10,129,0,0" Stroke="Black" VerticalAlignment="Top" Width="262"/>
+        <Label Content="手动控制" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top"/>
+        <Label Content="自动控制" HorizontalAlignment="Left" Margin="277,129,0,0" VerticalAlignment="Top"/>
+        <!-- 控制切换按钮-->
+        <Button x:Name="btn_auto_control" Content="自动" HorizontalAlignment="Left" Margin="277,101,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btn_auto_control_Click"/>
+        <Button x:Name="btn_hand_control" Content="手动" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btn_hand_control_Click"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="344" Margin="277,129,0,0" Stroke="Black" VerticalAlignment="Top" Width="131"/>
+
+        <!-- 手动控制按钮-->
+        <Button x:Name="btn_hand_takeoff" Content="起飞" HorizontalAlignment="Left" Margin="22,176,0,0" VerticalAlignment="Top" Width="75" Height="23" IsEnabled="False" Click="btn_hand_takeoff_Click"/>
+        <Button x:Name="btn_hand_land" Content="降落" HorizontalAlignment="Left" Margin="102,176,0,0" VerticalAlignment="Top" Width="75" Height="23" IsEnabled="False" Click="btn_hand_land_Click"/>
+        <Button x:Name="btn_hand_hover" Content="悬停" HorizontalAlignment="Left" Margin="102,265,0,0" VerticalAlignment="Top" Width="75" Height="23" IsEnabled="False" Click="btn_hand_hover_Click"/>
+        <Button x:Name="btn_hand_left" Content="向左" HorizontalAlignment="Left" Margin="22,265,0,0" VerticalAlignment="Top" Width="75" Height="23" IsEnabled="False" Click="btn_hand_left_Click"/>
+        <Button x:Name="btn_hand_forward" Content="前进 " HorizontalAlignment="Left" Margin="102,237,0,0" VerticalAlignment="Top" Width="75" Height="23" IsEnabled="False" Click="btn_hand_forward_Click"/>
+        <Button x:Name="btn_hand_right" Content="向右" HorizontalAlignment="Left" Margin="182,265,0,0" VerticalAlignment="Top" Width="75" Height="23" IsEnabled="False" Click="btn_hand_right_Click"/>
+        <Button x:Name="btn_hand_back" Content=" 后退" HorizontalAlignment="Left" Margin="102,293,0,0" VerticalAlignment="Top" Width="75" Height="23" IsEnabled="False" Click="btn_hand_back_Click"/>
+        <Button x:Name="btn_hand_yawleft" Content="左偏航" HorizontalAlignment="Left" Margin="22,383,0,0" VerticalAlignment="Top" Width="75" Height="23" IsEnabled="False" Click="btn_hand_yawleft_Click"/>
+        <Button x:Name="btn_hand_yawright" Content="右偏航" HorizontalAlignment="Left" Margin="182,383,0,0" VerticalAlignment="Top" Width="75" Height="23" IsEnabled="False" Click="btn_hand_yawright_Click"/>
+        <Button x:Name="btn_hand_up" Content="上升" HorizontalAlignment="Left" Margin="102,355,0,0" VerticalAlignment="Top" Width="75" Height="23" IsEnabled="False" Click="btn_hand_up_Click"/>
+        <Button x:Name="btn_hand_down" Content="下降" HorizontalAlignment="Left" Margin="102,412,0,0" VerticalAlignment="Top" Width="75" Height="23" IsEnabled="False" Click="btn_hand_down_Click"/>
+        <!-- 手动控制按钮-->
+        
+        
+    </Grid>
+</Window>

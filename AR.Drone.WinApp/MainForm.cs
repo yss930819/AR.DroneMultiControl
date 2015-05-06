@@ -181,7 +181,6 @@ namespace AR.Drone.WinApp
             {
                 //导航数据获取事件，添加事件响应
 
-
                 //定时器更新允许
                 tmrStateUpdate.Enabled = true;
             }
@@ -577,7 +576,7 @@ namespace AR.Drone.WinApp
         {
             String _str = TestTB.Text;
             float _tmp = float.Parse(_str);
-            _droneClient.Progress(FlightMode.Progressive, pitch: _tmp);
+            _droneClient.Progress(FlightMode.Progressive, pitch: -0.05f);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -821,7 +820,7 @@ namespace AR.Drone.WinApp
 
             _autopilot.EnqueueObjective(
                 Objective.Create(2000,
-                    new VelocityX(0.1f),
+                    new VelocityX(0.0f),
                     new VelocityY(0.0f),
                     new Altitude(1.0f),
                     new Heading(turn)
@@ -884,27 +883,83 @@ namespace AR.Drone.WinApp
         {
             if (btnP2P.Text.Equals("点到点"))
             {
-                viconWriteInit();
+                 float head = (float)(-Math.PI / 2.0);
+                //viconWriteInit();
+                //temp = 0;
+                //btnP2P.Text = "停  止";
+                CreateAutopilot();
+                if (_autopilot.Active) _autopilot.Active = false;
+                else
+                {
+                    _autopilot.ClearObjectives();
+                    _autopilot.EnqueueObjective(new FlatTrim(1000));
+                    _autopilot.EnqueueObjective(new Takeoff(5000));
+
+                  
+
+                   // _autopilot.EnqueueObjective(
+                   //Objective.Create(5000,
+                   //    new Heading(head)
+                   //)
+                   //);
+
+                    //_autopilot.EnqueueObjective(
+                    //    new Hover(1000)
+                    //    );
+                    _autopilot.Active = true;
+
+                    btnAutopilot.ForeColor = Color.Red;
+                }
+                //机头调整
+                float _controlYaw;
+                float _dYaw;
+                bool _flagYaw = true;
+                while (_flagYaw)
+                {
+                    _dYaw = head - _navigationData.Yaw;
+                    _controlYaw = -0.3f * _dYaw;
+                    if (_controlYaw > gate) _controlYaw = gate;
+                    if (_controlYaw < -gate) _controlYaw = -gate;
+                    _droneClient.Progress(FlightMode.Progressive, yaw: _controlYaw);
+                    Thread.Sleep(100);
+                }
                 temp = 0;
                 btnP2P.Text = "停  止";
-                tmrPointToPoint.Enabled = true;
+
+
+                Thread newThread = new Thread(delegate()
+                {
+                    Thread.Sleep(10000);
+                    this.Invoke(new Action(() =>
+                    {//当需要操作界面元素时，需要用Invoke，注意这里面不能有繁琐的操
+                        //this.tmrPointToPoint.Enabled = true;
+                        _autopilot.Active = false;
+                        //Thread.Sleep(1000);如果这么写，就会卡住主线程
+                    }));
+                });
+
+                newThread.Start();
                 _isP2P = true;
-                _viconPositionGet.Start();
+                //_viconPositionGet.Start();
             }
             else if (btnP2P.Text.Equals("停  止"))
             {
+
+                btnP2P.Text = "点到点";
+                tmrPointToPoint.Enabled = false;
+                _autopilot.ClearObjectives();
+
+                _autopilot.EnqueueObjective(new Land(5000));
+
+                _autopilot.Active = true;
                 btnP2P.Text = "点到点";
                 tmrPointToPoint.Enabled = false;
                 _controlX = 0;
                 _controlY = 0;
                 _isP2P = false;
-                if (!_isP2P && (_navigationData.State.HasFlag(NavigationState.Flying)))
-                {
-                    _droneClient.Land();
-                }
-                _viconPositionGet.Stop();
-                _viconPositionGet.Join();
-                StopRecording();
+                //_viconPositionGet.Stop();
+                //_viconPositionGet.Join();
+                //StopRecording();
             }
 
             /**************************自动驾驶仪部分*****************************/
@@ -916,39 +971,56 @@ namespace AR.Drone.WinApp
             //    {
             //        _autopilot.ClearObjectives();
             //        _autopilot.EnqueueObjective(new FlatTrim(1000));
-            //        _autopilot.EnqueueObjective(new Takeoff(3000));
+            //        _autopilot.EnqueueObjective(new Takeoff(5000));
 
-            //        _autopilot.EnqueueObjective(
-            //       Objective.Create(3000,
-            //           new VelocityX(0.0f),
-            //           new VelocityY(0.0f),
-            //           new Altitude(1.0f)
-            //       )
-            //   );
+            //       // _autopilot.EnqueueObjective(
+            //       //Objective.Create(3000,
+            //       //    new VelocityX(0.0f),
+            //       //    new VelocityY(0.0f),
+            //       //    new Altitude(1.0f),
+            //       //    new Heading(0.0f)
+            //       //)
+            //   //);
             //        _autopilot.Active = true;
+
             //        btnAutopilot.ForeColor = Color.Red;
             //    }
             //    temp = 0;
             //    btnP2P.Text = "停  止";
-            //    tmrPointToPoint.Enabled = true;
+
+            //    Thread newThread = new Thread(delegate()
+            //    {
+            //        Thread.Sleep(10000);
+            //        this.Invoke(new Action(() =>
+            //        {//当需要操作界面元素时，需要用Invoke，注意这里面不能有繁琐的操
+            //            this.tmrPointToPoint.Enabled = true;
+            //            //_autopilot.Active = false;
+            //            //Thread.Sleep(1000);如果这么写，就会卡住主线程
+            //        }));
+            //    });
+
+            //    newThread.Start();
+
+            //    //this.tmrPointToPoint.Enabled = true;
+
             //}
             //else if (btnP2P.Text.Equals("停  止"))
             //{
-            //    btnP2P.Text = "点到点";
-            //    tmrPointToPoint.Enabled = false;
-            //    _autopilot.ClearObjectives();
+            ////    btnP2P.Text = "点到点";
+            ////    tmrPointToPoint.Enabled = false;
+            ////    _autopilot.ClearObjectives();
 
-            //    _autopilot.EnqueueObjective(
-            //    Objective.Create(3000,
-            //        new VelocityX(0.0f),
-            //        new VelocityY(0.0f),
-            //        new Altitude(1.0f)
-            //    )
-            //);
+            ////    _autopilot.EnqueueObjective(
+            ////    Objective.Create(1000,
+            ////        new VelocityX(0.0f),
+            ////        new VelocityY(0.0f),
+            ////        new Altitude(1.0f)
+            ////    )
+            ////);
 
-            //    _autopilot.EnqueueObjective(new Land(5000));
+            ////    _autopilot.EnqueueObjective(new Land(5000));
 
-            //    _autopilot.Active = true;
+            ////    _autopilot.Active = true;
             //}
 
         }
@@ -968,21 +1040,21 @@ namespace AR.Drone.WinApp
         /// <returns></returns>
         private void tmrPointToPoint_Tick(object sender, EventArgs e)
         {
-            if (_navigationData != null)
-            {
-                Trace.WriteLine("激活" + DateTime.Now + _navigationData.State);
-            }
-
-
-            ////if (_isP2P && ((_navigationData.State == (NavigationState.Command | NavigationState.Landed)) ||
-            ////    (_navigationData.State) == (NavigationState.Command | NavigationState.Landed | NavigationState.Watchdog)))
-            //if (_isP2P && (_navigationData.State.HasFlag(NavigationState.Landed)))
+            //if (_navigationData != null)
             //{
-            //    _droneClient.Takeoff();
-            //    Trace.WriteLine("起飞");
-            //    temp = 0;
+            //    Trace.WriteLine("激活" + DateTime.Now + _navigationData.State);
             //}
-            ////待更新控制率部分
+
+
+            //////if (_isP2P && ((_navigationData.State == (NavigationState.Command | NavigationState.Landed)) ||
+            //////    (_navigationData.State) == (NavigationState.Command | NavigationState.Landed | NavigationState.Watchdog)))
+            ////if (_isP2P && (_navigationData.State.HasFlag(NavigationState.Landed)))
+            ////{
+            ////    _droneClient.Takeoff();
+            ////    Trace.WriteLine("起飞");
+            ////    temp = 0;
+            ////}
+            //////待更新控制率部分
             if (_isP2P && (_navigationData.State.HasFlag(NavigationState.Flying)) && !_ispositionErr)
             {
 
@@ -999,10 +1071,6 @@ namespace AR.Drone.WinApp
                     }
                 }
 
-               
-
-                c = Math.Cos(psi);
-                s = Math.Cos(psi);
 
                 //读取设置的PD值
                 P_pitch = float.Parse(tbPPitch.Text);
@@ -1028,7 +1096,7 @@ namespace AR.Drone.WinApp
 
                 if (_controlX > gate) _controlX = gate;
                 if (_controlX < -gate) _controlX = -gate;
-                
+
                 //Y方向控制
                 Yerror[1] = Yerror[0];
                 Yerror[0] = (_aimY - currentY) / 1000;
@@ -1077,10 +1145,25 @@ namespace AR.Drone.WinApp
 
 
             /******************** 自动驾驶仪部分动态添加任务 ******************************/
-            //const float turn = (float)(Math.PI / 5);
+            //float high;
+            //Trace.WriteLine("激活" + DateTime.Now + _navigationData.State);
+            //if (temp < 5)
+            //    high = (float)((double)(temp % 5) / 10.0);
+            //else
+            //    high = (float)((double)(5 - (temp % 5)) / 10.0);
+
+            //temp++;
+
+            //if (temp == 10)
+            //    temp = 0;
+
+
+            ////const float turn = (float)(Math.PI / 10.0);
             //float heading = _droneClient.NavigationData.Yaw;
 
-            //_autopilot.EnqueueObjective(Objective.Create(1000, new Heading(heading + turn, aCanBeObtained: true)));
+            //_autopilot.EnqueueObjective(Objective.Create(2000,
+            //    new Altitude(1.0f - high)
+            //    , new Heading(0.0f)));
 
         }
 

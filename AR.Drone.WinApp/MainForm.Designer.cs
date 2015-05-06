@@ -343,7 +343,7 @@
             // 
             // tmrPointToPoint
             // 
-            this.tmrPointToPoint.Interval = 50;
+            this.tmrPointToPoint.Interval = 2000;
             this.tmrPointToPoint.Tick += new System.EventHandler(this.tmrPointToPoint_Tick);
             // 
             // TestTB
