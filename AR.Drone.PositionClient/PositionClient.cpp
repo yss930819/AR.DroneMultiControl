@@ -41,7 +41,6 @@ void PositionClient::RecevieData()
 	
 
 	err=recvfrom(sockSrv,(char *)(_quadrotor),length,0,(SOCKADDR*)addrClient,pLen);
-	cout<<err<<endl;
 
 	if (err!=-1)
 	{
@@ -49,12 +48,12 @@ void PositionClient::RecevieData()
 		//数据格式转换,
 		_quadrotor->ConverData();
 		//输出飞机经纬度和高度
-		std::cout<<_quadrotor->longitude<<std::endl;
-		std::cout<<_quadrotor->latitude<<std::endl;
-		std::cout<<_quadrotor->altitude<<std::endl;
-		std::cout<<_quadrotor->phi<<std::endl;
-		std::cout<<_quadrotor->theta<<std::endl;
-		std::cout<<_quadrotor->psi<<std::endl;
+		//std::cout<<_quadrotor->longitude<<std::endl;
+		//std::cout<<_quadrotor->latitude<<std::endl;
+		//std::cout<<_quadrotor->altitude<<std::endl;
+		//std::cout<<_quadrotor->phi<<std::endl;
+		//std::cout<<_quadrotor->theta<<std::endl;
+		//std::cout<<_quadrotor->psi<<std::endl;
 	}      
 }
 
@@ -68,6 +67,7 @@ void PositionClient::RecevieData()
 void AR::Drone::Client::PositionClient::initSocket()
 {
 	//SOCKET初始化
+	position = new diyPosition();
 	WORD wVersionRequested;
 	WSADATA wsaData;
 	int err;
@@ -103,24 +103,22 @@ void AR::Drone::Client::PositionClient::initSocket()
 	addrClient = new SOCKADDR_IN();
 }
 
-double AR::Drone::Client::PositionClient::getlongitude()
+
+
+diyPosition* AR::Drone::Client::PositionClient::getPosition1()
 {
-	return _quadrotor->longitude;
+	position->x = _quadrotor->longitude;
+	position->y = _quadrotor->latitude;
+	position->z = _quadrotor->altitude;
+	return position;
 }
 
-double AR::Drone::Client::PositionClient::getlatitude()
+diyPosition* AR::Drone::Client::PositionClient::getPosition2()
 {
-	return _quadrotor->latitude;
-}
-
-double AR::Drone::Client::PositionClient::getpsi()
-{
-	return _quadrotor->psi;
-}
-
-double AR::Drone::Client::PositionClient::getaltitude()
-{
-	return _quadrotor->altitude;
+	position->x = _quadrotor->agl;
+	position->y = _quadrotor->phi;
+	position->z = _quadrotor->theta;
+	return position;
 }
 
 

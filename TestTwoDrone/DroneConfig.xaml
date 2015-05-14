@@ -1,0 +1,46 @@
+﻿<Window x:Class="TestTwoDrone.DroneConfig"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DroneConfig" Height="400" Width="350
+        " SourceInitialized="Window_SourceInitialized_1" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="68*"/>
+            <RowDefinition Height="255*"/>
+            <RowDefinition Height="46*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FFF4F4F5" Margin="10,0" Stroke="Black" Grid.Row="1"/>
+        <Label x:Name="lb_name" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="25"/>
+        <Label x:Name="lb_Info" Content="Label" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Height="25"/>
+
+        <!--保存按钮-->
+        <Button x:Name="btn_save" Content="保存" HorizontalAlignment="Left" Margin="60,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Height="26" Click="btn_save_Click"/>
+        <Button x:Name="btn_cancel" Content="取消" Margin="0,10,60,0" Grid.Row="2" VerticalAlignment="Top" Height="26" HorizontalAlignment="Right" Width="72" Click="btn_cancel_Click"/>
+
+        <!-- 控制部分控件-->
+        <Label Content="控制参数" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Top" Height="25" Width="58"/>
+
+        <Label  Content="目标位置" HorizontalAlignment="Left" Margin="25,49,0,0" VerticalAlignment="Top" Width="60" Height="25" Grid.Row="1"/>
+        <Label  Content="x:" HorizontalAlignment="Left" Margin="85,49,0,0" VerticalAlignment="Top" Width="20" Height="25" Grid.Row="1"/>
+        <Label  Content="y:" HorizontalAlignment="Left" Margin="168,49,0,0" VerticalAlignment="Top" Width="20" Height="25" Grid.Row="1"/>
+        <Label  Content="z:" HorizontalAlignment="Left" Margin="244,49,0,0" VerticalAlignment="Top" Width="20" Height="25" Grid.Row="1"/>
+        <TextBox x:Name="tb_aimx" HorizontalAlignment="Left" Height="23" Margin="103,53,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="53"/>
+        <TextBox x:Name="tb_aimy" HorizontalAlignment="Left" Height="23" Margin="186,53,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="53"/>
+        <TextBox x:Name="tb_aimz" HorizontalAlignment="Left" Height="23" Margin="262,53,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="53"/>
+        <Label  Content="俯仰" HorizontalAlignment="Left" Margin="25,99,0,0" VerticalAlignment="Top" Width="60" Height="25" Grid.Row="1" HorizontalContentAlignment="Center"/>
+        <Label  Content="P" HorizontalAlignment="Left" Margin="85,99,0,0" VerticalAlignment="Top" Width="20" Height="25" Grid.Row="1"/>
+        <Label  Content="D" HorizontalAlignment="Left" Margin="168,99,0,0" VerticalAlignment="Top" Width="20" Height="25" Grid.Row="1"/>
+        <TextBox x:Name="tb_pitch_P" HorizontalAlignment="Left" Height="23" Margin="103,103,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="53"/>
+        <TextBox x:Name="tb_pitch_D" HorizontalAlignment="Left" Height="23" Margin="186,103,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="53"/>
+        <Label  Content="滚转" HorizontalAlignment="Left" Margin="25,149,0,0" VerticalAlignment="Top" Width="60" Height="25" Grid.Row="1" HorizontalContentAlignment="Center"/>
+        <Label  Content="P" HorizontalAlignment="Left" Margin="85,149,0,0" VerticalAlignment="Top" Width="20" Height="25" Grid.Row="1"/>
+        <Label  Content="D" HorizontalAlignment="Left" Margin="168,149,0,0" VerticalAlignment="Top" Width="20" Height="25" Grid.Row="1"/>
+        <TextBox x:Name="tb_roll_P" HorizontalAlignment="Left" Height="23" Margin="103,153,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="53"/>
+        <TextBox x:Name="tb_roll_D" HorizontalAlignment="Left" Height="23" Margin="186,153,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="53"/>
+        <Label  Content="高度" HorizontalAlignment="Left" Margin="25,199,0,0" VerticalAlignment="Top" Width="60" Height="25" Grid.Row="1" HorizontalContentAlignment="Center"/>
+        <Label  Content="P" HorizontalAlignment="Left" Margin="85,199,0,0" VerticalAlignment="Top" Width="20" Height="25" Grid.Row="1"/>
+        <TextBox x:Name="tb_gaz_P" HorizontalAlignment="Left" Height="23" Margin="103,203,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="53"/>
+
+
+    </Grid>
+</Window>

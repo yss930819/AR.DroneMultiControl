@@ -34,11 +34,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Relese 64|AnyCPU'">
     <OutputPath>bin\Relese 64\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +61,10 @@
     <ProjectReference Include="..\AR.Drone.Vicon\AR.Drone.Vicon.vcxproj">
       <Project>{c85d5196-bad7-4c0c-a7c5-78a42aa85909}</Project>
       <Name>AR.Drone.Vicon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeamworkAlgorithm\TeamworkAlgorithm.vcxproj">
+      <Project>{34ad5435-32c4-4c65-8785-430012a69f37}</Project>
+      <Name>TeamworkAlgorithm</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

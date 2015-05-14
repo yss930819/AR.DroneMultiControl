@@ -111,6 +111,18 @@ namespace AR.Drone.WinApp
         //   private float inte_y = 0;
         private float P_gaz = -0.08f;
 
+        #region 初始化参数
+
+        private bool _isVedio;
+        private bool _isNavadata;
+        private bool _isViconRead;
+
+        private float _aimX = 600f;
+        private float _aimY = 0f;
+        private float _aimZ = 800f;
+        private float gate = 0.08f;
+
+        #endregion
 
         #endregion
 
@@ -125,18 +137,7 @@ namespace AR.Drone.WinApp
 
         #endregion
 
-        #region 初始化参数
-
-        private bool _isVedio;
-        private bool _isNavadata;
-        private bool _isViconRead;
-
-        private float _aimX = 600f;
-        private float _aimY = 0f;
-        private float _aimZ = 800f;
-        private float gate = 0.08f;
-
-        #endregion
+    
 
         #endregion
 
@@ -880,7 +881,7 @@ namespace AR.Drone.WinApp
         /// <param name="e"></param>
         /// <returns></returns>
         private void btnFileWrite_Click(object sender, EventArgs e)
-        {
+        { 
             if (btnP2P.Text.Equals("点到点"))
             {
                  float head = (float)(-Math.PI / 2.0);

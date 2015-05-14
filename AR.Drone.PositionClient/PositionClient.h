@@ -9,6 +9,12 @@ namespace AR{
 	namespace Drone{
 
 		namespace Client{
+			public struct diyPosition
+			{
+				double x;
+				double y;
+				double z;
+			};
 
 			public ref class PositionClient
 			{
@@ -18,10 +24,9 @@ namespace AR{
 				~PositionClient();
 				void RecevieData();
 				void initSocket();
-				double getlongitude();
-				double getlatitude();
-				double getaltitude();
-				double getpsi();
+				diyPosition *position;
+				diyPosition* getPosition1();
+				diyPosition* getPosition2();
 			private:
 				SOCKET sockSrv;
 				int len;
